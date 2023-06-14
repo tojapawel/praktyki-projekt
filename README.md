@@ -1,0 +1,2 @@
+# praktyki-projekt
+Kozicki Paweł
