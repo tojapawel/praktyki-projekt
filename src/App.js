@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import hotelsJSON from './json/hotels.json';
+import HotelsList from './components/temp/HotelsList/HotelsList';
+
 
 function App() {
+  console.log(hotelsJSON);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HotelsList items={hotelsJSON} />
     </div>
   );
 }
