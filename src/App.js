@@ -1,13 +1,13 @@
 import './App.css';
 import hotelsJSON from './json/hotels.json';
+import Header from './components/Header/Header';
 import HotelsList from './components/temp/HotelsList/HotelsList';
 
-
 function App() {
-  console.log(hotelsJSON);
   return (
     <div>
-      <HotelsList items={hotelsJSON} />
+      <Header items={hotelsJSON}></Header>
+      {/* <HotelsList items={hotelsJSON} /> */}
     </div>
   );
 }
