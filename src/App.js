@@ -1,24 +1,31 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import './App.css';
-import hotelsJSON from './json/hotels.json';
-import Header from './components/Header/Header';
-import HotelsList from './components/HotelsList/HotelsList';
+import Index from './routes/Index';
+import Hotel from './routes/Hotel';
 
-function App() {
-  const [filteredHotels, setFilteredHotels] = useState(hotelsJSON);
+import E404 from './routes/errors/E404';
 
-  const changeHotels = (fHotels) => {
-    setFilteredHotels(fHotels);
-  };
-
+const NotFound = () => {
   return (
     <div>
-      <Header hotels={hotelsJSON} fiHotels={changeHotels}></Header>
-      
-      <HotelsList hotels={filteredHotels} />
+      <h2>404 - Strona nie znaleziona</h2>
+      {/* Treść strony błędu 404 */}
     </div>
   );
-}
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/hotel/:hotelId" element={<Hotel />} />
+
+        <Route path="*" element={<E404 />} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;

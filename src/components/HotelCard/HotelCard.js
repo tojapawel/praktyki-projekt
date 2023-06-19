@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from "./HotelCard.module.css";
 
+import { Link } from 'react-router-dom';
+
 function calculateStars(stars) {
     let starshtml = "";
 
@@ -18,7 +20,6 @@ function calculateStars(stars) {
 const HotelCard = (props) => {
 
     let stars = calculateStars(props.stars);
-    const link = "/hotel/" + props.id;
 
     return (
         <tr>
@@ -40,7 +41,9 @@ const HotelCard = (props) => {
             <td>
                 <input className={styles.box} type="checkbox" checked={props.service} />
             </td>
-            <td><a id="link" href={link}>Link</a></td>
+            <td><Link to={`/hotel/${props.id}`}>Link</Link></td>
+            
+            
         </tr >
     );
 }
