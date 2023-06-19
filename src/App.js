@@ -1,13 +1,22 @@
+import { useState, useEffect } from 'react';
+
 import './App.css';
 import hotelsJSON from './json/hotels.json';
 import Header from './components/Header/Header';
-import HotelsList from './components/temp/HotelsList/HotelsList';
+import HotelsList from './components/HotelsList/HotelsList';
 
 function App() {
+  const [filteredHotels, setFilteredHotels] = useState(hotelsJSON);
+
+  const changeHotels = (fHotels) => {
+    setFilteredHotels(fHotels);
+  };
+
   return (
     <div>
-      <Header items={hotelsJSON}></Header>
-      {/* <HotelsList items={hotelsJSON} /> */}
+      <Header hotels={hotelsJSON} fiHotels={changeHotels}></Header>
+      
+      <HotelsList items={filteredHotels} />
     </div>
   );
 }
