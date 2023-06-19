@@ -3,19 +3,7 @@ import styles from "./HotelCard.module.css";
 
 import { Link } from 'react-router-dom';
 
-function calculateStars(stars) {
-    let starshtml = "";
-
-    for (let i = 0; i < stars; i++) {
-        starshtml += '★';
-    }
-
-    for (let i = 0; i < 5 - stars; i++) {
-        starshtml += '☆';
-    }
-
-    return starshtml;
-}
+import calculateStars from '../../functions/calculateStars';
 
 const HotelCard = (props) => {
 
@@ -28,6 +16,10 @@ const HotelCard = (props) => {
             <td>{props.name}</td>
             <td>{props.location.postCode}, {props.location.city}, {props.location.address}</td>
             <td className={styles.stars}>{stars}</td>
+            <td>{props.reviewsScore}</td>
+            <td>
+                <input className={styles.box} type="checkbox" checked={props.promoted} />
+            </td>
             <td>{props.distanceFromCenter} km</td>
             <td>
                 <input className={styles.box} type="checkbox" checked={props.wifi} />

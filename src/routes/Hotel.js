@@ -1,17 +1,16 @@
 import '../App.css';
 
 import { Link, useParams } from 'react-router-dom';
+import HotelInfo from '../components/HotelInfo/HotelInfo';
 
-function Hotel() {
+const Hotel = () => {
 
     const { hotelId } = useParams();
 
     return (
         <div className="main_container">
-                <p>Hotel</p>
-                <p>Identyfikator hotelu: {hotelId}</p>
-
-                <Link to="/">Powrót do strony głównej</Link>
+            <HotelInfo hotelId={hotelId} />
+            <Link to="/">Powrót do strony głównej</Link>
         </div>
     );
 }

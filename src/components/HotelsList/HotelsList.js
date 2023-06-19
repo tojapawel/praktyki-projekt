@@ -19,6 +19,8 @@ const HotelsList = (props) => {
 					<th>Nazwa</th>
 					<th>Adres</th>
 					<th>Gwiazdki</th>
+					<th>Ocena</th>
+					<th>Promowany</th>
 					<th>Do centrum</th>
 					<th>Wifi</th>
 					<th>Parking</th>
@@ -41,6 +43,8 @@ const HotelsList = (props) => {
 						parking={hotels.metadata.parking}
 						pets={hotels.metadata.pets}
 						service={hotels.metadata.service}
+						reviewsScore={hotels.reviewsScore}
+						promoted={hotels.promoted}
 					/>
 				))}
 			</tbody>

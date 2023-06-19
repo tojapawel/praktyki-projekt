@@ -74,7 +74,7 @@ const Header = (props) => {
 				<option value="odcm">Odległość do centrum malejąco</option>
 				<option value="odcr">Odległość do centrum rosnąco</option>
 				<option value="" disabled>----------------------------</option>
-				<option value="na">Nazwa alfabetycznie</option>
+				<option value="na">Nazwa hotelu alfabetycznie</option>
 				<option value="" disabled>----------------------------</option>
 				<option value="ma">Miasto alfabetycznie</option>
 				<option value="" disabled>----------------------------</option>
