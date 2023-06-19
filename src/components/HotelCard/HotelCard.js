@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from "./HotelCard.module.css";
 
-function calculateStars(stars){
+function calculateStars(stars) {
     let starshtml = "";
 
     for (let i = 0; i < stars; i++) {
         starshtml += '★';
     }
 
-    for (let i = 0; i < 5-stars; i++) {
+    for (let i = 0; i < 5 - stars; i++) {
         starshtml += '☆';
     }
 
@@ -18,6 +18,7 @@ function calculateStars(stars){
 const HotelCard = (props) => {
 
     let stars = calculateStars(props.stars);
+    const link = "/hotel/" + props.id;
 
     return (
         <tr>
@@ -26,7 +27,21 @@ const HotelCard = (props) => {
             <td>{props.name}</td>
             <td>{props.location.postCode}, {props.location.city}, {props.location.address}</td>
             <td className={styles.stars}>{stars}</td>
-        </tr>
+            <td>{props.distanceFromCenter} km</td>
+            <td>
+                <input className={styles.box} type="checkbox" checked={props.wifi} />
+            </td>
+            <td>
+                <input className={styles.box} type="checkbox" checked={props.parking} />
+            </td>
+            <td>
+                <input className={styles.box} type="checkbox" checked={props.pets} />
+            </td>
+            <td>
+                <input className={styles.box} type="checkbox" checked={props.service} />
+            </td>
+            <td><a id="link" href={link}>Link</a></td>
+        </tr >
     );
 }
 

@@ -6,7 +6,7 @@ import styles from "./HotelList.module.css";
 
 const HotelsList = (props) => {
 
-	if (props.items.length === 0) {
+	if (props.hotels.length === 0) {
 		return <h2>Brak hoteli</h2>;
 	}
 
@@ -19,10 +19,16 @@ const HotelsList = (props) => {
 					<th>Nazwa</th>
 					<th>Adres</th>
 					<th>Gwiazdki</th>
+					<th>Do centrum</th>
+					<th>Wifi</th>
+					<th>Parking</th>
+					<th>Zwierzeta</th>
+					<th>Obsługa pokoju</th>
+					<th>Link</th>
 				</tr>
 			</thead>
 			<tbody>
-				{props.items.map((hotels, index) => (
+				{props.hotels.map((hotels, index) => (
 					<HotelCard
 						key={hotels.id}
 						id={hotels.id}
@@ -30,7 +36,11 @@ const HotelsList = (props) => {
 						name={hotels.name}
 						location={hotels.location}
 						stars={hotels.stars}
-						rooms={hotels.rooms}
+						distanceFromCenter={hotels.metadata.distanceFromCenter}
+						wifi={hotels.metadata.wifi}
+						parking={hotels.metadata.parking}
+						pets={hotels.metadata.pets}
+						service={hotels.metadata.service}
 					/>
 				))}
 			</tbody>

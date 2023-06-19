@@ -16,7 +16,7 @@ function App() {
     <div>
       <Header hotels={hotelsJSON} fiHotels={changeHotels}></Header>
       
-      <HotelsList items={filteredHotels} />
+      <HotelsList hotels={filteredHotels} />
     </div>
   );
 }
