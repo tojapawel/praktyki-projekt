@@ -1,0 +1,30 @@
+{
+  "table": [
+    {
+      "number": "Numer",
+      "id": "ID",
+      "name": "Nazwa",
+      "address": "Adres",
+      "stars": "Gwiazdki",
+      "rooms": {
+        "rooms": "Pokoje",
+        "price": "Cena",
+        "maxGuests": "Max gości",
+        "beds": "Łóżka",
+        "familyRoom": "Pokój rodzinny",
+        "area": "Powierzchnia",
+        "breakfast": "Śniadania",
+        "available": "Dostępny"
+      },
+      "metadata": {
+        "distanceFromCenter": "Do centrum",
+        "wifi": "Wifi",
+        "parking": "Parking",
+        "pets": "Zwierzęta",
+        "roomService": "Obsługa pokoju"
+      },
+      "reviewsScore": "Ocena",
+      "promoted": "Promowany"
+    }
+  ]
+}

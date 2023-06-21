@@ -19,7 +19,7 @@ function HotelInfo(props) {
                 <table>
                     <thead>
                         <tr>
-                            <th className={styles.center} colspan="11">Hotel</th>
+                            <th className={styles.center} colSpan="11">Hotel</th>
                         </tr>
                         <tr>
                             <th>ID</th>
@@ -43,20 +43,20 @@ function HotelInfo(props) {
                             <td className={styles.stars}>{stars}</td>
                             <td>{hotel.reviewsScore}</td>
                             <td>
-                                <input className={styles.box} type="checkbox" checked={hotel.promoted} />
+                                <input className={styles.box} type="checkbox" defaultChecked={hotel.promoted} />
                             </td>
                             <td>{hotel.metadata.distanceFromCenter} km</td>
                             <td>
-                                <input className={styles.box} type="checkbox" checked={hotel.metadata.wifi} />
+                                <input className={styles.box} type="checkbox" defaultChecked={hotel.metadata.wifi} />
                             </td>
                             <td>
-                                <input className={styles.box} type="checkbox" checked={hotel.metadata.parking} />
+                                <input className={styles.box} type="checkbox" defaultChecked={hotel.metadata.parking} />
                             </td>
                             <td>
-                                <input className={styles.box} type="checkbox" checked={hotel.metadata.pets} />
+                                <input className={styles.box} type="checkbox" defaultChecked={hotel.metadata.pets} />
                             </td>
                             <td>
-                                <input className={styles.box} type="checkbox" checked={hotel.metadata.service} />
+                                <input className={styles.box} type="checkbox" defaultChecked={hotel.metadata.service} />
                             </td>
                         </tr>
                     </tbody>
@@ -65,7 +65,7 @@ function HotelInfo(props) {
                 <table className={styles.table_padding}>
                     <thead>
                         <tr>
-                            <th className={styles.center} colspan="8">Pokoje</th>
+                            <th className={styles.center} colSpan="8">Pokoje</th>
                         </tr>
                         <tr>
                             <th>Numer</th>
@@ -80,20 +80,20 @@ function HotelInfo(props) {
                     </thead>
                     <tbody>
                         {hotel.rooms.map((room, index) => (
-                            <tr>
+                            <tr key={index}>
                                 <td>{index + 1}</td>
                                 <td>{room.price} zł</td>
                                 <td>{room.maxGuests}</td>
                                 <td>{room.beds}</td>
                                 <td>
-                                    <input className={styles.box} type="checkbox" checked={room.familyRoom} />
+                                    <input className={styles.box} type="checkbox" defaultChecked={room.familyRoom} />
                                 </td>
                                 <td>{room.area} m<sup>2</sup></td>
                                 <td>
-                                    <input className={styles.box} type="checkbox" checked={room.breakfast} />
+                                    <input className={styles.box} type="checkbox" defaultChecked={room.breakfast} />
                                 </td>
                                 <td>
-                                    <input className={styles.box} type="checkbox" checked={room.available} />
+                                    <input className={styles.box} type="checkbox" defaultChecked={room.available} />
                                 </td>
                             </tr>
                         ))}

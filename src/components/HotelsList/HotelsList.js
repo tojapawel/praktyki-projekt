@@ -34,7 +34,7 @@ const HotelsList = (props) => {
 					<HotelCard
 						key={hotels.id}
 						id={hotels.id}
-						number={index+1}
+						number={index + 1}
 						name={hotels.name}
 						location={hotels.location}
 						stars={hotels.stars}

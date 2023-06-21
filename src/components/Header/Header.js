@@ -41,16 +41,39 @@ const Header = (props) => {
 				filtered.sort((a, b) => a.location.city.localeCompare(b.location.city));
 				break;
 			default:
+
 				break;
 		}
 
+		filtered.sort((a, b) => {
+			if (a.promoted && !b.promoted) {
+				return -1;
+			}
+			if (!a.promoted && b.promoted) {
+				return 1;
+			}
+		});
+
 		props.fiHotels(filtered);
+
 	}, [sort, city, stars, props.hotels]);
+
+	let cities = [...new Set(props.hotels.map(hotel => hotel.location.city))];
 
 	return (
 		<div className={styles.header}>
 			<label htmlFor='city-input'>Miasto: </label>
-			<input id="city-input" type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+			{/* <input id="city-input" type="text" value={city} onChange={(e) => setCity(e.target.value)} /> */}
+
+			<select id="city-select" value={city} onChange={(e) => setCity(e.target.value)} >
+				<option value="">Wybierz miasto</option>
+
+				{cities.map((city, index) => (
+					<option key={index} value={city}>{city}</option>
+				))}
+			</select>
+
+			<br />
 
 			<label htmlFor='stars-select'> Ilość gwiazdek: </label>
 			<select id="stars-select" value={stars} onChange={(e) => setStars(e.target.value)} >
@@ -79,7 +102,6 @@ const Header = (props) => {
 				<option value="ma">Miasto alfabetycznie</option>
 				<option value="" disabled>----------------------------</option>
 			</select>
-
 		</div>
 	);
 };

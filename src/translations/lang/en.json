@@ -1,0 +1,30 @@
+{
+  "table": [
+    {
+      "number": "Number",
+      "id": "ID",
+      "name": "Name",
+      "address": "Address",
+      "stars": "Stars",
+      "room": {
+        "rooms": "Rooms",
+        "price": "Price",
+        "maxGuests": "Max guests",
+        "beds": "Beds",
+        "familyRoom": "Family room",
+        "area": "Area",
+        "breakfast": "Breakfast",
+        "available": "Available"
+      },
+      "metadata": {
+        "distanceFromCenter": "Distance from center",
+        "wifi": "Wifi",
+        "parking": "Parking",
+        "pets": "Pets",
+        "roomService": "Room service"
+      },
+      "reviewsScore": "Reviews score",
+      "promoted": "Promoted"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import Header from '../components/Header/Header';
 import HotelsList from '../components/HotelsList/HotelsList';
 
 function Index() {
-  const [filteredHotels, setFilteredHotels] = useState(hotelsJSON);
+  const [filteredHotels, setFilteredHotels] = useState([]);
 
   const changeHotels = (fHotels) => {
     setFilteredHotels(fHotels);

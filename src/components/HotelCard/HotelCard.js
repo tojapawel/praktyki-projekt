@@ -18,24 +18,22 @@ const HotelCard = (props) => {
             <td className={styles.stars}>{stars}</td>
             <td>{props.reviewsScore}</td>
             <td>
-                <input className={styles.box} type="checkbox" checked={props.promoted} />
+                <input className={styles.box} type="checkbox" defaultChecked={props.promoted} />
             </td>
             <td>{props.distanceFromCenter} km</td>
             <td>
-                <input className={styles.box} type="checkbox" checked={props.wifi} />
+                <input className={styles.box} type="checkbox" defaultChecked={props.wifi} />
             </td>
             <td>
-                <input className={styles.box} type="checkbox" checked={props.parking} />
+                <input className={styles.box} type="checkbox" defaultChecked={props.parking} />
             </td>
             <td>
-                <input className={styles.box} type="checkbox" checked={props.pets} />
+                <input className={styles.box} type="checkbox" defaultChecked={props.pets} />
             </td>
             <td>
-                <input className={styles.box} type="checkbox" checked={props.service} />
+                <input className={styles.box} type="checkbox" defaultChecked={props.service} />
             </td>
             <td><Link to={`/hotel/${props.id}`}>Link</Link></td>
-            
-            
         </tr >
     );
 }
