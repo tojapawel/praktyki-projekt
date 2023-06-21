@@ -42,7 +42,7 @@ const HotelsList = (props) => {
 						wifi={hotels.metadata.wifi}
 						parking={hotels.metadata.parking}
 						pets={hotels.metadata.pets}
-						service={hotels.metadata.service}
+						service={hotels.metadata.roomService}
 						reviewsScore={hotels.reviewsScore}
 						promoted={hotels.promoted}
 					/>

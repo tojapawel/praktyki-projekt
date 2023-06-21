@@ -1,6 +1,16 @@
-.header{
-    height: 100px;
+.header {
+    min-height: 100px;
     background-color: lightblue;
     text-align: center;
     margin-bottom: 30px;
+    padding: 20px;
+}
+
+.metadata{
+    padding: 20px 0;
+}
+
+.metadata .item{
+    display: inline-block;
+    padding: 0 10px;
 }
