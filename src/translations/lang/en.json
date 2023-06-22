@@ -1,30 +1,51 @@
 {
-  "table": [
-    {
-      "number": "Number",
-      "id": "ID",
-      "name": "Name",
-      "address": "Address",
-      "stars": "Stars",
-      "room": {
-        "rooms": "Rooms",
-        "price": "Price",
-        "maxGuests": "Max guests",
-        "beds": "Beds",
-        "familyRoom": "Family room",
-        "area": "Area",
-        "breakfast": "Breakfast",
-        "available": "Available"
-      },
-      "metadata": {
-        "distanceFromCenter": "Distance from center",
-        "wifi": "Wifi",
-        "parking": "Parking",
-        "pets": "Pets",
-        "roomService": "Room service"
-      },
-      "reviewsScore": "Reviews score",
-      "promoted": "Promoted"
-    }
-  ]
+  "table": {
+    "number": "Number",
+    "id": "ID",
+    "name": "Name",
+    "address": "Address",
+    "stars": "Stars",
+    "room": {
+      "price": "Price",
+      "maxGuests": "Max guests",
+      "beds": "Beds",
+      "familyRoom": "Family room",
+      "area": "Area",
+      "breakfast": "Breakfast",
+      "available": "Available"
+    },
+    "metadata": {
+      "distanceFromCenter": "Distance from center",
+      "wifi": "Wifi",
+      "parking": "Parking",
+      "pets": "Pets",
+      "roomService": "Room service"
+    },
+    "reviewsScore": "Reviews score",
+    "promoted": "Promoted"
+  },
+  "header": {
+    "main": {
+      "all": "All"
+    },
+    "city": "City",
+    "starsCount": "Stars count",
+    "hotelMustHave": "Hotel must have",
+    "sorting": {
+      "sort": "Sorting",
+      "type": {
+        "selectSort": "Default sort",
+        "starsDescending": "Stars descending",
+        "starsAscending": "Stars ascending",
+        "ratingDescending": "Rating descending",
+        "ratingAscending": "Rating ascending",
+        "distanceToCenterDescending": "Distance to center descending",
+        "distanceToCenterAscending": "Distance to center ascending",
+        "hotelNameAlphabetically": "Hotel name alphabetically",
+        "cityAlphabetically": "City alphabetically"
+      }
+    },
+    "resetButton": "Reset filters",
+    "changeLanguage": "Change language"
+  }
 }

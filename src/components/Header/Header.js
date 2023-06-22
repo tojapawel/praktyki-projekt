@@ -2,7 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 import styles from "./Header.module.css";
 
+import LanguageSelector from '../../translations/LanguageSelector';
+// eslint-disable-next-line
+import i18n from "../../translations/i18n"
+
+import { useTranslation } from 'react-i18next';
+
 const Header = (props) => {
+	const { t } = useTranslation();
+
 	const [city, setCity] = useState('');
 	const [stars, setStars] = useState('');
 
@@ -29,23 +37,23 @@ const Header = (props) => {
 				return false;
 			}
 
-			if (stars && hotel.stars != stars) {
+			if (stars && hotel.stars !== stars) {
 				return false;
 			}
 
-			if (wifiCheck && hotel.metadata.wifi != wifiCheck) {
+			if (wifiCheck && hotel.metadata.wifi !== wifiCheck) {
 				return false;
 			}
 
-			if (parkingCheck && hotel.metadata.parking != parkingCheck) {
+			if (parkingCheck && hotel.metadata.parking !== parkingCheck) {
 				return false;
 			}
 
-			if (petsCheck && hotel.metadata.pets != petsCheck) {
+			if (petsCheck && hotel.metadata.pets !== petsCheck) {
 				return false;
 			}
 
-			if (serviceCheck && hotel.metadata.roomService != serviceCheck) {
+			if (serviceCheck && hotel.metadata.roomService !== serviceCheck) {
 				return false;
 			}
 
@@ -100,9 +108,9 @@ const Header = (props) => {
 
 	return (
 		<div className={styles.header}>
-			<label htmlFor='city-input'>Miasto: </label>
+			<label htmlFor='city-input'>{t('header.city')}: </label>
 			<select id="city-select" value={city} onChange={(e) => setCity(e.target.value)} >
-				<option value="">Wybierz miasto</option>
+				<option value="">{t('header.main.all')}</option>
 
 				{cities.map((city, index) => (
 					<option key={index} value={city}>{city}</option>
@@ -111,9 +119,9 @@ const Header = (props) => {
 
 			<br />
 
-			<label htmlFor='stars-select'> Ilość gwiazdek: </label>
+			<label htmlFor='stars-select'>{t('header.starsCount')}: </label>
 			<select id="stars-select" value={stars} onChange={(e) => setStars(e.target.value)} >
-				<option value="">Wszystkie</option>
+				<option value="">{t('header.main.all')}</option>
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -123,51 +131,57 @@ const Header = (props) => {
 
 			<br />
 
-			<label htmlFor='sort-select'>Sortowanie: </label>
+			<label htmlFor='sort-select'>{t('header.sorting.sort')}: </label>
 			<select id="sort-select" value={sort} onChange={(e) => setSort(e.target.value)} >
-				<option value="">Wybierz sortowanie</option>
+				<option value="">{t('header.sorting.type.selectSort')}</option>
 				<option value="" disabled>----------------------------</option>
-				<option value="gm">Gwiazdki malejąco</option>
-				<option value="gr">Gwiazdki rosnąco</option>
+				<option value="gm">{t('header.sorting.type.starsDescending')}</option>
+				<option value="gr">{t('header.sorting.type.starsAscending')}</option>
 				<option value="" disabled>----------------------------</option>
-				<option value="om">Ocena malejąco</option>
-				<option value="or">Ocena rosnąco</option>
+				<option value="om">{t('header.sorting.type.ratingDescending')}</option>
+				<option value="or">{t('header.sorting.type.ratingAscending')}</option>
 				<option value="" disabled>----------------------------</option>
-				<option value="odcm">Odległość do centrum malejąco</option>
-				<option value="odcr">Odległość do centrum rosnąco</option>
+				<option value="odcm">{t('header.sorting.type.distanceToCenterDescending')}</option>
+				<option value="odcr">{t('header.sorting.type.distanceToCenterAscending')}</option>
 				<option value="" disabled>----------------------------</option>
-				<option value="na">Nazwa hotelu alfabetycznie</option>
+				<option value="na">{t('header.sorting.type.hotelNameAlphabetically')}</option>
 				<option value="" disabled>----------------------------</option>
-				<option value="ma">Miasto alfabetycznie</option>
+				<option value="ma">{t('header.sorting.type.cityAlphabetically')}</option>
 				<option value="" disabled>----------------------------</option>
 			</select>
 
 			<br />
 
 			<div className={styles.metadata}>
-				<span>Czy hotel ma mieć: </span>
+				<span>{t('header.hotelMustHave')}: </span>
 				<div className={styles.item}>
-					<label htmlFor='wifi-checkbox'>Wifi: </label>
+					<label htmlFor='wifi-checkbox'>{t('table.metadata.wifi')}: </label>
 					<input type="checkbox" id="wifi-checkbox" checked={wifiCheck} name="wifi-checkbox" onChange={(e) => setWifiCheck(e.target.checked)} />
 				</div>
 				<div className={styles.item}>
 
-					<label htmlFor='parking-checkbox'>Parking: </label>
+					<label htmlFor='parking-checkbox'>{t('table.metadata.parking')}: </label>
 					<input type="checkbox" id="parking-checkbox" checked={parkingCheck} name="parking-checkbox" onChange={(e) => setParkingCheck(e.target.checked)} />
 				</div>
 				<div className={styles.item}>
 
-					<label htmlFor='pets-checkbox'>Zwierzęta: </label>
+					<label htmlFor='pets-checkbox'>{t('table.metadata.pets')}: </label>
 					<input type="checkbox" id="pets-checkbox" checked={petsCheck} name="pets-checkbox" onChange={(e) => setPetsCheck(e.target.checked)} />
 				</div>
 				<div className={styles.item}>
 
-					<label htmlFor='service-checkbox'>Obługa pokoju: </label>
+					<label htmlFor='service-checkbox'>{t('table.metadata.roomService')}: </label>
 					<input type="checkbox" id="service-checkbox" checked={serviceCheck} name="service-checkbox" onChange={(e) => setServiceCheck(e.target.checked)} />
 				</div>
 			</div>
 
-			<button onClick={handleReset}>Resetuj filtry</button>
+			<button onClick={handleReset}>{t('header.resetButton')}</button>
+
+			<br />
+
+			<div className={styles.langChange}>
+				<span>{t('header.changeLanguage')}: </span><LanguageSelector />
+			</div>
 
 		</div>
 	);

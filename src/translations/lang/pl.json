@@ -1,30 +1,51 @@
 {
-  "table": [
-    {
-      "number": "Numer",
-      "id": "ID",
-      "name": "Nazwa",
-      "address": "Adres",
-      "stars": "Gwiazdki",
-      "rooms": {
-        "rooms": "Pokoje",
-        "price": "Cena",
-        "maxGuests": "Max gości",
-        "beds": "Łóżka",
-        "familyRoom": "Pokój rodzinny",
-        "area": "Powierzchnia",
-        "breakfast": "Śniadania",
-        "available": "Dostępny"
-      },
-      "metadata": {
-        "distanceFromCenter": "Do centrum",
-        "wifi": "Wifi",
-        "parking": "Parking",
-        "pets": "Zwierzęta",
-        "roomService": "Obsługa pokoju"
-      },
-      "reviewsScore": "Ocena",
-      "promoted": "Promowany"
-    }
-  ]
+  "table": {
+    "number": "Numer",
+    "id": "ID",
+    "name": "Nazwa",
+    "address": "Adres",
+    "stars": "Gwiazdki",
+    "room": {
+      "price": "Cena",
+      "maxGuests": "Max gości",
+      "beds": "Łóżka",
+      "familyRoom": "Pokój rodzinny",
+      "area": "Powierzchnia",
+      "breakfast": "Śniadania",
+      "available": "Dostępny"
+    },
+    "metadata": {
+      "distanceFromCenter": "Do centrum",
+      "wifi": "Wifi",
+      "parking": "Parking",
+      "pets": "Zwierzęta",
+      "roomService": "Obsługa pokoju"
+    },
+    "reviewsScore": "Ocena",
+    "promoted": "Promowany"
+  },
+  "header": {
+    "main": {
+      "all": "Wszystkie"
+    },
+    "city": "Miasto",
+    "starsCount": "Ilość gwiazdek",
+    "hotelMustHave": "Czy hotel ma mieć",
+    "sorting": {
+      "sort": "Sortowanie",
+      "type": {
+        "selectSort": "Domyślne sortowanie",
+        "starsDescending": "Gwiazdki malejąco",
+        "starsAscending": "Gwiazdki rosnąco",
+        "ratingDescending": "Ocena malejąco",
+        "ratingAscending": "Ocena rosnąco",
+        "distanceToCenterDescending": "Odległość do centrum malejąco",
+        "distanceToCenterAscending": "Odległość do centrum rosnąco",
+        "hotelNameAlphabetically": "Nazwa hotelu alfabetycznie",
+        "cityAlphabetically": "Miasto alfabetycznie"
+      }
+    },
+    "resetButton": "Resetuj filtry",
+    "changeLanguage": "Zmiana języka"
+  }
 }

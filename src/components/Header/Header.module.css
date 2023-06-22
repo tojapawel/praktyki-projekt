@@ -4,6 +4,8 @@
     text-align: center;
     margin-bottom: 30px;
     padding: 20px;
+
+    position: relative;;
 }
 
 .metadata{
@@ -13,4 +15,10 @@
 .metadata .item{
     display: inline-block;
     padding: 0 10px;
+}
+
+.langChange{
+    position: absolute;
+    top: 20px;
+    right: 30px;
 }

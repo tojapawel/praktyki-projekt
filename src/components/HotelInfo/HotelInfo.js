@@ -4,9 +4,11 @@ import styles from "./HotelInfo.module.css";
 import hotelsJSON from '../../json/hotels.json';
 
 import calculateStars from "../../functions/calculateStars";
-import E404 from '../../routes/errors/E404';
+
+import { useTranslation } from 'react-i18next';
 
 function HotelInfo(props) {
+    const { t } = useTranslation();
 
     let hotel = hotelsJSON.filter((hotel) => hotel.id === props.hotelId);
 
@@ -22,17 +24,17 @@ function HotelInfo(props) {
                             <th className={styles.center} colSpan="11">Hotel</th>
                         </tr>
                         <tr>
-                            <th>ID</th>
-                            <th>Nazwa</th>
-                            <th>Adres</th>
-                            <th>Gwiazdki</th>
-                            <th>Ocena</th>
-                            <th>Promowany</th>
-                            <th>Do centrum</th>
-                            <th>Wifi</th>
-                            <th>Parking</th>
-                            <th>Zwierzeta</th>
-                            <th>Obsługa pokoju</th>
+                            <th>{t('table.id')}</th>
+                            <th>{t('table.name')}</th>
+                            <th>{t('table.address')}</th>
+                            <th>{t('table.stars')}</th>
+                            <th>{t('table.reviewsScore')}</th>
+                            <th>{t('table.promoted')}</th>
+                            <th>{t('table.metadata.distanceFromCenter')}</th>
+                            <th>{t('table.metadata.wifi')}</th>
+                            <th>{t('table.metadata.parking')}</th>
+                            <th>{t('table.metadata.pets')}</th>
+                            <th>{t('table.metadata.roomService')}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,14 +70,15 @@ function HotelInfo(props) {
                             <th className={styles.center} colSpan="8">Pokoje</th>
                         </tr>
                         <tr>
-                            <th>Numer</th>
-                            <th>Cena</th>
-                            <th>Max gości</th>
-                            <th>Łóżka</th>
-                            <th>Pokój rodzinny</th>
-                            <th>Powierzchnia</th>
-                            <th>Śniadania</th>
-                            <th>Dostępny</th>
+                            <th>{t('table.number')}</th>
+                            <th>{t('table.room.price')}</th>
+                            <th>{t('table.room.maxGuests')}</th>
+                            <th>{t('table.room.beds')}</th>
+                            <th>{t('table.room.familyRoom')}</th>
+                            <th>{t('table.room.area')}</th>
+                            <th>{t('table.room.breakfast')}</th>
+                            <th>{t('table.room.available')}</th>
+
                         </tr>
                     </thead>
                     <tbody>

@@ -4,7 +4,10 @@ import HotelCard from "../HotelCard/HotelCard";
 // eslint-disable-next-line
 import styles from "./HotelList.module.css";
 
+import { useTranslation } from 'react-i18next';
+
 const HotelsList = (props) => {
+    const { t } = useTranslation();
 
 	if (props.hotels.length === 0) {
 		return <h2>Brak hoteli</h2>;
@@ -14,18 +17,18 @@ const HotelsList = (props) => {
 		<table>
 			<thead>
 				<tr>
-					<th>Numer</th>
-					<th>ID</th>
-					<th>Nazwa</th>
-					<th>Adres</th>
-					<th>Gwiazdki</th>
-					<th>Ocena</th>
-					<th>Promowany</th>
-					<th>Do centrum</th>
-					<th>Wifi</th>
-					<th>Parking</th>
-					<th>Zwierzeta</th>
-					<th>Obsługa pokoju</th>
+					<th>{t('table.number')}</th>
+					<th>{t('table.id')}</th>
+					<th>{t('table.name')}</th>
+					<th>{t('table.address')}</th>
+					<th>{t('table.stars')}</th>
+					<th>{t('table.reviewsScore')}</th>
+					<th>{t('table.promoted')}</th>
+					<th>{t('table.metadata.distanceFromCenter')}</th>
+					<th>{t('table.metadata.wifi')}</th>
+					<th>{t('table.metadata.parking')}</th>
+					<th>{t('table.metadata.pets')}</th>
+					<th>{t('table.metadata.roomService')}</th>
 					<th>Link</th>
 				</tr>
 			</thead>
