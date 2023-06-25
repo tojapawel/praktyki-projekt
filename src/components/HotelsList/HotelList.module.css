@@ -1,16 +1,11 @@
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
+.hotelslist {
+    margin: 100px;
+    align-content: center;
 
-td,
-th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: auto;
 
-tr:nth-child(even) {
-    background-color: #dddddd;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }

@@ -27,6 +27,8 @@ const Header = (props) => {
 
 	const [submitCheck, setSubmitCheck] = useState(false);
 
+	const [filtered, setFiltered] = useState([]);
+
 	const handleReset = () => {
 		setCity('');
 		setStars('');
@@ -38,15 +40,18 @@ const Header = (props) => {
 		setGuests('');
 		setScore('');
 		setBreakfast('');
-		setSubmitCheck(false);
+		setSubmitCheck(true);
+		props.fiHotels([]);
+		setFiltered([]);
 	}
 
 	const handleSubmitF = () => {
+		props.fiHotels(filtered);
 		setSubmitCheck(true);
 	}
 
 	useEffect(() => {
-		const filtered = props.hotels.filter((hotel) => {
+		setFiltered(props.hotels.filter((hotel) => {
 			if (city && hotel.location.city.toLocaleLowerCase() !== city.toLocaleLowerCase()) {
 				return false;
 			}
@@ -84,7 +89,7 @@ const Header = (props) => {
 			}
 
 			return true;
-		});
+		}));
 
 		switch (sort) {
 			case "gm":
@@ -123,11 +128,10 @@ const Header = (props) => {
 				return 1;
 			}
 		});
-
-		props.fiHotels(filtered);
+		
 		setSubmitCheck(false);
 
-	}, [submitCheck]);
+	}, [submitCheck, filtered]);
 
 	let cities = [...new Set(props.hotels.map(hotel => hotel.location.city))];
 

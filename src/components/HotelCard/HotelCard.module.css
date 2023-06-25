@@ -1,8 +1,124 @@
-.stars {
-    font-size: 20px;
+/* @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+body {
+    font-family: 'Kanit', sans-serif;
+} */
+
+a {
+    color: inherit;
 }
 
-.box {
-    pointer-events: none;
-    opacity: .6;
+a:visited {
+    text-decoration: none;
+}
+
+.hotel {
+    height: 400px;
+    width: 300px;
+
+    position: relative;
+
+    transition: transform .2s;
+
+    margin: 30px 30px;
+
+    border-radius: 30px;
+
+    -webkit-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
+}
+
+.hotel:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.hotel .top {
+    height: 300px;
+    width: 300px;
+
+    position: absolute;
+
+    border-radius: 30px 30px 0 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hotel .bottom {
+    height: 100px;
+    width: 300px;
+
+    position: absolute;
+    bottom: 0;
+
+    border-radius: 0 0 30px 30px;
+}
+
+.hotel .bottom .left {
+    text-align: left;
+    height: 115px;
+    width: 210px;
+    float: left;
+
+    padding: 25px 0 10px 20px;
+
+    border-radius: 0 0 0 30px;
+
+}
+
+.hotel .bottom .name {
+    font-weight: bold;
+    display: block;
+}
+
+.hotel .bottom .price {
+    display: block;
+    font-size: 15px;
+}
+
+
+.hotel .bottom .right {
+    height: 150px;
+    width: 70px;
+    float: right;
+    text-align: center;
+
+    border-radius: 0 0 30px 0;
+}
+
+.hotel .bottom .right .score {
+    height: 45px;
+    width: 70px;
+    padding-top: 5px;
+}
+
+.hotel .bottom .right .score div {
+    height: 40px;
+    margin-left: 10px;
+    line-height: 40px;
+    width: 50px;
+    border-radius: 5px;
+
+    background-color: lightskyblue;
+}
+
+.hotel .bottom .right .stars {
+    height: 40px;
+    width: 70px;
+    padding-top: 10px;
+    
+
+    /* background-color: lightpink; */
+}
+
+.hotel .bottom .right .arrow {
+    height: 50px;
+    width: 70px;
+    line-height: 60px;
+    bottom: 0;
+    color: black;
+    /* background-color: lightskyblue; */
 }
