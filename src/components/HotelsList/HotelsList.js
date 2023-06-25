@@ -7,7 +7,7 @@ import styles from "./HotelList.module.css";
 import { useTranslation } from 'react-i18next';
 
 const HotelsList = (props) => {
-    const { t } = useTranslation();
+	const { t } = useTranslation();
 
 	if (props.hotels.length === 0) {
 		return <h2>Brak hoteli</h2>;

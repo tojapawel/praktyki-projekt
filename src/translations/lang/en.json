@@ -26,9 +26,11 @@
   },
   "header": {
     "main": {
-      "all": "All"
+      "all": "All",
+      "min": "Minimum"
     },
     "city": "City",
+    "guests": "Guests",
     "starsCount": "Stars count",
     "hotelMustHave": "Hotel must have",
     "sorting": {

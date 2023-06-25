@@ -21,6 +21,9 @@ const Header = (props) => {
 	const [petsCheck, setPetsCheck] = useState(false);
 	const [serviceCheck, setServiceCheck] = useState(false);
 
+	const [guests, setGuests] = useState("");
+	const [score, setScore] = useState("");
+
 	const handleReset = () => {
 		setCity('');
 		setStars('');
@@ -29,11 +32,17 @@ const Header = (props) => {
 		setParkingCheck(false);
 		setPetsCheck(false);
 		setServiceCheck(false);
+		setGuests('');
+		setScore('');
 	}
 
 	useEffect(() => {
 		const filtered = props.hotels.filter((hotel) => {
 			if (city && hotel.location.city.toLocaleLowerCase() !== city.toLocaleLowerCase()) {
+				return false;
+			}
+
+			if (score && hotel.reviewsScore < score) {
 				return false;
 			}
 
@@ -55,6 +64,10 @@ const Header = (props) => {
 
 			if (serviceCheck && hotel.metadata.roomService !== serviceCheck) {
 				return false;
+			}
+
+			if (guests) {
+				return hotel.rooms.some((room) => room.maxGuests >= parseInt(guests));
 			}
 
 			return true;
@@ -102,7 +115,7 @@ const Header = (props) => {
 		props.fiHotels(filtered);
 
 
-	}, [sort, city, stars, props.hotels, wifiCheck, parkingCheck, petsCheck, serviceCheck]);
+	}, [sort, city, stars, props.hotels, wifiCheck, parkingCheck, petsCheck, serviceCheck, guests, score]);
 
 	let cities = [...new Set(props.hotels.map(hotel => hotel.location.city))];
 
@@ -175,9 +188,15 @@ const Header = (props) => {
 				</div>
 			</div>
 
-			<button onClick={handleReset}>{t('header.resetButton')}</button>
+			<label htmlFor='guests-input'>{t('header.guests')}: </label>
+			<input id="guests-select" type='number' min="1" value={guests} onChange={(e) => setGuests(e.target.value)} />
 
-			<br />
+			<label htmlFor='score-input'> {t('header.main.min')} {t('table.reviewsScore').toLocaleLowerCase()}: </label>
+			<input id="score-select" type='number' min="0" max="10" value={score} onChange={(e) => setScore(e.target.value)} />
+
+			<br /><br />
+
+			<button onClick={handleReset}>{t('header.resetButton')}</button>
 
 			<div className={styles.langChange}>
 				<span>{t('header.changeLanguage')}: </span><LanguageSelector />

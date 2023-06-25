@@ -26,9 +26,11 @@
   },
   "header": {
     "main": {
-      "all": "Wszystkie"
+      "all": "Wszystkie",
+      "min": "Minimalna"
     },
     "city": "Miasto",
+    "guests": "Ilość gości",
     "starsCount": "Ilość gwiazdek",
     "hotelMustHave": "Czy hotel ma mieć",
     "sorting": {
