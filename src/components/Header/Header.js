@@ -13,6 +13,7 @@ const Header = (props) => {
 
 	const [city, setCity] = useState('');
 	const [stars, setStars] = useState('');
+	const [score, setScore] = useState("");
 
 	const [sort, setSort] = useState('');
 
@@ -22,7 +23,9 @@ const Header = (props) => {
 	const [serviceCheck, setServiceCheck] = useState(false);
 
 	const [guests, setGuests] = useState("");
-	const [score, setScore] = useState("");
+	const [breakfast, setBreakfast] = useState("");
+
+	const [submitCheck, setSubmitCheck] = useState(false);
 
 	const handleReset = () => {
 		setCity('');
@@ -34,6 +37,12 @@ const Header = (props) => {
 		setServiceCheck(false);
 		setGuests('');
 		setScore('');
+		setBreakfast('');
+		setSubmitCheck(false);
+	}
+
+	const handleSubmitF = () => {
+		setSubmitCheck(true);
 	}
 
 	useEffect(() => {
@@ -66,8 +75,12 @@ const Header = (props) => {
 				return false;
 			}
 
-			if (guests) {
-				return hotel.rooms.some((room) => room.maxGuests >= parseInt(guests));
+			if (breakfast && (hotel.rooms.some((room) => room.breakfast === true) !== breakfast)) {
+				return false;
+			}
+
+			if (guests && (hotel.rooms.some((room) => room.maxGuests >= parseInt(guests)) === false)) {
+				return false;
 			}
 
 			return true;
@@ -99,7 +112,6 @@ const Header = (props) => {
 				filtered.sort((a, b) => a.location.city.localeCompare(b.location.city));
 				break;
 			default:
-
 				break;
 		}
 
@@ -113,9 +125,9 @@ const Header = (props) => {
 		});
 
 		props.fiHotels(filtered);
+		setSubmitCheck(false);
 
-
-	}, [sort, city, stars, props.hotels, wifiCheck, parkingCheck, petsCheck, serviceCheck, guests, score]);
+	}, [submitCheck]);
 
 	let cities = [...new Set(props.hotels.map(hotel => hotel.location.city))];
 
@@ -194,9 +206,13 @@ const Header = (props) => {
 			<label htmlFor='score-input'> {t('header.main.min')} {t('table.reviewsScore').toLocaleLowerCase()}: </label>
 			<input id="score-select" type='number' min="0" max="10" value={score} onChange={(e) => setScore(e.target.value)} />
 
+			<label htmlFor='breakfast-checkbox'> {t('table.room.breakfast')}: </label>
+			<input type="checkbox" id="breakfast-checkbox" checked={breakfast} name="service-checkbox" onChange={(e) => setBreakfast(e.target.checked)} />
+
 			<br /><br />
 
 			<button onClick={handleReset}>{t('header.resetButton')}</button>
+			<button onClick={handleSubmitF}>{t('header.searchButton')}</button>
 
 			<div className={styles.langChange}>
 				<span>{t('header.changeLanguage')}: </span><LanguageSelector />

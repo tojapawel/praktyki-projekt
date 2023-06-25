@@ -27,7 +27,8 @@
   "header": {
     "main": {
       "all": "Wszystkie",
-      "min": "Minimalna"
+      "min": "Minimalna",
+      "max": "Maksymalna"
     },
     "city": "Miasto",
     "guests": "Ilość gości",
@@ -48,6 +49,7 @@
       }
     },
     "resetButton": "Resetuj filtry",
+    "searchButton": "Szukaj",
     "changeLanguage": "Zmiana języka"
   }
 }
