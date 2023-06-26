@@ -3,9 +3,6 @@ import styles from "./HotelCard.module.css";
 
 import { Link } from 'react-router-dom';
 
-import img from "../../assets/img/img_placeholder.jpg";
-import { MdNavigateNext  } from 'react-icons/md';
-
 import calculateStars from '../../functions/calculateStars';
 
 const HotelCard = (props) => {
@@ -13,25 +10,31 @@ const HotelCard = (props) => {
     let stars = calculateStars(props.stars);
 
     return (
-        <div className={styles.hotel}>
-            <Link to={`/hotel/${props.id}`}>
-                <div className={styles.top} style={{ backgroundImage: `url(${img})` }}></div>
-                <div className={styles.bottom}>
-                    <div className={styles.left}>
-                        <span className={styles.name}>{props.name}</span>
-                        <span className={styles.price}>DO DODANIA / noc</span>
-                    </div>
-                    <div className={styles.right}>
-                        <div className={styles.score}>
-                            <div>{props.reviewsScore}</div>
-                        </div>
-                        <div className={styles.arrow}>
-                            <MdNavigateNext size={24} />
-                        </div>
-                    </div>
-                </div>
-            </Link>
-        </div>
+        <tr>
+            <td>{props.number}</td>
+            <td>{props.id}</td>
+            <td>{props.name}</td>
+            <td>{props.location.postCode}, {props.location.city}, {props.location.address}</td>
+            <td className={styles.stars}>{stars}</td>
+            <td>{props.reviewsScore}</td>
+            <td>
+                <input className={styles.box} type="checkbox" defaultChecked={props.promoted} />
+            </td>
+            <td>{props.distanceFromCenter} km</td>
+            <td>
+                <input className={styles.box} type="checkbox" defaultChecked={props.wifi} />
+            </td>
+            <td>
+                <input className={styles.box} type="checkbox" defaultChecked={props.parking} />
+            </td>
+            <td>
+                <input className={styles.box} type="checkbox" defaultChecked={props.pets} />
+            </td>
+            <td>
+                <input className={styles.box} type="checkbox" defaultChecked={props.service} />
+            </td>
+            <td><Link to={`/hotel/${props.id}`}>Link</Link></td>
+        </tr >
     );
 }
 
