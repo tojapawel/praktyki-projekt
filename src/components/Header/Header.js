@@ -88,6 +88,8 @@ const Header = (props) => {
 				return false;
 			}
 
+			// TODO: filtrowanie po cenie pokoju
+
 			return true;
 		}));
 
@@ -221,6 +223,8 @@ const Header = (props) => {
 			<div className={styles.langChange}>
 				<span>{t('header.changeLanguage')}: </span><LanguageSelector />
 			</div>
+
+			TODO: wprowadzanie daty przyjazdu i wyjazdu
 
 		</div>
 	);

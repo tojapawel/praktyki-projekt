@@ -14,6 +14,8 @@ const HotelsList = (props) => {
   }
 
   return (
+    // TODO: wyświetlanie filtrów po lewej stronie
+    // TODO: wyświetlanie listy hoteli po prawej stronie
     <table>
       <thead>
         <tr>
