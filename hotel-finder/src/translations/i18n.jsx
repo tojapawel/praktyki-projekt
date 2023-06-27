@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import translationEN from './lang/en.json';
@@ -16,7 +16,7 @@ const resources = {
 const storedLanguage = localStorage.getItem('selectedLanguage');
 const defaultLanguage = storedLanguage || 'pl';
 
-i18n.use(initReactI18next).init({
+i18next.use(initReactI18next).init({
   resources,
   lng: defaultLanguage,
   fallbackLng: 'en',
@@ -25,4 +25,4 @@ i18n.use(initReactI18next).init({
   },
 });
 
-export default i18n;
+export default i18next;
