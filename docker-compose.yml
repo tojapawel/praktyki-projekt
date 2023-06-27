@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  api-server:
+    build:
+      context: ./api-server    # Path to the project1 directory
+    ports:
+      - 3001:3001             # Port mapping for project1
+    volumes:
+      - ./api-server:/app      # Mount project1 directory as a volume
+    command: npm start       # Start command for project1
+
+  hotel-finder:
+    build:
+      context: ./hotel-finder    # Path to the project2 directory
+    ports:
+      - 3000:3000            # Port mapping for project2
+    volumes:
+      - ./hotel-finder:/app      # Mount project2 directory as a volume
+    command: npm run dev       # Start command for project2
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./db-server/db:/var/lib/mysql
+      - ./db-server/DB_DUMP:/var/www/DB
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "33075:3306"
