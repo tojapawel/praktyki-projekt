@@ -5,6 +5,7 @@ import Header from "../components/Header/Header";
 import HotelsList from "../components/HotelsList/HotelsList";
 
 import fetchData from "../functions/fetchData";
+import Main from "../components/Index/Main/Main";
 
 function Index() {
   const [filteredHotels, setFilteredHotels] = useState([]);
@@ -25,9 +26,10 @@ function Index() {
 
   return (
     <div className="main_container">
-      <Header hotels={data} fiHotels={changeHotels}></Header>
+      {/* <Header hotels={data} fiHotels={changeHotels}></Header> */}
 
-      <HotelsList hotels={filteredHotels} />
+      {/* <HotelsList hotels={filteredHotels} /> */}
+      <Main />
     </div>
   );
 }
