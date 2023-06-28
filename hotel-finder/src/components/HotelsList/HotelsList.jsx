@@ -30,7 +30,7 @@ const HotelsList = (props) => {
           <th>{t("table.metadata.wifi")}</th>
           <th>{t("table.metadata.parking")}</th>
           <th>{t("table.metadata.pets")}</th>
-          <th>{t("table.metadata.roomServicse")}</th>
+          <th>{t("table.metadata.roomService")}</th>
           <th>Link</th>
         </tr>
       </thead>

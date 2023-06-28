@@ -224,7 +224,7 @@ const Header = (props) => {
 				<span>{t('header.changeLanguage')}: </span><LanguageSelector />
 			</div>
 
-			TODO: wprowadzanie daty przyjazdu i wyjazdu
+			{/* TODO: wprowadzanie daty przyjazdu i wyjazdu */}
 
 		</div>
 	);

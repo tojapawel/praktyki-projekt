@@ -4,6 +4,12 @@ const mysql = require('mysql');
 const app = express();
 const port = 3001;
 
+app.use(function(req, res, next){
+  res.header('Access-Control-Allow-Origin', 'http://hassioustka.duckdns.org:3354')
+  res.header('Access-Control-Allow-Header', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 // MySQL connection configuration
 const connection = mysql.createConnection({
   host: '192.168.0.214',
@@ -26,7 +32,7 @@ app.use(express.json());
 
 // GET endpoint to fetch data from the database
 app.get('/data', (req, res) => {
-  const query = 'SELECT * FROM users';
+  const query = 'SELECT hotels_json FROM hotels where id = 1';
 
   connection.query(query, (error, results) => {
     if (error) {
