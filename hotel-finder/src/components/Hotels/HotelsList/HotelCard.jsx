@@ -16,7 +16,7 @@ const HotelCard = (props) => {
                             <i className='bi bi-dot fs-4' style={{position: 'relative', bottom: '-4px'}}/>
                             <small>{hotel.metadata.distanceFromCenter} km do centrum</small>
                         </p>
-                        <small className="mx-2">Wifi<i className={hotel.metadata.wifi ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>
+                        <small className="ml-2">Wifi<i className={hotel.metadata.wifi ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>
                         <small className="mx-2">Parking<i className={hotel.metadata.parking ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>
                         <small className="mx-2">Zwierzęta<i className={hotel.metadata.pets ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>
                         <small className="mx-2">Obsługa pokoju<i className={hotel.metadata.roomService ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>

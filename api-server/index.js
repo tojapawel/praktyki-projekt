@@ -5,28 +5,19 @@ const app = express();
 const port = 3001;
 
 app.use(function(req, res, next){
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Origin', 'http://hassioustka.duckdns.org:3354');
+  res.header('Access-Control-Allow-Origin', 'http://192.168.0.137:3000');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
-
-// MySQL connection configuration
-// const connection = mysql.createConnection({
-//   host: '192.168.0.214',
-//   user: 'root',
-//   password: 'root',
-//   database: 'hotel-finder',
-//   port: 33075
-// });
-
 const connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
+  host: '192.168.0.137',
+   user: 'root',
   password: 'root',
   database: 'hotel-finder',
   port: 33075
-}); //TODO: Change to 
+});
 
 connection.connect((err) => {
   if (err) {
