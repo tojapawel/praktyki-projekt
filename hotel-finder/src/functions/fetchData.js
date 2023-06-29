@@ -1,7 +1,8 @@
 const fetchData = async () => {
     try {
       const response = await fetch(
-        "http://hassioustka.duckdns.org:3355/data"
+        //TODO: Change to "http://hassioustka.duckdns.org:3355/data"
+        "http://localhost:3001/data"
       );
       const jsonData = await response.json();
       const data = JSON.parse(jsonData[0].hotels_json);

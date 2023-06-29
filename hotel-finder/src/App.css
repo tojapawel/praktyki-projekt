@@ -1,3 +1,6 @@
-.main_container{
-  margin: 30px;
+.vertical_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
