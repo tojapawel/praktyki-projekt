@@ -43,7 +43,7 @@ const Main = () => {
                 minLength={0}
                 selected={selectedCity}
                 onChange={handleCitySelection}
-                placeholder="Wybierz miasto"
+                placeholder="Wybierz miejscowość"
                 style={{height: '58px'}}
               />
             </div>

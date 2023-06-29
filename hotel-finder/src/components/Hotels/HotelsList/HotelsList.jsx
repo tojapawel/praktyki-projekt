@@ -1,4 +1,5 @@
 import HotelCard from "./HotelCard";
+import HotelFilter from "./HotelFilter";
 
 const HotelsList = (props) => {
   return (
@@ -13,13 +14,7 @@ const HotelsList = (props) => {
 
     <div className="row align-items-md-stretch">
 
-      <div className="h-100 col-md-4 sticky-top pt-4">
-        <div className="p-5 text-bg-dark rounded-3">
-          <h2>Change the background</h2>
-          <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
-          <button className="btn btn-outline-light" type="button">Example button</button>
-        </div>
-      </div>
+      <HotelFilter />
 
       <div className="col-md-8  pt-4">
 
