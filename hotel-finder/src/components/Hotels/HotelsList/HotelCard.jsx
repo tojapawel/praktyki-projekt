@@ -1,16 +1,28 @@
+import { useState, useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 
 import CalculateStars from "../../../functions/calculateStars";
 
+
 const HotelCard = (props) => {
     const hotel = props.hotel;
+
+    const handleTooltipToggle = () => {
+        setShowTooltip(!showTooltip);
+    };
 
     return (
         <div className="card mb-3">
             <div className="row g-0">
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title">{hotel.name}</h5>
+                        <h5 className="card-title">
+                            {props.index + 1}. {hotel.name}
+                            <small>
+                                {hotel.promoted && <i className='mx-2 bi bi-megaphone-fill' style={{position: 'relative', bottom: '2px', fontSize: '15px', opacity: '.6'}} />}
+                            </small>
+                        </h5>
                         <p className="card-text">
                             <small className="text-primary">{hotel.location.city}, {hotel.location.address}</small>
                             <i className='bi bi-dot fs-4' style={{position: 'relative', bottom: '-4px'}}/>

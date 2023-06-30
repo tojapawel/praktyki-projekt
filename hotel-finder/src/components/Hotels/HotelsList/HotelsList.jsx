@@ -6,6 +6,17 @@ import HotelCard from "./HotelCard";
 import HotelFilter from "./HotelFilter";
 
 const HotelsList = (props) => {
+
+  const [filteredData, setFilteredData] = useState([]);
+  
+  useEffect(() => {
+    setFilteredData(props.hotels);
+  }, [props.hotels]);
+
+  const handleGetFiltered = (filtered) => {
+    setFilteredData(filtered);
+  }
+
   return (
     <div className="container py-4">
       <div className="p-5 mb-4 text-bg-dark rounded-3">
@@ -22,12 +33,28 @@ const HotelsList = (props) => {
       </div>
 
       <div className="row align-items-md-stretch">
-        <HotelFilter hotels={props.hotels} />
+        <HotelFilter hotels={props.hotels} handleGetFiltered={handleGetFiltered}/>
 
         <div className="col-md-8 pt-4">
-          {props.hotels.map((hotel, index) => (
-            <HotelCard hotel={hotel} key={index} />
-          ))}
+
+          {filteredData.length > 0 ?
+            filteredData.map((hotel, index) => (
+              <HotelCard hotel={hotel} key={index} index={index} />
+            ))
+            :
+            <div class="container my-5">
+              <div class="p-5 text-center">
+                <h1 class="text-body-emphasis">Brak hoteli</h1>
+                <p class="mx-auto fs-5 text-muted">
+                  Nie mogliśmy znaleźć hoteli pasujących do Twoich preferencji.
+                </p>
+              </div>
+            </div>
+          }
+
+          {/* {filteredData.map((hotel, index) => (
+            <HotelCard hotel={hotel} key={index} index={index} />
+          ))} */}
         </div>
       </div>
     </div>
