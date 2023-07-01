@@ -1,26 +1,32 @@
-import { useState, useEffect } from 'react';
-
+import { MdCampaign, MdCheck, MdClose, MdStar, MdStarOutline } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip'
 
 import CalculateStars from "../../../functions/calculateStars";
-
 
 const HotelCard = (props) => {
     const hotel = props.hotel;
 
-    const handleTooltipToggle = () => {
-        setShowTooltip(!showTooltip);
-    };
+    const setIcon = (val) => {
+        if(val){
+            return <MdCheck className='me-2 text-success' style={{position: 'relative', bottom: '1px'}}/>;
+        }
+
+        return <MdClose className='me-2 text-danger' style={{position: 'relative', bottom: '1px'}}/>;
+    }
 
     return (
         <div className="card mb-3">
+            <Tooltip anchorSelect=".promotedHotelTT" place="top">
+                Promowany
+            </Tooltip>
             <div className="row g-0">
                 <div className="col-md-8">
                     <div className="card-body">
                         <h5 className="card-title">
                             {props.index + 1}. {hotel.name}
                             <small>
-                                {hotel.promoted && <i className='mx-2 bi bi-megaphone-fill' style={{position: 'relative', bottom: '2px', fontSize: '15px', opacity: '.6'}} />}
+                                {hotel.promoted && <MdCampaign className='mx-2 promotedHotelTT' style={{position: 'relative', bottom: '3px'}} />}
                             </small>
                         </h5>
                         <p className="card-text">
@@ -28,17 +34,17 @@ const HotelCard = (props) => {
                             <i className='bi bi-dot fs-4' style={{position: 'relative', bottom: '-4px'}}/>
                             <small>{hotel.metadata.distanceFromCenter} km do centrum</small>
                         </p>
-                        <small className="ml-2">Wifi<i className={hotel.metadata.wifi ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>
-                        <small className="mx-2">Parking<i className={hotel.metadata.parking ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>
-                        <small className="mx-2">Zwierzęta<i className={hotel.metadata.pets ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>
-                        <small className="mx-2">Obsługa pokoju<i className={hotel.metadata.roomService ? 'bi bi-check fs-5 text-success' : 'bi bi-x fs-5 text-danger'} style={{position: 'relative', bottom: '-2px'}} /></small>
+                        <small className="ml-2">Wifi {setIcon(hotel.metadata.wifi)}</small>
+                        <small className="ml-2">Parking {setIcon(hotel.metadata.parking)}</small>
+                        <small className="ml-2">Zwierzęta {setIcon(hotel.metadata.pets)}</small>
+                        <small className="ml-2">Obsługa pokoju {setIcon(hotel.metadata.roomService)}</small>    
                     </div>
                 </div>
                 <div className="col-md-4">
                     <div className="card-body text-end">
                         <h6>Ocena <span className="badge bg-primary">{hotel.reviewsScore}</span></h6>
                         <h6><CalculateStars stars={hotel.stars}/></h6>
-                        <Link to={`/hotel/${props.id}`} type="button" className="mt-4 btn btn-primary btn-sm">Pokaż ceny</Link>
+                        <Link to={`/hotel/${hotel.id}`} type="button" className="mt-4 btn btn-primary btn-sm">Pokaż ceny</Link>
                     </div>
                 </div>
             </div>

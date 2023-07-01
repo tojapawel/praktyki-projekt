@@ -1,0 +1,18 @@
+{
+  "hotel": {
+    "metadata": {
+      "true": {
+        "wifi": "Hotel posiada darmowy dostęp do wifi na terenie całego obiektu.",
+        "parking": "Do dyspozycji gości jest duży parking mieszczący 300 pojazdów.",
+        "pets": "W hotelu odpoczniesz nie tylko ty, lecz także Twoje pupile.",
+        "roomService": "Obsługa hotelu jest zawsze do dyspozycji gości."
+      },
+      "false": {
+        "wifi": "Hotel nie udostępnia wifi dla gości.",
+        "parking": "Hotel nie posiada parkingu.",
+        "pets": "Do hotelu nie można wprowadzać zwierząt.",
+        "roomService": "Hotel nie posiada obsługi pokoju."
+      }
+    }
+  }
+}

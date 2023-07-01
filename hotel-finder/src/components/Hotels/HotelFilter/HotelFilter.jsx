@@ -3,12 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 
-// import fetchData from "../../../functions/fetchData";
-
 const HotelFilter = (props) => {
   const [selectedCity, setSelectedCity] = useState([]);
-
-  const initHotels = props.hotels;
 
   const sortPromoted = (init) => {
     init.sort((a, b) => {
@@ -38,6 +34,7 @@ const HotelFilter = (props) => {
   const [breakfast, setBreakfast] = useState(false);
 
   const [submitChecker, setSubmitChecker] = useState(false);
+  const [sort, setSort] = useState("");
 
   let cities = [...new Set(props.hotels.map((hotel) => hotel.location.city))];
 
@@ -97,12 +94,45 @@ const HotelFilter = (props) => {
 				return false;
 			}
 
+      //TODO: dodać filtrowanie "Wyświetl tylko hotele z dostępnymi pokojami"
+
       if (guests && (hotel.rooms.some((room) => room.maxGuests >= parseInt(guests)) === false)) {
 				return false;
 			}
 
+      //TODO: Dodać filtr cenowy
+
 			return true;
 		}));
+
+		switch (sort) {
+			case "gm":
+				filtered.sort((a, b) => b.stars - a.stars);
+				break;
+			case "gr":
+				filtered.sort((a, b) => a.stars - b.stars);
+				break;
+			case "om":
+				filtered.sort((a, b) => b.reviewsScore - a.reviewsScore);
+				break;
+			case "or":
+				filtered.sort((a, b) => a.reviewsScore - b.reviewsScore);
+				break;
+			case "odcm":
+				filtered.sort((a, b) => b.metadata.distanceFromCenter - a.metadata.distanceFromCenter);
+				break;
+			case "odcr":
+				filtered.sort((a, b) => a.metadata.distanceFromCenter - b.metadata.distanceFromCenter);
+				break;
+			case "na":
+				filtered.sort((a, b) => a.name.localeCompare(b.name));
+				break;
+			case "ma":
+				filtered.sort((a, b) => a.location.city.localeCompare(b.location.city));
+				break;
+			default:
+				break;
+		}
 
     sortPromoted(filtered);
 
@@ -111,7 +141,8 @@ const HotelFilter = (props) => {
   }, [submitChecker]);
 
   return (
-    <div className="h-100 col-md-4 sticky-top pt-4">
+    //TODO: wyświetlanie filtrowania do zmiany
+    <div className="h-100 col-md-4 sticky-top" style={{overflowY: 'auto', maxHeight: '100vh'}}>
       <div className="p-5 text-bg-dark rounded-3">
         <h2>Filtrowanie hoteli</h2>
 
@@ -169,12 +200,12 @@ const HotelFilter = (props) => {
             value={stars}
             onChange={(e) => setStars(e.target.value)}>
             <option value="">Wszystkie</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="0">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
+            <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734;</option>
+            <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734;</option>
+            <option value="3">&#9733;&#9733;&#9733;&#9734;&#9734;</option>
+            <option value="4">&#9733;&#9733;&#9733;&#9733;&#9734;</option>
+            <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
           </select>
         </div>
 
@@ -241,6 +272,33 @@ const HotelFilter = (props) => {
           <label className="form-check-label" htmlFor="breakfast">
             Śniadania
           </label>
+        </div>
+
+        <div className="my-4">
+          <label htmlFor="sort" className="form-label">
+            Sortowanie
+          </label>
+          <select
+            className="form-select"
+            id="sort"
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}>
+              <option value="">Sortowanie</option>
+              <option value="" disabled>----------------------------</option>
+              <option value="gm">Gwiazdki malejąco</option>
+              <option value="gr">Gwiazdki rosnąco</option>
+              <option value="" disabled>----------------------------</option>
+              <option value="om">Ocena malejąco</option>
+              <option value="or">Ocena rosnąco</option>
+              <option value="" disabled>----------------------------</option>
+              <option value="odcm">Odległość do centrum malejąco</option>
+              <option value="odcr">Odległość do centrum rosnąco</option>
+              <option value="" disabled>----------------------------</option>
+              <option value="na">Nazwa hotelu alfabetycznie</option>
+              <option value="" disabled>----------------------------</option>
+              <option value="ma">Miasto alfabetycznie</option>
+              <option value="" disabled>----------------------------</option>
+          </select>
         </div>
 
         <div className="row mt-4">
