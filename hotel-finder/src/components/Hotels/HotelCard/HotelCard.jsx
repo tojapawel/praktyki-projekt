@@ -1,4 +1,4 @@
-import { MdCampaign, MdCheck, MdClose, MdStar, MdStarOutline } from 'react-icons/md';
+import { MdCampaign, MdCheck, MdClose, MdHelpOutline } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip'
 
@@ -6,6 +6,11 @@ import CalculateStars from "../../../functions/calculateStars";
 
 const HotelCard = (props) => {
     const hotel = props.hotel;
+
+    const getMinPrice = (rooms) => {
+        const prices = rooms.map(room => room.price);
+        return Math.min(...prices);
+    }
 
     const setIcon = (val) => {
         if(val){
@@ -19,6 +24,9 @@ const HotelCard = (props) => {
         <div className="card mb-3">
             <Tooltip anchorSelect=".promotedHotelTT" place="top">
                 Promowany
+            </Tooltip>
+            <Tooltip anchorSelect=".price" place="top">
+                Cena za zajtańszy pokój za noc
             </Tooltip>
             <div className="row g-0">
                 <div className="col-md-8">
@@ -44,7 +52,8 @@ const HotelCard = (props) => {
                     <div className="card-body text-end">
                         <h6>Ocena <span className="badge bg-primary">{hotel.reviewsScore}</span></h6>
                         <h6><CalculateStars stars={hotel.stars}/></h6>
-                        <Link to={`/hotel/${hotel.id}`} type="button" className="mt-4 btn btn-primary btn-sm">Pokaż ceny</Link>
+                        <h6>{getMinPrice(hotel.rooms)} zł / noc <MdHelpOutline style={{position: 'relative', bottom: '1px'}} className='price'/></h6>
+                        <Link to={`/hotel/${hotel.id}`} type="button" className="btn btn-primary btn-sm">Pokaż ceny</Link>
                     </div>
                 </div>
             </div>

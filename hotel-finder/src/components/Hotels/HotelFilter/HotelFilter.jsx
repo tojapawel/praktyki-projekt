@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
+import { MdHorizontalRule } from "react-icons/md";
 
 const HotelFilter = (props) => {
   const [selectedCity, setSelectedCity] = useState([]);
@@ -32,6 +33,10 @@ const HotelFilter = (props) => {
   const [roomService, setRoomService] = useState(false);
 
   const [breakfast, setBreakfast] = useState(false);
+  const [available, setAvailable] = useState(false);
+  
+  const [priceMin, setPriceMin] = useState("");
+  const [priceMax, setPriceMax] = useState("");
 
   const [submitChecker, setSubmitChecker] = useState(false);
   const [sort, setSort] = useState("");
@@ -52,6 +57,9 @@ const HotelFilter = (props) => {
     setPets(false);
     setRoomService(false);
     setBreakfast(false);
+    setAvailable(false);
+    setPriceMin("");
+    setPriceMax("");
 
     props.handleGetFiltered(props.hotels);
   };
@@ -94,7 +102,17 @@ const HotelFilter = (props) => {
 				return false;
 			}
 
-      //TODO: dodać filtrowanie "Wyświetl tylko hotele z dostępnymi pokojami"
+      if (available && (hotel.rooms.some((room) => room.available === true) !== available)) {
+				return false;
+			}
+
+      if (priceMin && (hotel.rooms.some((room) => room.price < parseInt(priceMin)))) {
+				return false;
+			}
+
+      if (priceMax && (hotel.rooms.some((room) => room.price > parseInt(priceMax)))) {
+				return false;
+			}
 
       if (guests && (hotel.rooms.some((room) => room.maxGuests >= parseInt(guests)) === false)) {
 				return false;
@@ -141,8 +159,8 @@ const HotelFilter = (props) => {
   }, [submitChecker]);
 
   return (
-    //TODO: wyświetlanie filtrowania do zmiany
-    <div className="h-100 col-md-4 sticky-top" style={{overflowY: 'auto', maxHeight: '100vh'}}>
+    //TODO: wyświetlanie sortowania do zmiany
+    <div className={`h-100 col-md-4 mt-4`}>
       <div className="p-5 text-bg-dark rounded-3">
         <h2>Filtrowanie hoteli</h2>
 
@@ -188,6 +206,52 @@ const HotelFilter = (props) => {
             value={reviewScore}
             onChange={(e) => setReviewScore(e.target.value)}
           />
+        </div>
+
+        <div className="mb-4">
+          <div className="row">
+          <label htmlFor="priceMin" className="form-label">
+            Cena
+          </label>
+            <div style={{width: '47.5%'}}>
+                
+              <div className="input-group">
+                <input
+                  type="number"
+                  min="0"
+                  className="form-control"
+                  id="priceMin"
+                  value={priceMin}
+                  placeholder="od"
+                  onChange={(e) => setPriceMin(e.target.value)}
+                />
+                <span className="input-group-text">zł</span>
+              </div>
+
+            </div>
+
+            <div style={{width: '5%', textAlign: 'center', position: 'relative', top: '5px', padding: '0 0 0 0'}}>
+              <MdHorizontalRule />
+
+            </div>
+
+            <div style={{width: '47.5%'}}>
+
+              <div className="input-group">
+                <input
+                  type="number"
+                  min="0"
+                  className="form-control"
+                  id="priceMax"
+                  value={priceMax}
+                  placeholder="do"
+                  onChange={(e) => setPriceMax(e.target.value)}
+                />
+                <span className="input-group-text">zł</span>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         <div className="mb-4">
@@ -274,6 +338,19 @@ const HotelFilter = (props) => {
           </label>
         </div>
 
+        <div className="form-check my-2">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            checked={available}
+            id="available"
+            onChange={(e) => setAvailable(e.target.checked)}
+          />
+          <label className="form-check-label" htmlFor="available">
+            Pokaż tylko dostępne
+          </label>
+        </div>
+
         <div className="my-4">
           <label htmlFor="sort" className="form-label">
             Sortowanie
@@ -315,8 +392,6 @@ const HotelFilter = (props) => {
         </div>
       </div>
     </div>
-
-    // TODO: Dodać responsywność i możliwość zwijania i rozwijania na mobilkach
   );
 };
 

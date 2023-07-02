@@ -7,24 +7,19 @@ import {
   MdCheck,
   MdClose,
 } from "react-icons/md";
+
+import React, { useState } from "react";
 import CalculateStars from "../../functions/calculateStars";
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line
 import i18n from "../../translations/i18n";
 import { useTranslation } from "react-i18next";
+import RoomRow from "./RoomRow";
 
 const OneHotel = (props) => {
   const { t } = useTranslation();
-
-  const setBool = (val) => {
-    if (val) {
-      return (
-        <MdCheck className="me-2 text-success" style={{ position: "relative", bottom: "1px" }} />
-      );
-    }
-    return <MdClose className="me-2 text-danger" style={{ position: "relative", bottom: "1px" }} />;
-  };
+  const [available, setAvailable] = useState();
 
   const setMetadataColor = (val) => {
     if (val) {
@@ -66,7 +61,7 @@ const OneHotel = (props) => {
   if (props.hotels.length >= 1) {
     let hotel = props.hotels.filter((hotel) => hotel.id === props.hotelId);
     if (hotel.length === 1) {
-      hotel = hotel[0];
+      hotel = hotel[0];    
 
       return (
         <div className="container mb-5" id="top">
@@ -188,7 +183,17 @@ const OneHotel = (props) => {
             </div>
           </div>
 
-          <h2 className="mt-5 pb-2 mx-4 border-bottom text-dark">Pokoje</h2>
+          <div className="mt-5 pb-2 mx-4 text-dark border-bottom">
+              <h2>Pokoje</h2>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                checked={available}
+                id="available"
+                onChange={(e) => setAvailable(e.target.checked)}
+              />
+              <label className="form-check-label ms-2" htmlFor="available">Pokaż tylko dostępne</label>
+          </div>
 
           <div className="table-responsive mx-4">
             <table className="table text-center table-striped table-hover">
@@ -205,26 +210,17 @@ const OneHotel = (props) => {
                 </tr>
               </thead>
               <tbody>
-                {hotel.rooms.map((room, index) => (
-                  <tr key={index}>
-                    <td>{room.price} zł</td>
-                    <td>{room.maxGuests}</td>
-                    <td>{room.beds}</td>
-                    <td>{setBool(room.familyRoom)}</td>
-                    <td>
-                      {room.area} m<sup>2</sup>
-                    </td>
-                    <td>{setBool(room.breakfast)}</td>
-                    <td>{setBool(room.available)}</td>
-                    <td>
-                      {room.available ? (
-                        <Link to={`/book/${hotel.id}/${index}`}>Rezerwuj</Link>
-                      ) : (
-                        <span className="text-secondary">niedostępny</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
+
+              {available === true
+                ? hotel.rooms
+                    .filter((room) => room.available === true)
+                    .map((room, index) => (
+                      <RoomRow key={index} room={room} hotelId={hotel.id} index={index} />
+                    ))
+                : hotel.rooms.map((room, index) => (
+                    <RoomRow key={index} room={room} hotelId={hotel.id} index={index} />
+              ))}
+
               </tbody>
             </table>
           </div>
