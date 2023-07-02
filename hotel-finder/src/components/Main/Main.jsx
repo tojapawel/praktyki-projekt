@@ -48,7 +48,7 @@ const Main = () => {
               />
             </div>
             <div className="form-floating mb-3">
-              <input type="number" min="0" className="form-control" id="floatingPassword" placeholder="Ilość osób" value={guests} onChange={(e) => setGuests(e.target.value)}/>
+              <input type="number" min="1" className="form-control" id="floatingPassword" placeholder="Ilość osób" value={guests} onChange={(e) => setGuests(e.target.value)}/>
               <label htmlFor="floatingPassword">Ilość osób</label>
             </div>
 

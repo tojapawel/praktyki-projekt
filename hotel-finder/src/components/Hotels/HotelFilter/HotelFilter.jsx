@@ -7,6 +7,7 @@ import { MdHorizontalRule } from "react-icons/md";
 const HotelFilter = (props) => {
   const [selectedCity, setSelectedCity] = useState([]);
 
+
   const sortPromoted = (init) => {
     init.sort((a, b) => {
       if (a.promoted && !b.promoted) {
@@ -39,6 +40,7 @@ const HotelFilter = (props) => {
   const [priceMax, setPriceMax] = useState("");
 
   const [submitChecker, setSubmitChecker] = useState(false);
+  const [loadChecker, setLoadChecker] = useState(false);
   const [sort, setSort] = useState("");
 
   let cities = [...new Set(props.hotels.map((hotel) => hotel.location.city))];
@@ -60,10 +62,19 @@ const HotelFilter = (props) => {
     setAvailable(false);
     setPriceMin("");
     setPriceMax("");
-
+    
     props.handleGetFiltered(props.hotels);
   };
 
+  useEffect(() => {
+    if (props.city != undefined) {
+      setSelectedCity([props.city]);
+      setGuests(props.guests);
+      //TODO: zrobić, żeby filtrowało po załadowaniu strony
+    }
+  }, []);
+
+  
   const handleFilter = () => {
     setSubmitChecker(true);
   };
@@ -156,7 +167,8 @@ const HotelFilter = (props) => {
 
     props.handleGetFiltered(filtered);
     setSubmitChecker(false);
-  }, [submitChecker]);
+    // setLoadChecker(false);
+  }, [submitChecker, loadChecker]);
 
   return (
     //TODO: wyświetlanie sortowania do zmiany

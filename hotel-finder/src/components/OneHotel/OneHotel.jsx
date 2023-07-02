@@ -3,9 +3,7 @@ import {
   MdWifi,
   MdDirectionsCar,
   MdCleaningServices,
-  MdHome,
-  MdCheck,
-  MdClose,
+  MdHome
 } from "react-icons/md";
 
 import React, { useState } from "react";
@@ -212,8 +210,8 @@ const OneHotel = (props) => {
               <tbody>
 
                 {available === true && hotel.rooms.filter((room) => room.available === true).length === 0 && (
-                    <tr>
-                    <th colspan="8">Brak dostępnych pokoi</th>
+                  <tr>
+                    <th colSpan="8">Brak dostępnych pokoi</th>
                   </tr>
                 )}
 

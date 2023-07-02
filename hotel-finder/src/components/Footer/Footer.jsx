@@ -9,7 +9,7 @@ const Footer = (props) => {
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li className="ms-3">
             <a className="text-body-secondary link-underline link-underline-opacity-0" href="#">
-              Top
+              Góra
             </a>
           </li>
         </ul>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import fetchData from "../functions/fetchData";
+
 import Footer from "../components/Footer/Footer";
 import OneHotel from "../components/OneHotel/OneHotel";
 
 import E404 from "./errors/E404";
 
-import { Link, useParams } from "react-router-dom";
-import { MdArrowBack } from "react-icons/md";
+import { useParams } from "react-router-dom";
 
 const Hotel = () => {
   const [data, setData] = useState([]);

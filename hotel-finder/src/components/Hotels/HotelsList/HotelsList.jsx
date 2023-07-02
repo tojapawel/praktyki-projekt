@@ -32,7 +32,7 @@ const HotelsList = (props) => {
       </div>
 
       <div className="row align-items-md-stretch">
-        <HotelFilter hotels={props.hotels} handleGetFiltered={handleGetFiltered} />
+        <HotelFilter hotels={props.hotels} city={props.city} guests={props.guests} handleGetFiltered={handleGetFiltered} />
 
         <div className="col-md-8 pt-4">
           {filteredData.length > 0 ? (
