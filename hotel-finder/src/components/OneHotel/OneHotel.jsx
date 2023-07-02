@@ -211,15 +211,21 @@ const OneHotel = (props) => {
               </thead>
               <tbody>
 
-              {available === true
-                ? hotel.rooms
-                    .filter((room) => room.available === true)
-                    .map((room, index) => (
+                {available === true && hotel.rooms.filter((room) => room.available === true).length === 0 && (
+                    <tr>
+                    <th colspan="8">Brak dostępnych pokoi</th>
+                  </tr>
+                )}
+
+                {available === true
+                  ? hotel.rooms
+                      .filter((room) => room.available === true)
+                      .map((room, index) => (
+                        <RoomRow key={index} room={room} hotelId={hotel.id} index={index} />
+                      ))
+                  : hotel.rooms.map((room, index) => (
                       <RoomRow key={index} room={room} hotelId={hotel.id} index={index} />
-                    ))
-                : hotel.rooms.map((room, index) => (
-                    <RoomRow key={index} room={room} hotelId={hotel.id} index={index} />
-              ))}
+                ))}
 
               </tbody>
             </table>
