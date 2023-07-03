@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-uruchonmienie dockera (na screen'ach):
+uruchomienie dockera (na screen'ach):
 ```bash
 cd api-server
 npm start
