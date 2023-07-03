@@ -1,5 +1,118 @@
 {
+  "main": {
+    "motto": "Znajdź hotel swoich marzeń i odpocznij na najlepszych wakacjach pod słońcem",
+    
+    "breadcrumbs": {
+      "hotels": "Hotele"
+    },
+
+    "button": {
+      "main": {
+        "searchHotels": "Szukaj hoteli",
+        "allHotels": "Pokaż wszystkie hotele"
+      }
+    },
+
+    "input": {
+      "city": {
+        "chooseCity": "Wybierz miejscowość",
+        "emptyCity": "Brak pasujących wyników"
+      },
+      "guests": "Ilość osób",
+      "date": {
+        "arrival": "Data przyjazdu",
+        "departure": "Data wyjazdu"
+      }
+    }
+  },
+
+  "hotels":{
+    "filter": {
+      "info": "Filtrowanie hoteli",
+      "city": "Miejscowość",
+      "minReviewScore": "Minimalna ocena",
+      "price": {
+        "price": "Cena",
+        "from": "od",
+        "to": "do"
+      },
+      "stars": {
+        "starsCount": "Ilość gwiazdek",
+        "all": "Wszystkie"
+      },
+      "metadata": {
+        "wifi": "Wifi",
+        "parking": "Parking",
+        "pets": "Zwierzęta",
+        "roomService": "Obsługa pokoju"
+      },
+      "room": {
+        "breakfast": "Śniadania",
+        "onlyAvailable": "Pokaż tylko dostępne"
+      },
+      "sort": {
+        "sort": "Sortowanie",
+        "type": {
+          "default": "Domyślne",
+          "stars": {
+            "desc": "Gwiazdki malejąco",
+            "asc": "Gwiazdki rosnąco"
+          },
+          "reviewScore": {
+            "desc": "Ocena malejąco",
+            "asc": "Ocena rosnąco"
+          },
+          "distanceFromCenter": {
+            "desc": "Odległość do centrum malejąco",
+            "asc": "Odległość do centrum rosnąco"
+          },
+          "hotelName": "Nazwa hotelu alfabetycznie",
+          "city": "Miasto alfabetycznie"
+        },
+        "button": {
+          "reset": "Reset",
+          "filter": "Filtruj"
+        }
+      }
+    },
+    "hotelCard": {
+      "tooltip": {
+        "promoted": "Promowany",
+        "lowestPrice": "Cena za zajtańszy pokój za noc"
+      },
+      "toCenter": "do centrum",
+      "reviewScore": "Ocena",
+      "night": "noc",
+      "showPrices": "Pokaż ceny"
+    },
+    "hotelsList": {
+      "info": "Poniżej znajdują się hotele, które spełniają Twoje wymagania.",
+      "emptyHotels": {
+        "noHotels": "Brak hoteli",
+        "info": "Nie mogliśmy znaleźć hoteli pasujących do Twoich preferencji."
+      }
+    }
+  },
+
   "hotel": {
+    "distanceFromCenter": "Odleglość od centrum",
+    "roomCount": "Ilość pokoi",
+    "utilities": "Udogodnienia",
+    "rooms": {
+      "rooms": "Pokoje",
+      "beds": "Łóżka",
+      "familyRoom": "Pokój rodzinny",
+      "area": "Powierzchnia",
+      "available": "Dostępny",
+      "reservation": "Rezerwacja"
+    },
+    "noAvailableHotels": "Brak dostępnych pokoi",
+
+    "roomRow": {
+      "unAvailable": "niedostępny",
+      "book": "Rezerwuj"
+    },
+
     "metadata": {
       "true": {
         "wifi": "Hotel posiada darmowy dostęp do wifi na terenie całego obiektu.",
@@ -14,5 +127,9 @@
         "roomService": "Hotel nie posiada obsługi pokoju."
       }
     }
+  },
+
+  "footer": {
+    "top": "Góra"
   }
 }

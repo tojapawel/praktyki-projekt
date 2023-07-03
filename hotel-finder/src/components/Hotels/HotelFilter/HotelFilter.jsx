@@ -4,9 +4,14 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { MdHorizontalRule } from "react-icons/md";
 
-const HotelFilter = (props) => {
-  const [selectedCity, setSelectedCity] = useState([]);
+// eslint-disable-next-line
+import i18n from "../../../translations/i18n";
+import { useTranslation } from "react-i18next";
 
+const HotelFilter = (props) => {
+  const { t } = useTranslation();
+
+  const [selectedCity, setSelectedCity] = useState([]);
 
   const sortPromoted = (init) => {
     init.sort((a, b) => {
@@ -40,7 +45,6 @@ const HotelFilter = (props) => {
   const [priceMax, setPriceMax] = useState("");
 
   const [submitChecker, setSubmitChecker] = useState(false);
-  const [loadChecker, setLoadChecker] = useState(false);
   const [sort, setSort] = useState("");
 
   let cities = [...new Set(props.hotels.map((hotel) => hotel.location.city))];
@@ -129,8 +133,6 @@ const HotelFilter = (props) => {
 				return false;
 			}
 
-      //TODO: Dodać filtr cenowy
-
 			return true;
 		}));
 
@@ -167,33 +169,31 @@ const HotelFilter = (props) => {
 
     props.handleGetFiltered(filtered);
     setSubmitChecker(false);
-    // setLoadChecker(false);
-  }, [submitChecker, loadChecker]);
+  }, [submitChecker]);
 
   return (
-    //TODO: wyświetlanie sortowania do zmiany
     <div className={`h-100 col-md-4 mt-4`}>
       <div className="p-5 text-bg-dark rounded-3">
-        <h2>Filtrowanie hoteli</h2>
+        <h2>{t("hotels.filter.info")}</h2>
 
         <div className="mb-4 mt-4">
           <label htmlFor="city" className="form-label">
-            Miejscowość
+            {t("hotels.filter.city")}
           </label>
           <Typeahead
             id="city"
             options={cities}
-            emptyLabel="Brak pasujących wyników"
+            emptyLabel={t("main.input.city.emptyCity")}
             minLength={0}
             selected={selectedCity}
             onChange={handleCitySelection}
-            placeholder="Wybierz miejscowość"
+            placeholder={t("main.input.city.chooseCity")}
           />
         </div>
 
         <div className="mb-4">
           <label htmlFor="guests" className="form-label">
-            Ilość osób
+            {t("main.input.guests")}
           </label>
           <input
             type="number"
@@ -207,7 +207,7 @@ const HotelFilter = (props) => {
 
         <div className="mb-4">
           <label htmlFor="reviewScore" className="form-label">
-            Minimalna ocena
+            {t("hotels.filter.minReviewScore")}
           </label>
           <input
             type="number"
@@ -223,7 +223,7 @@ const HotelFilter = (props) => {
         <div className="mb-4">
           <div className="row">
           <label htmlFor="priceMin" className="form-label">
-            Cena
+            {t("hotels.filter.price.price")}
           </label>
             <div style={{width: '47.5%'}}>
                 
@@ -234,7 +234,7 @@ const HotelFilter = (props) => {
                   className="form-control"
                   id="priceMin"
                   value={priceMin}
-                  placeholder="od"
+                  placeholder={t("hotels.filter.price.from")}
                   onChange={(e) => setPriceMin(e.target.value)}
                 />
                 <span className="input-group-text">zł</span>
@@ -256,7 +256,7 @@ const HotelFilter = (props) => {
                   className="form-control"
                   id="priceMax"
                   value={priceMax}
-                  placeholder="do"
+                  placeholder={t("hotels.filter.price.to")}
                   onChange={(e) => setPriceMax(e.target.value)}
                 />
                 <span className="input-group-text">zł</span>
@@ -268,14 +268,14 @@ const HotelFilter = (props) => {
 
         <div className="mb-4">
           <label htmlFor="stars" className="form-label">
-            Ilość gwiazdek
+            {t("hotels.filter.stars.starsCount")}
           </label>
           <select
             className="form-select"
             id="stars"
             value={stars}
             onChange={(e) => setStars(e.target.value)}>
-            <option value="">Wszystkie</option>
+            <option value="">{t("hotels.filter.stars.all")}</option>
             <option value="0">&#9734;&#9734;&#9734;&#9734;&#9734;</option>
             <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734;</option>
             <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734;</option>
@@ -294,7 +294,7 @@ const HotelFilter = (props) => {
             onChange={(e) => setWifi(e.target.checked)}
           />
           <label className="form-check-label" htmlFor="wifi">
-            Wifi
+            {t("hotels.filter.metadata.wifi")}
           </label>
         </div>
 
@@ -307,7 +307,7 @@ const HotelFilter = (props) => {
             onChange={(e) => setParking(e.target.checked)}
           />
           <label className="form-check-label" htmlFor="parking">
-            Parking
+            {t("hotels.filter.metadata.parking")}
           </label>
         </div>
 
@@ -320,7 +320,7 @@ const HotelFilter = (props) => {
             onChange={(e) => setPets(e.target.checked)}
           />
           <label className="form-check-label" htmlFor="pets">
-            Zwierzęta
+            {t("hotels.filter.metadata.pets")}
           </label>
         </div>
 
@@ -333,7 +333,7 @@ const HotelFilter = (props) => {
             onChange={(e) => setRoomService(e.target.checked)}
           />
           <label className="form-check-label" htmlFor="roomService">
-            Obsługa pokoju
+            {t("hotels.filter.metadata.roomService")}
           </label>
         </div>
 
@@ -346,7 +346,7 @@ const HotelFilter = (props) => {
             onChange={(e) => setBreakfast(e.target.checked)}
           />
           <label className="form-check-label" htmlFor="breakfast">
-            Śniadania
+            {t("hotels.filter.room.breakfast")}
           </label>
         </div>
 
@@ -359,33 +359,33 @@ const HotelFilter = (props) => {
             onChange={(e) => setAvailable(e.target.checked)}
           />
           <label className="form-check-label" htmlFor="available">
-            Pokaż tylko dostępne
+            {t("hotels.filter.room.onlyAvailable")}
           </label>
         </div>
 
         <div className="my-4">
           <label htmlFor="sort" className="form-label">
-            Sortowanie
+            {t("hotels.filter.sort.sort")}
           </label>
           <select
             className="form-select"
             id="sort"
             value={sort}
             onChange={(e) => setSort(e.target.value)}>
-              <option value="">Sortowanie</option>
+              <option value="">{t("hotels.filter.sort.type.default")}</option>
               <option value="" disabled>----------------------------</option>
-              <option value="gm">Gwiazdki malejąco</option>
-              <option value="gr">Gwiazdki rosnąco</option>
+              <option value="gm">{t("hotels.filter.sort.type.stars.desc")}</option>
+              <option value="gr">{t("hotels.filter.sort.type.stars.asc")}</option>
               <option value="" disabled>----------------------------</option>
-              <option value="om">Ocena malejąco</option>
-              <option value="or">Ocena rosnąco</option>
+              <option value="om">{t("hotels.filter.sort.type.reviewScore.desc")}</option>
+              <option value="or">{t("hotels.filter.sort.type.reviewScore.asc")}</option>
               <option value="" disabled>----------------------------</option>
-              <option value="odcm">Odległość do centrum malejąco</option>
-              <option value="odcr">Odległość do centrum rosnąco</option>
+              <option value="odcm">{t("hotels.filter.sort.type.distanceFromCenter.desc")}</option>
+              <option value="odcr">{t("hotels.filter.sort.type.distanceFromCenter.desc")}</option>
               <option value="" disabled>----------------------------</option>
-              <option value="na">Nazwa hotelu alfabetycznie</option>
+              <option value="na">{t("hotels.filter.sort.type.hotelName")}</option>
               <option value="" disabled>----------------------------</option>
-              <option value="ma">Miasto alfabetycznie</option>
+              <option value="ma">{t("hotels.filter.sort.type.city")}</option>
               <option value="" disabled>----------------------------</option>
           </select>
         </div>
@@ -393,12 +393,12 @@ const HotelFilter = (props) => {
         <div className="row mt-4">
           <div className="col-3">
             <button className="btn btn-outline-danger" type="button" onClick={handleReset}>
-              Reset
+              {t("hotels.filter.sort.button.reset")}
             </button>
           </div>
           <div className="col-9">
             <button className="btn btn-outline-light w-100" type="button" onClick={handleFilter}>
-              Filtruj
+              {t("hotels.filter.sort.button.filter")}
             </button>
           </div>
         </div>

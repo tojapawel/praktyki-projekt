@@ -2,7 +2,13 @@ import React from 'react';
 import { MdCheck, MdClose } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line
+import i18n from "../../translations/i18n";
+import { useTranslation } from "react-i18next";
+
 function RoomRow({ room, hotelId, index }) {
+  const { t } = useTranslation();
+
   const setBool = (val) => {
     if (val) {
       return (
@@ -25,9 +31,9 @@ function RoomRow({ room, hotelId, index }) {
       <td>{setBool(room.available)}</td>
       <td>
         {room.available ? (
-          <Link to={`/book/${hotelId}/${index}`}>Rezerwuj</Link>
+          <Link to={`/book/${hotelId}/${index}`}>{t("hotel.roomRow.book")}</Link>
         ) : (
-          <span className="text-secondary">niedostępny</span>
+          <span className="text-secondary">{t("hotel.roomRow.unAvailable")}</span>
         )}
       </td>
     </tr>

@@ -5,7 +5,13 @@ import { Link } from "react-router-dom";
 import HotelCard from "../HotelCard/HotelCard";
 import HotelFilter from "../HotelFilter/HotelFilter";
 
+// eslint-disable-next-line
+import i18n from "../../../translations/i18n";
+import { useTranslation } from "react-i18next";
+
 const HotelsList = (props) => {
+  const { t } = useTranslation();
+
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
@@ -26,7 +32,7 @@ const HotelsList = (props) => {
             </Link>
           </h1>
           <p className="col-md-8 fs-4">
-            Poniżej znajdują się hotele, które spełniają Twoje wymagania.
+            {t("hotels.hotelsList.info")}
           </p>
         </div>
       </div>
@@ -42,9 +48,9 @@ const HotelsList = (props) => {
           ) : (
             <div className="container my-5">
               <div className="p-5 text-center">
-                <h1 className="text-body-emphasis">Brak hoteli</h1>
+                <h1 className="text-body-emphasis">{t("hotels.hotelsList.emptyHotels.noHotels")}</h1>
                 <p className="mx-auto fs-5 text-muted">
-                  Nie mogliśmy znaleźć hoteli pasujących do Twoich preferencji.
+                {t("hotels.hotelsList.emptyHotels.info")}
                 </p>
               </div>
             </div>
