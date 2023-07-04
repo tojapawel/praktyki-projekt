@@ -66,8 +66,8 @@ const HotelFilter = (props) => {
       setSelectedCity([props.city]);
       setGuests(props.guests);
       console.log("useEffect do przyjmowania danych");
-      setSubmitChecker(true);
     }
+    setSubmitChecker(true);
   }, []);
   
   const handleFilter = () => {
