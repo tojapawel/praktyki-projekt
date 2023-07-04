@@ -27,10 +27,8 @@ connection.connect((err) => {
   console.log('Connected to MySQL database');
 });
 
-// Middleware for parsing JSON requests
 app.use(express.json());
 
-// GET endpoint to fetch data from the database
 app.get('/data', (req, res) => {
   const query = 'SELECT hotels_json FROM hotels where id = 1';
 
@@ -44,7 +42,6 @@ app.get('/data', (req, res) => {
   });
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

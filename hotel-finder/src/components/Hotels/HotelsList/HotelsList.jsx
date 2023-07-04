@@ -14,9 +14,9 @@ const HotelsList = (props) => {
 
   const [filteredData, setFilteredData] = useState([]);
 
-  useEffect(() => {
-    setFilteredData(props.hotels);
-  }, [props.hotels]);
+  // useEffect(() => {
+  //   setFilteredData(props.hotels);
+  // }, [props.hotels]);
 
   const handleGetFiltered = (filtered) => {
     setFilteredData(filtered);

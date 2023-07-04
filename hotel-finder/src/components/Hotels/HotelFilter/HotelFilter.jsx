@@ -8,24 +8,15 @@ import { MdHorizontalRule } from "react-icons/md";
 import i18n from "../../../translations/i18n";
 import { useTranslation } from "react-i18next";
 
+import filterHotels from "../../../functions/HotelFilter/filterHotels";
+import sortHotels from "../../../functions/HotelFilter/sortHotels";
+
+import sortPromoted from "../../../functions/HotelFilter/sortPromoted";
+
 const HotelFilter = (props) => {
   const { t } = useTranslation();
 
   const [selectedCity, setSelectedCity] = useState([]);
-
-  const sortPromoted = (init) => {
-    init.sort((a, b) => {
-      if (a.promoted && !b.promoted) {
-        return -1;
-      }
-
-      if (!a.promoted && b.promoted) {
-        return 1;
-      }
-    });
-
-    return init;
-  }
 
   const [filtered, setFiltered] = useState(sortPromoted(props.hotels));
 
@@ -44,7 +35,7 @@ const HotelFilter = (props) => {
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
 
-  const [submitChecker, setSubmitChecker] = useState(false);
+  const [submitChecker, setSubmitChecker] = useState(true);
   const [sort, setSort] = useState("");
 
   let cities = [...new Set(props.hotels.map((hotel) => hotel.location.city))];
@@ -66,110 +57,38 @@ const HotelFilter = (props) => {
     setAvailable(false);
     setPriceMin("");
     setPriceMax("");
-    
-    props.handleGetFiltered(props.hotels);
+
+    setSubmitChecker(true);
   };
 
   useEffect(() => {
     if (props.city != undefined) {
       setSelectedCity([props.city]);
       setGuests(props.guests);
-      //TODO: zrobić, żeby filtrowało po załadowaniu strony
+      console.log("useEffect do przyjmowania danych");
+      setSubmitChecker(true);
     }
   }, []);
-
   
   const handleFilter = () => {
     setSubmitChecker(true);
   };
 
   useEffect(() => {
-    setFiltered(props.hotels.filter((hotel) => {
-			if (selectedCity.length !== 0 && hotel.location.city.toLocaleLowerCase() !== selectedCity[0].toLocaleLowerCase()) {
-				return false;
-			}
-
-      if (reviewScore && hotel.reviewsScore < reviewScore) {
-				return false;
-			}
-
-      if (stars && hotel.stars != stars) {
-				return false;
-			}
-
-      if (wifi && hotel.metadata.wifi !== wifi) {
-				return false;
-			}
-
-			if (parking && hotel.metadata.parking !== parking) {
-				return false;
-			}
-
-			if (pets && hotel.metadata.pets !== pets) {
-				return false;
-			}
-
-			if (roomService && hotel.metadata.roomService !== roomService) {
-				return false;
-			}
-
-      if (breakfast && (hotel.rooms.some((room) => room.breakfast === true) !== breakfast)) {
-				return false;
-			}
-
-      if (available && (hotel.rooms.some((room) => room.available === true) !== available)) {
-				return false;
-			}
-
-      if (priceMin && (hotel.rooms.some((room) => room.price < parseInt(priceMin)))) {
-				return false;
-			}
-
-      if (priceMax && (hotel.rooms.some((room) => room.price > parseInt(priceMax)))) {
-				return false;
-			}
-
-      if (guests && (hotel.rooms.some((room) => room.maxGuests >= parseInt(guests)) === false)) {
-				return false;
-			}
-
-			return true;
-		}));
-
-		switch (sort) {
-			case "gm":
-				filtered.sort((a, b) => b.stars - a.stars);
-				break;
-			case "gr":
-				filtered.sort((a, b) => a.stars - b.stars);
-				break;
-			case "om":
-				filtered.sort((a, b) => b.reviewsScore - a.reviewsScore);
-				break;
-			case "or":
-				filtered.sort((a, b) => a.reviewsScore - b.reviewsScore);
-				break;
-			case "odcm":
-				filtered.sort((a, b) => b.metadata.distanceFromCenter - a.metadata.distanceFromCenter);
-				break;
-			case "odcr":
-				filtered.sort((a, b) => a.metadata.distanceFromCenter - b.metadata.distanceFromCenter);
-				break;
-			case "na":
-				filtered.sort((a, b) => a.name.localeCompare(b.name));
-				break;
-			case "ma":
-				filtered.sort((a, b) => a.location.city.localeCompare(b.location.city));
-				break;
-			default:
-				break;
-		}
+    setFiltered(
+      filterHotels(props.hotels, selectedCity, reviewScore, stars, wifi, parking, pets, roomService, breakfast, available, priceMin, priceMax, guests)
+    );
+    sortHotels(sort, filtered);
 
     sortPromoted(filtered);
 
     props.handleGetFiltered(filtered);
     setSubmitChecker(false);
+    console.log("useEffect do filtrowania");
+
   }, [submitChecker]);
+
+  //TODO: Dodać automatyczne uruchomienie funkcji handleSubmit() po załadowaniu strony
 
   return (
     <div className={`h-100 col-md-4 mt-4`}>
