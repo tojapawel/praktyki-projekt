@@ -122,7 +122,12 @@
        },
 
        "comments": {
-         "comments": "Comments"
+         "comments": "Comments",
+         "add": "Add comment",
+         "empty": "No comments",
+         "author": "Author",
+         "comment": "Comment",
+         "cancel": "Cancel"
        }
     },
     "footer":{

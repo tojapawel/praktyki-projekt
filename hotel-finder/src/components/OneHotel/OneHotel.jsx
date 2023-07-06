@@ -13,12 +13,16 @@ import { Link } from "react-router-dom";
 import i18n from "../../translations/i18n";
 import { useTranslation } from "react-i18next";
 
+import addComment from "../../functions/addComment";
 import CalculateStars from "../../functions/calculateStars";
 import RoomRow from "./RoomRow";
 
 const OneHotel = (props) => {
   const { t } = useTranslation();
   const [available, setAvailable] = useState();
+
+  const [commentAuthor, setCommentAuthor] = useState("");
+  const [commentComment, setCommentComment] = useState("");
 
   const setMetadataColor = (val) => {
     if (val) {
@@ -60,7 +64,12 @@ const OneHotel = (props) => {
   if (props.hotels.length >= 1) {
     let hotel = props.hotels.filter((hotel) => hotel.id === props.hotelId);
     if (hotel.length === 1) {
-      hotel = hotel[0];    
+      hotel = hotel[0];
+
+      const handleAddComment = (hotelid) => {
+        addComment(hotelid, commentAuthor, commentComment);
+        window.location.reload(false);
+      }
 
       return (
         <div className="container mb-5" id="top">
@@ -232,14 +241,38 @@ const OneHotel = (props) => {
 
           <div className="mt-5 pb-2 mx-4 text-dark border-bottom">
               <h2>{t("hotel.comments.comments")}</h2>
-              <button className="btn btn-primary btn-sm">Dodaj komentarz</button>
+              <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#commentModal">{t("hotel.comments.add")}</button>
           </div>
+
+          <div className="modal fade" id="commentModal" tabIndex="-1" aria-hidden="true">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">{t("hotel.comments.add")}</h1>
+                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+
+                  <div className="form-floating mb-3">
+                    <input type="text" className="form-control" id="comment-author" onChange={(e) => setCommentAuthor(e.target.value)}/>
+                    <label htmlFor="comment-author">{t("hotel.comments.author")}</label>
+                  </div>
+
+                  <div className="form-floating">
+                    <textarea className="form-control" id="comment-comment" style={{height: '100px'}} onChange={(e) => setCommentComment(e.target.value)}></textarea>
+                    <label htmlFor="comment-comment">{t("hotel.comments.comment")}</label>
+                  </div>
+                
+                </div>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">{t("hotel.comments.cancel")}</button>
+                  <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={(e) => handleAddComment(hotel.id)}>{t("hotel.comments.add")}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="container mb-5">
-
-
-            
-
-
 
             {
               props.comments.length > 0 ? (
@@ -258,7 +291,7 @@ const OneHotel = (props) => {
                   </div>
                 )
               :
-              <div className="container px-3"><small>Brak komenatarzy</small></div>
+              <div className="container px-3"><small>{t("hotel.comments.empty")}</small></div>
             }
 
             </div>

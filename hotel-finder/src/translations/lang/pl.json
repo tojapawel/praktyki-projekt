@@ -129,7 +129,12 @@
     },
 
     "comments": {
-      "comments": "Komentarze"
+      "comments": "Komentarze",
+      "add": "Dodaj komentarz",
+      "empty": "Brak komentarzy",
+      "author": "Autor",
+      "comment": "Komentarz",
+      "cancel": "Anuluj"
     }
   },
 
