@@ -24,6 +24,9 @@ const HotelFilter = (props) => {
   const [reviewScore, setReviewScore] = useState("");
   const [stars, setStars] = useState("");
 
+  const [load, setLoad] = useState(true);
+  const [filter, setFilter] = useState([]);
+
   const [wifi, setWifi] = useState(false);
   const [parking, setParking] = useState(false);
   const [pets, setPets] = useState(false);
@@ -65,10 +68,30 @@ const HotelFilter = (props) => {
     if (props.city != undefined) {
       setSelectedCity([props.city]);
       setGuests(props.guests);
-      console.log("useEffect do przyjmowania danych");
     }
-    setSubmitChecker(true);
-  }, []);
+  }, [props.city, props.guests]);
+
+  useEffect(() => {
+    if(selectedCity.length > 0 && load === true){
+
+      setFilter(props.hotels.filter((hotel) => {
+        if (hotel.location.city.toLocaleLowerCase() !== selectedCity[0].toLocaleLowerCase()) {
+            return false;
+        }else{
+          return true;
+        }
+      }));
+
+      props.handleGetFiltered(filter);
+    }else{
+      props.handleGetFiltered(props.hotels);
+    }
+
+    if(filter.length > 0){
+      setLoad(false);
+    }
+
+  }, [props.hotels]);
   
   const handleFilter = () => {
     setSubmitChecker(true);
@@ -78,17 +101,13 @@ const HotelFilter = (props) => {
     setFiltered(
       filterHotels(props.hotels, selectedCity, reviewScore, stars, wifi, parking, pets, roomService, breakfast, available, priceMin, priceMax, guests)
     );
-    sortHotels(sort, filtered);
 
+    sortHotels(sort, filtered);
     sortPromoted(filtered);
 
     props.handleGetFiltered(filtered);
     setSubmitChecker(false);
-    console.log("useEffect do filtrowania");
-
   }, [submitChecker]);
-
-  //TODO: Dodać automatyczne uruchomienie funkcji handleSubmit() po załadowaniu strony
 
   return (
     <div className={`h-100 col-md-4 mt-4`}>
@@ -163,7 +182,6 @@ const HotelFilter = (props) => {
 
             <div style={{width: '5%', textAlign: 'center', position: 'relative', top: '5px', padding: '0 0 0 0'}}>
               <MdHorizontalRule />
-
             </div>
 
             <div style={{width: '47.5%'}}>

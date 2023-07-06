@@ -31,7 +31,7 @@ function RoomRow({ room, hotelId, index }) {
       <td>{setBool(room.available)}</td>
       <td>
         {room.available ? (
-          <Link to={`/book/${hotelId}/${index}`}>{t("hotel.roomRow.book")}</Link>
+          <Link to={`/book/${hotelId}/${room.price}${room.beds}${room.area}${room.maxGuests}`}>{t("hotel.roomRow.book")}</Link>
         ) : (
           <span className="text-secondary">{t("hotel.roomRow.unAvailable")}</span>
         )}

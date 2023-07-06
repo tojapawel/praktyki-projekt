@@ -12,11 +12,7 @@ import { useTranslation } from "react-i18next";
 const HotelsList = (props) => {
   const { t } = useTranslation();
 
-  const [filteredData, setFilteredData] = useState([]);
-
-  // useEffect(() => {
-  //   setFilteredData(props.hotels);
-  // }, [props.hotels]);
+  const [filteredData, setFilteredData] = useState(props.hotels);
 
   const handleGetFiltered = (filtered) => {
     setFilteredData(filtered);
