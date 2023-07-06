@@ -42,6 +42,20 @@ app.get('/data', (req, res) => {
   });
 });
 
+app.get('/comments/:id', (req, res) => {
+  const commentId = req.params.id;
+  const query = 'SELECT * FROM comments WHERE hotel_id = ?';
+
+  connection.query(query, [commentId], (error, results) => {
+    if (error) {
+      console.error('Error executing MySQL query:', error);
+      res.status(500).json({ error: 'Error retrieving data from database' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

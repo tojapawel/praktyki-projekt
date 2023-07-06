@@ -119,6 +119,10 @@
              "pets":"Pets are not allowed in the hotel.",
              "roomService":"The hotel does not have room service."
           }
+       },
+
+       "comments": {
+         "comments": "Comments"
        }
     },
     "footer":{

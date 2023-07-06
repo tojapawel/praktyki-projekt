@@ -229,6 +229,40 @@ const OneHotel = (props) => {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-5 pb-2 mx-4 text-dark border-bottom">
+              <h2>{t("hotel.comments.comments")}</h2>
+              <button className="btn btn-primary btn-sm">Dodaj komentarz</button>
+          </div>
+          <div className="container mb-5">
+
+
+            
+
+
+
+            {
+              props.comments.length > 0 ? (
+                
+                <div className="container px-4 my-5">
+                  {
+                    props.comments.map((comment) => (
+                      <div className="card mb-3" key={comment.id}>
+                        <div className="card-body">
+                          <h5 className="card-title">@{comment.author}</h5>
+                          <p className="card-text">{comment.comment}</p>
+                        </div>
+                      </div>
+                    ))
+                  }
+                  </div>
+                )
+              :
+              <div className="container px-3"><small>Brak komenatarzy</small></div>
+            }
+
+            </div>
+
         </div>
       );
     } else {

@@ -126,6 +126,10 @@
         "pets": "Do hotelu nie można wprowadzać zwierząt.",
         "roomService": "Hotel nie posiada obsługi pokoju."
       }
+    },
+
+    "comments": {
+      "comments": "Komentarze"
     }
   },
 
