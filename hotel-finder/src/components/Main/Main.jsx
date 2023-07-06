@@ -6,6 +6,8 @@ import "react-bootstrap-typeahead/css/Typeahead.css";
 import fetchData from "../../functions/fetchData";
 import LanguageSelector from "../../translations/LanguageSelector";
 
+import styles from "./Main.module.css";
+
 // eslint-disable-next-line
 import i18n from "../../translations/i18n";
 import { useTranslation } from "react-i18next";
@@ -15,6 +17,8 @@ const Main = () => {
 
   const [selectedCity, setSelectedCity] = useState([]);
 	const [guests, setGuests] = useState("");
+
+  const [disabled, setDisabled] = useState("");
 
   const [data, setData] = useState([]);
 
@@ -26,6 +30,14 @@ const Main = () => {
 
     fetchDataFunc();
   }, []);
+
+  useEffect(() => {
+    if(selectedCity.length > 0 && guests.length > 0){
+      setDisabled("");
+    }else{
+      setDisabled(styles.disabled);
+    }
+  }, [selectedCity, guests]);
 
   let cities = [...new Set(data.map(hotel => hotel.location.city))];
 
@@ -76,7 +88,7 @@ const Main = () => {
                 </div>
               </div>
             </div>
-            <Link className="w-100 btn btn-lg btn-primary mb-3" to={`/hotels/${selectedCity}/${guests}`}>{t("main.button.main.searchHotels")}</Link>
+            <Link className={`w-100 btn btn-lg btn-primary mb-3 ${disabled}`} to={`/hotels/${selectedCity}/${guests}`}>{t("main.button.main.searchHotels")}</Link>
             <hr className="my-4" />
             <small className="text-body-secondary">
               <Link to={`/hotels/`}>{t("main.button.main.allHotels")}</Link>
