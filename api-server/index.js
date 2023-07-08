@@ -30,7 +30,6 @@ connection.connect((err) => {
 app.use(express.json());
 
 
-//TODO: Do naprawy!!!
 app.get('/addcomment/:hotelid/:author/:comment', (req, res) => {
   const hotelid = req.params.hotelid;
   const author = req.params.author;
@@ -65,6 +64,23 @@ app.get('/comments/:id', (req, res) => {
   const query = 'SELECT * FROM comments WHERE hotel_id = ?';
 
   connection.query(query, [commentId], (error, results) => {
+    if (error) {
+      console.error('Error executing MySQL query:', error);
+      res.status(500).json({ error: 'Error retrieving data from database' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+
+//tests
+app.get('/getrooms/:hotel_id', (req, res) => {
+  const hotel_id = req.params.hotel_id;
+
+  const query = `SELECT r.* FROM rooms r JOIN hotelss h ON r.hotel_id = h.id WHERE h.hotel_id = "${hotel_id}"`;
+
+  connection.query(query, (error, results) => {
     if (error) {
       console.error('Error executing MySQL query:', error);
       res.status(500).json({ error: 'Error retrieving data from database' });
