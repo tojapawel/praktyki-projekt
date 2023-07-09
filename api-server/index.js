@@ -74,7 +74,7 @@ app.get('/comments/:id', (req, res) => {
 });
 
 
-//tests
+//TODO: zmienić sposób wyciągania danych z bazy danych
 app.get('/getrooms/:hotel_id', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
