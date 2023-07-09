@@ -75,6 +75,24 @@ app.get('/comments/:id', (req, res) => {
 
 
 //TODO: zmienić sposób wyciągania danych z bazy danych
+
+//pobieranie informacje o wszystkich hotelach
+app.get('/gethotels', (req, res) => {
+  const hotel_id = req.params.hotel_id;
+
+  const query = `SELECT * FROM hotelss`;
+
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error executing MySQL query:', error);
+      res.status(500).json({ error: 'Error retrieving data from database' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+//pobieranie informacje o pokojach w hotelu o id=hotel_id
 app.get('/getrooms/:hotel_id', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
@@ -90,7 +108,38 @@ app.get('/getrooms/:hotel_id', (req, res) => {
   });
 });
 
-app.post
+//pobieranie informacje o hoteli o id=hotel_id
+app.get('/gethotel/:hotel_id', (req, res) => {
+  const hotel_id = req.params.hotel_id;
+
+  const query = `SELECT * FROM hotelss WHERE hotel_id = "${hotel_id}"`;
+
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error executing MySQL query:', error);
+      res.status(500).json({ error: 'Error retrieving data from database' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+//pobieranie miast
+app.get('/getcities/', (req, res) => {
+  const query = `SELECT DISTINCT city FROM hotelss`;
+
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error executing MySQL query:', error);
+      res.status(500).json({ error: 'Error retrieving data from database' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+
+app.post;
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
