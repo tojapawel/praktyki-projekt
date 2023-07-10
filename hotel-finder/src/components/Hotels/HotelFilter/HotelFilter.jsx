@@ -35,8 +35,8 @@ const HotelFilter = (props) => {
   const [breakfast, setBreakfast] = useState(false);
   const [available, setAvailable] = useState(false);
   
-  const [priceMin, setPriceMin] = useState("");
-  const [priceMax, setPriceMax] = useState("");
+  const [priceMin, setPriceMin] = useState();
+  const [priceMax, setPriceMax] = useState();
 
   const [submitChecker, setSubmitChecker] = useState(true);
   const [sort, setSort] = useState("");
@@ -58,8 +58,8 @@ const HotelFilter = (props) => {
     setRoomService(false);
     setBreakfast(false);
     setAvailable(false);
-    setPriceMin("");
-    setPriceMax("");
+    setPriceMin();
+    setPriceMax();
 
     setSubmitChecker(true);
   };
@@ -173,7 +173,7 @@ const HotelFilter = (props) => {
                   id="priceMin"
                   value={priceMin}
                   placeholder={t("hotels.filter.price.from")}
-                  onChange={(e) => setPriceMin(e.target.value)}
+                  onChange={(e) => setPriceMin(Number(e.target.value))}
                 />
                 <span className="input-group-text">zł</span>
               </div>
@@ -194,7 +194,7 @@ const HotelFilter = (props) => {
                   id="priceMax"
                   value={priceMax}
                   placeholder={t("hotels.filter.price.to")}
-                  onChange={(e) => setPriceMax(e.target.value)}
+                  onChange={(e) => setPriceMax(Number(e.target.value))}
                 />
                 <span className="input-group-text">zł</span>
               </div>

@@ -5,11 +5,11 @@ const filterHotels = (hotels, selectedCity, reviewScore, stars, wifi, parking, p
         }
     
         if (reviewScore && hotel.reviewsScore < reviewScore) {
-                return false;
+            return false;
         }
         
         if (stars && hotel.stars != stars) {
-                return false;
+            return false;
         }
         
         if (wifi && hotel.metadata.wifi !== wifi) {
@@ -29,23 +29,27 @@ const filterHotels = (hotels, selectedCity, reviewScore, stars, wifi, parking, p
         }
     
         if (breakfast && (hotel.rooms.some((room) => room.breakfast === true) !== breakfast)) {
-                return false;
+            return false;
         }
         
         if (available && (hotel.rooms.some((room) => room.available === true) !== available)) {
-                return false;
+            return false;
+        }
+
+        if(priceMin === undefined){
+            priceMin = 0;
+        }
+
+        if(priceMax === undefined){
+            priceMax = 100000000;
         }
         
-        if (priceMin && (hotel.rooms.some((room) => room.price < parseInt(priceMin)))) {
-                return false;
-        }
-        
-        if (priceMax && (hotel.rooms.some((room) => room.price > parseInt(priceMax)))) {
-                return false;
-        }
+        if (priceMin !== undefined && priceMax !== undefined && !hotel.rooms.some((room) => room.price >= priceMin && room.price <= priceMax)) {
+            return false;
+          }
         
         if (guests && (hotel.rooms.some((room) => room.maxGuests >= parseInt(guests)) === false)) {
-                return false;
+            return false;
         }
         
         return true;

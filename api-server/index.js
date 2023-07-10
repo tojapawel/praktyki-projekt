@@ -76,7 +76,7 @@ app.get('/comments/:id', (req, res) => {
 
 //TODO: zmienić sposób wyciągania danych z bazy danych
 
-//pobieranie informacje o wszystkich hotelach
+//pobieranie informacji o wszystkich hotelach
 app.get('/gethotels', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
@@ -92,7 +92,7 @@ app.get('/gethotels', (req, res) => {
   });
 });
 
-//pobieranie informacje o pokojach w hotelu o id=hotel_id
+//pobieranie informacji o pokojach w hotelu o id=hotel_id
 app.get('/getrooms/:hotel_id', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
@@ -108,7 +108,7 @@ app.get('/getrooms/:hotel_id', (req, res) => {
   });
 });
 
-//pobieranie informacje o hoteli o id=hotel_id
+//pobieranie informacji o hotelu o id=hotel_id
 app.get('/gethotel/:hotel_id', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
