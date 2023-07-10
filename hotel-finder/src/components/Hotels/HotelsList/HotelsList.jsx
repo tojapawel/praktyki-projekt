@@ -37,6 +37,7 @@ const HotelsList = (props) => {
         <HotelFilter hotels={props.hotels} city={props.city} guests={props.guests} handleGetFiltered={handleGetFiltered} />
 
         <div className="col-md-8 pt-4">
+          <small className="text-body-secondary">{t("hotels.hotelsList.hotelsFound")}: {filteredData.length}</small>
           {filteredData.length > 0 ? (
             filteredData.map((hotel, index) => (
               <HotelCard hotel={hotel} key={index} index={index} />

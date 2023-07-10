@@ -90,7 +90,8 @@
       "emptyHotels": {
         "noHotels": "Brak hoteli",
         "info": "Nie mogliśmy znaleźć hoteli pasujących do Twoich preferencji."
-      }
+      },
+      "hotelsFound": "Znalezione hotele"
     }
   },
 

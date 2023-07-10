@@ -86,7 +86,8 @@
           "emptyHotels":{
              "noHotels":"No hotels",
              "info":"We couldn't find any hotels matching your preferences."
-          }
+          },
+         "hotelsFound": "Hotels found"
        }
     },
     "hotel":{

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
-import { MdHorizontalRule } from "react-icons/md";
+import { MdClose, MdExpandMore, MdHorizontalRule } from "react-icons/md";
 
 // eslint-disable-next-line
 import i18n from "../../../translations/i18n";
@@ -10,11 +10,14 @@ import { useTranslation } from "react-i18next";
 
 import filterHotels from "../../../functions/HotelFilter/filterHotels";
 import sortHotels from "../../../functions/HotelFilter/sortHotels";
-
 import sortPromoted from "../../../functions/HotelFilter/sortPromoted";
+
+import styles from "./HotelFilter.module.css";
 
 const HotelFilter = (props) => {
   const { t } = useTranslation();
+
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const [selectedCity, setSelectedCity] = useState([]);
 
@@ -42,6 +45,11 @@ const HotelFilter = (props) => {
   const [sort, setSort] = useState("");
 
   let cities = [...new Set(props.hotels.map((hotel) => hotel.location.city))];
+
+  const handleToggleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
 
   const handleCitySelection = (selected) => {
     setSelectedCity(selected);
@@ -111,8 +119,21 @@ const HotelFilter = (props) => {
 
   return (
     <div className={`h-100 col-md-4 mt-4`}>
+
       <div className="p-5 text-bg-dark rounded-3">
-        <h2>{t("hotels.filter.info")}</h2>
+
+        <div className="row">
+          <div className="col-10">
+            <h3>{t("hotels.filter.info")}</h3>
+          </div>
+          <div className="col-2">
+            <a type="button" style={{position: 'relative', bottom: '5px'}} className={`text-white float-end fs-3 ${styles.showmobile}`} data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="collapseWidthExample" onClick={handleToggleCollapse}>
+              {isCollapsed ? <MdExpandMore /> : <MdClose />}
+            </a>
+          </div>
+        </div>
+
+        <div className="collapse show" id="filterCollapse">
 
         <div className="mb-4 mt-4">
           <label htmlFor="city" className="form-label">
@@ -338,6 +359,7 @@ const HotelFilter = (props) => {
               {t("hotels.filter.sort.button.filter")}
             </button>
           </div>
+        </div>
         </div>
       </div>
     </div>

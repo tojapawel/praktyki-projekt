@@ -38,7 +38,7 @@ const HotelCard = (props) => {
                 <div className="col-md-8">
                     <div className="card-body">
                         <h5 className="card-title">
-                            {props.index + 1}. {hotel.name}
+                            {hotel.name}
                             <small>
                                 {hotel.promoted && <MdCampaign className='mx-2 promotedHotelTT' style={{position: 'relative', bottom: '3px'}} />}
                             </small>
