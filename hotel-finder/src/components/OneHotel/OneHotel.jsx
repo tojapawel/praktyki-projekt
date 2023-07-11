@@ -16,6 +16,7 @@ import { useTranslation } from "react-i18next";
 import addComment from "../../functions/addComment";
 import CalculateStars from "../../functions/calculateStars";
 import RoomRow from "./RoomRow";
+import LeafletMap from "../LeafletMap/LeafletMap";
 
 const OneHotel = (props) => {
   const { t } = useTranslation();
@@ -72,8 +73,8 @@ const OneHotel = (props) => {
       }
 
       return (
-        <div className="container mb-5" id="top">
-          <div className="container px-4 my-5">
+        <div className="container" id="top">
+          <div className="container px-4 mt-5">
             <div>
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
@@ -134,6 +135,12 @@ const OneHotel = (props) => {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="container mb-5">
+
+            <LeafletMap city={hotel.location.city}/>
+          
           </div>
 
           <h2 className="mt-5 pb-2 mx-4 border-bottom text-dark">{t("hotel.utilities")}</h2>

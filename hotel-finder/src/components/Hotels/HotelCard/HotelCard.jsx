@@ -2,6 +2,8 @@ import { MdCampaign, MdCheck, MdClose, MdHelpOutline } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { Tooltip } from 'react-tooltip'
 
+import LeafletMap from '../../LeafletMap/LeafletMap';
+
 import CalculateStars from "../../../functions/calculateStars";
 
 // eslint-disable-next-line
@@ -44,7 +46,9 @@ const HotelCard = (props) => {
                             </small>
                         </h5>
                         <p className="card-text">
-                            <small className="text-primary">{hotel.location.city}, {hotel.location.address}</small>
+                            <a type="button" data-bs-toggle="collapse" data-bs-target={`#cardmap-${hotel.id}`} aria-expanded="false" aria-controls="collapseWidthExample">
+                                <small className="text-primary">{hotel.location.city}, {hotel.location.address}</small>
+                            </a>
                             <i className='bi bi-dot fs-4' style={{position: 'relative', bottom: '-4px'}}/>
                             <small>{hotel.metadata.distanceFromCenter} km {t("hotels.hotelCard.toCenter")}</small>
                         </p>
