@@ -172,6 +172,7 @@ const HotelFilter = (props) => {
             type="number"
             min="0"
             max="10"
+            step="0.1"
             className="form-control"
             id="reviewScore"
             value={reviewScore}

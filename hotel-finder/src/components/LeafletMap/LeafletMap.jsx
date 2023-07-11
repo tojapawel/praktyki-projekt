@@ -6,7 +6,6 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 const LeafletMap = (props) => {
   const [position, setPosition] = useState([0, 0]);
 
-  //TODO: zrobić, zeby podczas dodawania hoteli do bazy danych dodawawało do niej też koordynaty danego miasta
   const handleSearch = async () => {
     try {
       const apiUrl = `https://geocode.maps.co/search?q=${encodeURIComponent(props.city)}`;

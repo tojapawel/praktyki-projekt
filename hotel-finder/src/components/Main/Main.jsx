@@ -3,7 +3,7 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import { Link } from 'react-router-dom';
 import "react-bootstrap-typeahead/css/Typeahead.css";
 
-import fetchData from "../../functions/fetchData";
+import fetchData from "../../functions/fetch/fetchData";
 import LanguageSelector from "../../translations/LanguageSelector";
 
 import styles from "./Main.module.css";

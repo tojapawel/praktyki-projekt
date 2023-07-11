@@ -74,12 +74,9 @@ app.get('/comments/:id', (req, res) => {
 });
 
 
-//TODO: zmienić sposób wyciągania danych z bazy danych
-
+//temp - future
 //pobieranie informacji o wszystkich hotelach
 app.get('/gethotels', (req, res) => {
-  const hotel_id = req.params.hotel_id;
-
   const query = `SELECT * FROM hotelss`;
 
   connection.query(query, (error, results) => {

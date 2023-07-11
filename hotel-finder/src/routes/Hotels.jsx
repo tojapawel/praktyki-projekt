@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HotelsList from "../components/Hotels/HotelsList/HotelsList";
 
-import fetchData from "../functions/fetchData";
+import fetchData from "../functions/fetch/fetchData";
 import Footer from "../components/Footer/Footer";
 
 import { useParams } from "react-router-dom";

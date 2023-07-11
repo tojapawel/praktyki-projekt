@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import fetchData from "../functions/fetchData";
+import fetchData from "../functions/fetch/fetchData";
 import fetchComments from "../functions/fetchComments";
 
 import Footer from "../components/Footer/Footer";
