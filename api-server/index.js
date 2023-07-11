@@ -1,8 +1,22 @@
+const crypto = require('crypto');
+
 const express = require('express');
 const mysql = require('mysql');
 
 const app = express();
 const port = 3001;
+
+//klucz API: sUdwM2xbtu
+function checkAPIKey(key) {
+  const API_KEY = 'ff65e1e206a6754a5641ce1fb13c628c772b51d6';
+  const hashKey = crypto.createHash('sha1');
+  hashKey.update(key);
+  if (API_KEY === hashKey.digest('hex')) {
+    return 0;
+  }else{
+    return 1;
+  }
+}
 
 app.use(function(req, res, next){
   res.header('Access-Control-Allow-Origin', 'http://hassioustka.duckdns.org:3354');
@@ -28,7 +42,6 @@ connection.connect((err) => {
 });
 
 app.use(express.json());
-
 
 app.get('/addcomment/:hotelid/:author/:comment', (req, res) => {
   const hotelid = req.params.hotelid;
@@ -122,17 +135,23 @@ app.get('/gethotel/:hotel_id', (req, res) => {
 });
 
 //pobieranie miast
-app.get('/getcities/', (req, res) => {
-  const query = `SELECT DISTINCT city FROM hotelss`;
+app.get('/getcities/:apiKey', (req, res) => {
+  const apiKey = req.params.apiKey;
 
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error executing MySQL query:', error);
-      res.status(500).json({ error: 'Error retrieving data from database' });
-    } else {
-      res.json(results);
-    }
-  });
+  if (!checkAPIKey(apiKey)) {
+    const query = `SELECT DISTINCT city FROM hotelss`;
+
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error retrieving data from database' });
+      } else {
+        res.json(results);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
 });
 
 

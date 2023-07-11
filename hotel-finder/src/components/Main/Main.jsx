@@ -3,7 +3,7 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import { Link } from 'react-router-dom';
 import "react-bootstrap-typeahead/css/Typeahead.css";
 
-import fetchData from "../../functions/fetch/fetchData";
+import fetchCities from "../../functions/fetch/fetchCities";
 import LanguageSelector from "../../translations/LanguageSelector";
 
 import styles from "./Main.module.css";
@@ -17,18 +17,17 @@ const Main = () => {
 
   const [selectedCity, setSelectedCity] = useState([]);
 	const [guests, setGuests] = useState("");
-
   const [disabled, setDisabled] = useState("");
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchDataFunc = async () => {
-      const fetchedData = await fetchData();
-      setData(fetchedData);
+    const fetchCitiesFunc = async () => {
+      const fetchedCities = await fetchCities();
+      setData(fetchedCities);
     };
 
-    fetchDataFunc();
+    fetchCitiesFunc();
   }, []);
 
   useEffect(() => {
@@ -39,7 +38,7 @@ const Main = () => {
     }
   }, [selectedCity, guests]);
 
-  let cities = [...new Set(data.map(hotel => hotel.location.city))];
+  let cities = data.map(city => city.city);
 
   const handleCitySelection = (selected) => {
     setSelectedCity(selected);

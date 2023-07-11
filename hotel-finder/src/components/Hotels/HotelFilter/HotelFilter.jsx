@@ -4,6 +4,9 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { MdClose, MdExpandMore, MdHorizontalRule } from "react-icons/md";
 
+import fetchCities from "../../../functions/fetch/fetchCities";
+
+
 // eslint-disable-next-line
 import i18n from "../../../translations/i18n";
 import { useTranslation } from "react-i18next";
@@ -15,6 +18,18 @@ import sortPromoted from "../../../functions/HotelFilter/sortPromoted";
 import styles from "./HotelFilter.module.css";
 
 const HotelFilter = (props) => {
+
+  const [citiesAPI, setCitiesAPI] = useState([]);
+
+  useEffect(() => {
+    const fetchCitiesFunc = async () => {
+      const fetchedCities = await fetchCities();
+      setCitiesAPI(fetchedCities);
+    };
+
+    fetchCitiesFunc();
+  }, []);
+
   const { t } = useTranslation();
 
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -44,7 +59,7 @@ const HotelFilter = (props) => {
   const [submitChecker, setSubmitChecker] = useState(true);
   const [sort, setSort] = useState("");
 
-  let cities = [...new Set(props.hotels.map((hotel) => hotel.location.city))];
+  let cities = citiesAPI.map(city => city.city);
 
   const handleToggleCollapse = () => {
     setIsCollapsed(!isCollapsed);

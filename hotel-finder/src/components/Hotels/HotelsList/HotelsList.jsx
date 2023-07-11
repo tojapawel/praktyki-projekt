@@ -9,6 +9,8 @@ import HotelFilter from "../HotelFilter/HotelFilter";
 import i18n from "../../../translations/i18n";
 import { useTranslation } from "react-i18next";
 
+//TODO: Zrobić wyciąganie danych z bazy danych nową metodą
+
 const HotelsList = (props) => {
   const { t } = useTranslation();
 

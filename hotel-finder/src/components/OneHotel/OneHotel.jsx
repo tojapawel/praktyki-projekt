@@ -18,6 +18,8 @@ import CalculateStars from "../../functions/calculateStars";
 import RoomRow from "./RoomRow";
 import LeafletMap from "../LeafletMap/LeafletMap";
 
+//TODO: Zrobić wyciąganie danych z bazy danych nową metodą
+
 const OneHotel = (props) => {
   const { t } = useTranslation();
   const [available, setAvailable] = useState();
