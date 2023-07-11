@@ -1,5 +1,6 @@
 {
     "main":{
+       "title": "Hotel finder",
        "motto":"Find the hotel of your dreams and relax on the best vacation under the sun",
        "breadcrumbs":{
           "hotels":"Hotels"

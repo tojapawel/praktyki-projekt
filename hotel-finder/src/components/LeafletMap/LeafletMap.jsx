@@ -33,9 +33,9 @@ const LeafletMap = (props) => {
   }, []);
 
   return (
-    <div>
+    <>
       {position[0] !== 0 && position[1] !== 0 ? (
-        <MapContainer center={position} zoom={13} style={{ height: '200px', width: '100%' }}>
+        <MapContainer center={position} zoom={13} className='rounded' style={{ height: '200px', width: '100%' }}>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           <Marker position={position}>
             <Popup>{props.city}</Popup>
@@ -44,7 +44,7 @@ const LeafletMap = (props) => {
       ) : (
         <p>Ładowanie mapy...</p>
       )}
-    </div>
+    </>
   );
 };
 

@@ -50,7 +50,7 @@ const Main = () => {
       <LanguageSelector />
       <div className="row align-items-center g-lg-5 py-5">
         <div className="col-lg-7 text-center text-lg-start">
-          <h1 className="display-4 fw-bold lh-1 text-body-emphasis mb-3">Hotel finder</h1>
+          <h1 className="display-4 fw-bold lh-1 text-body-emphasis mb-3">{t("main.title")}</h1>
           <p className="col-lg-10 fs-4">{t("main.motto")}</p>
         </div>
         <div className="col-md-10 mx-auto col-lg-5">

@@ -6,7 +6,7 @@ import {
   MdHome
 } from "react-icons/md";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line
@@ -66,7 +66,7 @@ const OneHotel = (props) => {
     let hotel = props.hotels.filter((hotel) => hotel.id === props.hotelId);
     if (hotel.length === 1) {
       hotel = hotel[0];
-
+      
       const handleAddComment = (hotelid) => {
         addComment(hotelid, commentAuthor, commentComment);
         window.location.reload(false);
@@ -137,7 +137,7 @@ const OneHotel = (props) => {
             </div>
           </div>
 
-          <div className="container mb-5">
+          <div className="container mb-5 px-4">
 
             <LeafletMap city={hotel.location.city}/>
           
