@@ -64,11 +64,12 @@ const OneHotel = (props) => {
     }
   };
 
-  if (props.hotels.length >= 1) {
-    let hotel = props.hotels.filter((hotel) => hotel.id === props.hotelId);
-    if (hotel.length === 1) {
-      hotel = hotel[0];
-      
+  // if (props.hotels.length >= 1) {
+  //   props.isError(false);
+
+      let hotel = props.hotel;
+      let rooms = props.rooms;
+      console.log(hotel);
       const handleAddComment = (hotelid) => {
         addComment(hotelid, commentAuthor, commentComment);
         window.location.reload(false);
@@ -95,7 +96,7 @@ const OneHotel = (props) => {
                     </Link>
                   </li>
                   <li className="breadcrumb-item active" aria-current="page">
-                    {hotel.name}
+                    {hotel[0].name}
                   </li>
                 </ol>
               </nav>
@@ -103,9 +104,9 @@ const OneHotel = (props) => {
 
             <div className="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
               <div className="col d-flex flex-column align-items-start gap-2">
-                <h2 className="fw-bold text-body-emphasis">{hotel.name}</h2>
+                <h2 className="fw-bold text-body-emphasis">{hotel[0].name}</h2>
                 <p className="text-primary">
-                  {hotel.location.city} ({hotel.location.postCode}), {hotel.location.address}
+                  {hotel[0].city} ({hotel[0].postCode}), {hotel[0].address}
                 </p>
               </div>
 
@@ -114,25 +115,26 @@ const OneHotel = (props) => {
                   <div className="col d-flex flex-column gap-2">
                     <h4 className="fw-semibold mb-0 text-body-emphasis">{t("hotel.distanceFromCenter")}</h4>
                     <p className="text-body-secondary fs-4">
-                      {hotel.metadata.distanceFromCenter} km
+                      {hotel[0].distanceFromCenter} km
                     </p>
                   </div>
 
                   <div className="col d-flex flex-column gap-2">
                     <h4 className="fw-semibold mb-0 text-body-emphasis">{t("hotels.filter.stars.starsCount")}</h4>
                     <p className="text-body-secondary fs-4">
-                      <CalculateStars stars={hotel.stars} />
+                      <CalculateStars stars={hotel[0].stars} />
                     </p>
                   </div>
 
                   <div className="col d-flex flex-column gap-2">
                     <h4 className="fw-semibold mb-0 text-body-emphasis">{t("hotels.hotelCard.reviewScore")}</h4>
-                    <p className="text-body-secondary fs-4">{hotel.reviewsScore} / 10</p>
+                    <p className="text-body-secondary fs-4">{hotel[0].reviewScore} / 10</p>
                   </div>
+
 
                   <div className="col d-flex flex-column gap-2">
                     <h4 className="fw-semibold mb-0 text-body-emphasis">{t("hotel.roomCount")}</h4>
-                    <p className="text-body-secondary fs-4">{hotel.rooms.length}</p>
+                    <p className="text-body-secondary fs-4">{rooms.length}</p>
                   </div>
                 </div>
               </div>
@@ -141,7 +143,7 @@ const OneHotel = (props) => {
 
           <div className="container mb-5 px-4">
 
-            <LeafletMap city={hotel.location.city}/>
+            <LeafletMap city={hotel[0].city}/>
           
           </div>
 
@@ -154,10 +156,10 @@ const OneHotel = (props) => {
                 width="1.75em"
                 height="1.75em"></svg>
               <div>
-                <h3 className={`fw-bold mb-0 fs-4 ${setMetadataColor(hotel.metadata.wifi)}`}>
+                <h3 className={`fw-bold mb-0 fs-4 ${setMetadataColor(hotel[0].wifi)}`}>
                   {t("hotels.filter.metadata.wifi")} <MdWifi style={{ position: "relative", bottom: "2px" }} />
                 </h3>
-                <p>{setMetadataText(hotel.metadata.wifi, "wifi")}</p>
+                <p>{setMetadataText(hotel[0].wifi, "wifi")}</p>
               </div>
             </div>
 
@@ -167,10 +169,10 @@ const OneHotel = (props) => {
                 width="1.75em"
                 height="1.75em"></svg>
               <div>
-                <h3 className={`fw-bold mb-0 fs-4 ${setMetadataColor(hotel.metadata.parking)}`}>
+                <h3 className={`fw-bold mb-0 fs-4 ${setMetadataColor(hotel[0].parking)}`}>
                   {t("hotels.filter.metadata.parking")} <MdDirectionsCar style={{ position: "relative", bottom: "2px" }} />
                 </h3>
-                <p>{setMetadataText(hotel.metadata.parking, "parking")}</p>
+                <p>{setMetadataText(hotel[0].parking, "parking")}</p>
               </div>
             </div>
             <div className="col d-flex align-items-start">
@@ -179,10 +181,10 @@ const OneHotel = (props) => {
                 width="1.75em"
                 height="1.75em"></svg>
               <div>
-                <h3 className={`fw-bold mb-0 fs-4 ${setMetadataColor(hotel.metadata.pets)}`}>
+                <h3 className={`fw-bold mb-0 fs-4 ${setMetadataColor(hotel[0].pets)}`}>
                   {t("hotels.filter.metadata.pets")} <MdPets style={{ position: "relative", bottom: "2px" }} />
                 </h3>
-                <p>{setMetadataText(hotel.metadata.pets, "pets")}</p>
+                <p>{setMetadataText(hotel[0].pets, "pets")}</p>
               </div>
             </div>
             <div className="col d-flex align-items-start">
@@ -191,11 +193,11 @@ const OneHotel = (props) => {
                 width="1.75em"
                 height="1.75em"></svg>
               <div>
-                <h3 className={`fw-bold mb-0 fs-4 ${setMetadataColor(hotel.metadata.roomService)}`}>
+                <h3 className={`fw-bold mb-0 fs-4 ${setMetadataColor(hotel[0].roomService)}`}>
                   {t("hotels.filter.metadata.roomService")} {" "}
                   <MdCleaningServices style={{ position: "relative", bottom: "2px" }} />
                 </h3>
-                <p>{setMetadataText(hotel.metadata.roomService, "roomService")}</p>
+                <p>{setMetadataText(hotel[0].roomService, "roomService")}</p>
               </div>
             </div>
           </div>
@@ -228,20 +230,20 @@ const OneHotel = (props) => {
               </thead>
               <tbody>
 
-                {available === true && hotel.rooms.filter((room) => room.available === true).length === 0 && (
+                {available === true && room.filter((room) => room.available === true).length === 0 && (
                   <tr>
                     <th colSpan="8">{t("hotel.noAvailableHotels")}</th>
                   </tr>
                 )}
 
                 {available === true
-                  ? hotel.rooms
+                  ? rooms
                       .filter((room) => room.available === true)
                       .map((room, index) => (
-                        <RoomRow key={index} room={room} hotelId={hotel.id} index={index} />
+                        <RoomRow key={index} room={room} hotelId={props.hotelId} index={index} />
                       ))
-                  : hotel.rooms.map((room, index) => (
-                      <RoomRow key={index} room={room} hotelId={hotel.id} index={index} />
+                  : rooms.map((room, index) => (
+                      <RoomRow key={index} room={room} hotelId={props.hotelId} index={index} />
                 ))}
 
               </tbody>
@@ -307,11 +309,9 @@ const OneHotel = (props) => {
 
         </div>
       );
-    } else {
-      props.isError(true);
-      return;
-    }
-  }
-};
+  //   } else {
+  //     props.isError(true);
+  //   }
+  };
 
 export default OneHotel;

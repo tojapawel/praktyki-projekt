@@ -103,35 +103,46 @@ app.get('/gethotels', (req, res) => {
 });
 
 //pobieranie informacji o pokojach w hotelu o id=hotel_id
-app.get('/getrooms/:hotel_id', (req, res) => {
+app.get('/getrooms/:apiKey/:hotel_id', (req, res) => {
+  const apiKey = req.params.apiKey;
   const hotel_id = req.params.hotel_id;
 
-  const query = `SELECT r.* FROM rooms r JOIN hotelss h ON r.hotel_id = h.id WHERE h.hotel_id = "${hotel_id}"`;
+  if (!checkAPIKey(apiKey)) {
+    const query = `SELECT r.* FROM rooms r JOIN hotelss h ON r.hotel_id = h.id WHERE h.hotel_id = "${hotel_id}"`;
 
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error executing MySQL query:', error);
-      res.status(500).json({ error: 'Error retrieving data from database' });
-    } else {
-      res.json(results);
-    }
-  });
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error retrieving data from database' });
+      } else {
+        res.json(results);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
+
 });
 
 //pobieranie informacji o hotelu o id=hotel_id
-app.get('/gethotel/:hotel_id', (req, res) => {
+app.get('/gethotel/:apiKey/:hotel_id', (req, res) => {
+  const apiKey = req.params.apiKey;
   const hotel_id = req.params.hotel_id;
 
-  const query = `SELECT * FROM hotelss WHERE hotel_id = "${hotel_id}"`;
+  if (!checkAPIKey(apiKey)) {
+    const query = `SELECT * FROM hotelss WHERE hotel_id = "${hotel_id}"`;
 
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error executing MySQL query:', error);
-      res.status(500).json({ error: 'Error retrieving data from database' });
-    } else {
-      res.json(results);
-    }
-  });
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error retrieving data from database' });
+      } else {
+        res.json(results);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
 });
 
 //pobieranie miast
