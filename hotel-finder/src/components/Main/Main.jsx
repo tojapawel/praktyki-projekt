@@ -19,6 +19,8 @@ const Main = () => {
 	const [guests, setGuests] = useState("");
   const [disabled, setDisabled] = useState("");
 
+  const [cookieClosed, setCookieClosed] = useState(false);
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -28,6 +30,11 @@ const Main = () => {
     };
 
     fetchCitiesFunc();
+
+    const cookieOK = localStorage.getItem('cookiesOK');
+    if (cookieOK !== null) {
+      setCookieClosed(cookieOK);
+    }
   }, []);
 
   useEffect(() => {
@@ -43,6 +50,11 @@ const Main = () => {
   const handleCitySelection = (selected) => {
     setSelectedCity(selected);
   };
+
+  const handleSaveCookies = () => {
+    localStorage.setItem('cookiesOK', true);
+    setCookieClosed(true);
+  }
   
   return (
     <div className="container col-xl-10 col-xxl-8 px-4 py-5 vertical_center">
@@ -95,6 +107,13 @@ const Main = () => {
           </div>
         </div>
       </div>
+
+      {!cookieClosed && <div class="alert alert-primary alert-dismissible fade show position-absolute bottom-0" role="alert">
+        Ta strona do poprawnego działania używa <strong>plików cookie</strong> / <strong>local storage</strong>. Jeżeli nie zgadzasz się z tym opuść stronę.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={handleSaveCookies}></button>
+      </div>}
+
+      
     </div>
   );
 }

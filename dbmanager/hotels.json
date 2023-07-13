@@ -1,0 +1,4202 @@
+[
+    {
+        "id": "4b881198-c461-4c12-bab4-a8a93c2f59a7",
+        "name": "Fugiat Odit Quia Numquam",
+        "location": {
+            "city": "Czarnków",
+            "postCode": "29-541",
+            "address": "ul. Stelmach 224"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 30844,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 47,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 38097,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 31,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 59437,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 44,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 77291,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 35,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 68115,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 27,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 43943,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 66434,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 22,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 6,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 2.2,
+        "promoted": false
+    },
+    {
+        "id": "a30948ee-02a1-4a8f-a6da-5b0673599747",
+        "name": "Officiis",
+        "location": {
+            "city": "Wielichowo",
+            "postCode": "38-122",
+            "address": "wyspa Bartosik 633"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 73419,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 38,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 74905,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 38,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 59365,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 34,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 44534,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 47,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 52950,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 49,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 70942,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 45,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 46278,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 20,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 9,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 1.3,
+        "promoted": true
+    },
+    {
+        "id": "77c938f3-b5fd-40f6-8f94-dcc27feca6ca",
+        "name": "Aut Quasi Illo Cumque",
+        "location": {
+            "city": "Żychlin",
+            "postCode": "24-964",
+            "address": "al. Dziedzic 99a"
+        },
+        "stars": 5,
+        "rooms": [
+            {
+                "price": 43514,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 31,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 38815,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 48025,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 35,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 38440,
+                "maxGuests": 6,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 87428,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 35,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 71932,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 46,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 36638,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 42,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 6,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 9.9,
+        "promoted": false
+    },
+    {
+        "id": "8945eaca-5aef-4bdd-85ba-58cfa7c949f2",
+        "name": "Officia Quas Saepe Aperiam",
+        "location": {
+            "city": "Miłosław",
+            "postCode": "57-926",
+            "address": "rynek Piotrowski 25a"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 42455,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 80020,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 28,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 75247,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 44,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 63479,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 38,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 51946,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 34,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 56676,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 85610,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 15,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 5,
+        "promoted": false
+    },
+    {
+        "id": "4bca2823-12ee-47a3-b533-20e1791b1b82",
+        "name": "Necessitatibus",
+        "location": {
+            "city": "Lubań",
+            "postCode": "12-215",
+            "address": "os. Czerniak 84"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 69558,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 26,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 72235,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 87585,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 27,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 69655,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 27,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 35522,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 47,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 65227,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 47,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 31677,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 30,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 20,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": true
+        },
+        "reviewsScore": 2.5,
+        "promoted": false
+    },
+    {
+        "id": "2d2b8b92-bea7-447d-a601-fda8c8ab018d",
+        "name": "Dolore Vero Ullam",
+        "location": {
+            "city": "Będzin",
+            "postCode": "01-580",
+            "address": "szosa Jaworski 98b"
+        },
+        "stars": 5,
+        "rooms": [
+            {
+                "price": 42080,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 29,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 78799,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 48,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 70010,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 50,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 31627,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 64818,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 49,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 56273,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 29,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 54165,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 27,
+                "breakfast": true,
+                "available": true
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 5,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 9.4,
+        "promoted": true
+    },
+    {
+        "id": "08cdace3-c928-4157-a9c4-6310f05222ed",
+        "name": "Officiis Asperiores",
+        "location": {
+            "city": "Czerwionka-Leszczyny",
+            "postCode": "67-250",
+            "address": "park Stachura 32a"
+        },
+        "stars": 5,
+        "rooms": [
+            {
+                "price": 50875,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 38,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 67434,
+                "maxGuests": 6,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 44,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 69295,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 48,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 77588,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 21,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 62439,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 78236,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 47,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 66551,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 32,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 3,
+            "wifi": true,
+            "parking": true,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 2.1,
+        "promoted": false
+    },
+    {
+        "id": "0607faa5-5c6d-41c2-938a-1455114cad4c",
+        "name": "Deserunt Veniam Sit",
+        "location": {
+            "city": "Krzeszowice",
+            "postCode": "59-683",
+            "address": "rynek Kowal 4/5"
+        },
+        "stars": 0,
+        "rooms": [
+            {
+                "price": 68190,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 22,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 76531,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 22,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 30261,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 44,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 79558,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 50,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 54470,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 33,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 57437,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 32,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 61197,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 18,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 6.1,
+        "promoted": false
+    },
+    {
+        "id": "2605942c-7621-42a0-8cf9-95e2297a4ef8",
+        "name": "Eaque",
+        "location": {
+            "city": "Sława",
+            "postCode": "92-472",
+            "address": "ul. Kucharczyk 5/7"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 78347,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 33,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 56508,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 38618,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 42,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 69998,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 43574,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 35,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 55102,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 31,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 72422,
+                "maxGuests": 6,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 43,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 18,
+            "wifi": true,
+            "parking": false,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 8.7,
+        "promoted": false
+    },
+    {
+        "id": "ed65ffd8-647d-4964-a5f6-b7358c7bf454",
+        "name": "Impedit Eligendi Numquam Esse",
+        "location": {
+            "city": "Wisła",
+            "postCode": "56-183",
+            "address": "ul. Łukasik 116"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 67766,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 78907,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 68886,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 22,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 73226,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 55971,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 34,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 42344,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 43,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 49812,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 38,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 3,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 1.6,
+        "promoted": false
+    },
+    {
+        "id": "94a8aa78-74f6-47c5-b0be-858caf3bbe7d",
+        "name": "Voluptates",
+        "location": {
+            "city": "Barlinek",
+            "postCode": "44-963",
+            "address": "skwer Grzyb 87a"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 83561,
+                "maxGuests": 6,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 28,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 81992,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 28,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 56555,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 29,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 89746,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 69520,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 48,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 57402,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 22,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 59626,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 44,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 16,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 6.1,
+        "promoted": true
+    },
+    {
+        "id": "1830c61a-4041-46d9-a411-42b0e2d34f3a",
+        "name": "Cum Ad",
+        "location": {
+            "city": "Nowe Brzesko",
+            "postCode": "47-803",
+            "address": "rondo Kmieć 9/4"
+        },
+        "stars": 3,
+        "rooms": [
+            {
+                "price": 65480,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 27,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 88717,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 78492,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 33,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 81149,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 35,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 72131,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 37,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 68105,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 49,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 81337,
+                "maxGuests": 6,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 30,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 4,
+            "wifi": true,
+            "parking": true,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 5.1,
+        "promoted": true
+    },
+    {
+        "id": "99198475-6946-43d9-98ca-3cf04231c48a",
+        "name": "Ex",
+        "location": {
+            "city": "Witkowo",
+            "postCode": "56-966",
+            "address": "pl. Bagiński 72b"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 67859,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 39,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 64770,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 67911,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 72921,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 32,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 31292,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 78713,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 31,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 86610,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 0,
+            "wifi": true,
+            "parking": true,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 2.4,
+        "promoted": false
+    },
+    {
+        "id": "907f289f-b9ba-47a2-8f0e-bfaf8d060575",
+        "name": "Quibusdam",
+        "location": {
+            "city": "Ciechocinek",
+            "postCode": "72-919",
+            "address": "park Jaśkiewicz 7/9"
+        },
+        "stars": 5,
+        "rooms": [
+            {
+                "price": 64335,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 44,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 80348,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 29,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 89604,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 33,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 55933,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 22,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 71565,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 22,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 78360,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 45,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 54731,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 1,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 9.6,
+        "promoted": false
+    },
+    {
+        "id": "b555d631-2218-4720-a249-58299f423a31",
+        "name": "Ad Exercitationem At",
+        "location": {
+            "city": "Mikołów",
+            "postCode": "25-055",
+            "address": "park Wypych 702"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 84485,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 32,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 47986,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 24,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 87095,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 31,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 62153,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 31,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 56228,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 28,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 88477,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 36,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 49569,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 41,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 11,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 3.7,
+        "promoted": false
+    },
+    {
+        "id": "49187e5d-63b9-42b3-b3fc-c81d64f31b48",
+        "name": "Reiciendis Facilis Blanditiis",
+        "location": {
+            "city": "Nowy Targ",
+            "postCode": "13-857",
+            "address": "rynek Kasprzyk 46b"
+        },
+        "stars": 0,
+        "rooms": [
+            {
+                "price": 84422,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 49543,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 22,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 49930,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 35,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 68181,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 28,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 56618,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 45,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 47987,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 52500,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 40,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 5,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 9.6,
+        "promoted": true
+    },
+    {
+        "id": "590c94f0-5ffa-48cb-8f72-2be778b864d1",
+        "name": "Nemo Quam",
+        "location": {
+            "city": "Sławków",
+            "postCode": "68-835",
+            "address": "al. Łuczak 27c"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 48613,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 50,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 46315,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 25,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 33798,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 34,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 61513,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 47,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 74368,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 31,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 66966,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 41,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 79032,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 24,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 11,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": true
+        },
+        "reviewsScore": 5.1,
+        "promoted": true
+    },
+    {
+        "id": "6550d19e-35b2-4fe6-ae3e-89b3a38ebff5",
+        "name": "Ipsa Recusandae Ex",
+        "location": {
+            "city": "Trzcianka",
+            "postCode": "10-132",
+            "address": "droga Grzyb 65a"
+        },
+        "stars": 0,
+        "rooms": [
+            {
+                "price": 83787,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 48084,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 50,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 31948,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 35,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 81770,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 47,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 49960,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 26,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 59898,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 42,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 45045,
+                "maxGuests": 6,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 32,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 8,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 7.9,
+        "promoted": false
+    },
+    {
+        "id": "e4539602-445e-4154-baf5-ee1c84f26774",
+        "name": "Autem Sapiente Assumenda Accusantium",
+        "location": {
+            "city": "Konstantynów Łódzki",
+            "postCode": "09-269",
+            "address": "al. Kurowski 50c"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 30850,
+                "maxGuests": 6,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 35,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 38511,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 28,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 30371,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 30281,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 59054,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 32807,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 44,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 63282,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 47,
+                "breakfast": false,
+                "available": true
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 19,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 6.8,
+        "promoted": false
+    },
+    {
+        "id": "1c6f66de-61c0-4697-9a85-b68bdb48af90",
+        "name": "Labore",
+        "location": {
+            "city": "Trzcińsko-Zdrój",
+            "postCode": "54-962",
+            "address": "os. Wyszyński 80c"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 78839,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 33,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 54840,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 50,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 43720,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 39,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 88486,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 30856,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 42,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 86753,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 36,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 53847,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 23,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 15,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 7.2,
+        "promoted": false
+    },
+    {
+        "id": "07469b81-3f2a-44c7-ac52-02ca049d3d5b",
+        "name": "Quas Voluptate Fuga",
+        "location": {
+            "city": "Kościan",
+            "postCode": "12-809",
+            "address": "rondo Stolarski 73a"
+        },
+        "stars": 3,
+        "rooms": [
+            {
+                "price": 54782,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 64543,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 77592,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 40,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 87749,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 44,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 39307,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 33,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 64042,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 43,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 82822,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 40,
+                "breakfast": false,
+                "available": true
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 16,
+            "wifi": true,
+            "parking": true,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 3.1,
+        "promoted": true
+    },
+    {
+        "id": "3c98e3e1-f86a-419f-973f-20f5a0484c0d",
+        "name": "Et Corrupti Nisi Vel",
+        "location": {
+            "city": "Turek",
+            "postCode": "94-709",
+            "address": "droga Kalinowski 57a"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 36143,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 24,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 60177,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 41,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 73746,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 48,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 82236,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 36,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 61664,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 31,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 86606,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 28,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 35323,
+                "maxGuests": 6,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 45,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 16,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 3.1,
+        "promoted": false
+    },
+    {
+        "id": "6b3cb8fe-8c58-4f19-a93c-d9eea8490d33",
+        "name": "Autem Eaque Possimus Placeat",
+        "location": {
+            "city": "Zwierzyniec",
+            "postCode": "03-372",
+            "address": "pl. Mazurek 47c"
+        },
+        "stars": 5,
+        "rooms": [
+            {
+                "price": 88555,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 26,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 76522,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 50,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 66203,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 43,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 38358,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 40,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 43603,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 42,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 57777,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 43,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 65979,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 36,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 8,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 2,
+        "promoted": true
+    },
+    {
+        "id": "8e12a636-4fdb-4756-8029-aab1f023a12b",
+        "name": "Veritatis Tempora Repudiandae",
+        "location": {
+            "city": "Miejska Górka",
+            "postCode": "56-069",
+            "address": "skwer Jezierski 50a"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 62332,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 55575,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 31249,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 26,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 36712,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 23,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 39186,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 27,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 53205,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 45,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 42468,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 24,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 17,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 3.5,
+        "promoted": false
+    },
+    {
+        "id": "a1cfb588-57cc-49fa-8e18-d57a692c5552",
+        "name": "Reiciendis Neque Est Veniam",
+        "location": {
+            "city": "Ruciane-Nida",
+            "postCode": "63-040",
+            "address": "bulw. Michalik 9/5"
+        },
+        "stars": 5,
+        "rooms": [
+            {
+                "price": 51309,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 43574,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 30,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 43572,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 39,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 46402,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 39,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 47122,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 38,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 41530,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 40,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 69472,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 49,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 7,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 1,
+        "promoted": false
+    },
+    {
+        "id": "1ed3404b-84b7-4277-9295-29639b5b084b",
+        "name": "Numquam Iusto",
+        "location": {
+            "city": "Osiek",
+            "postCode": "86-463",
+            "address": "os. Ślusarczyk 60c"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 59522,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 40,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 81950,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 62913,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 49,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 57175,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 30512,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 36,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 38356,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 38,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 58071,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 39,
+                "breakfast": false,
+                "available": true
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 16,
+            "wifi": true,
+            "parking": false,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 8.2,
+        "promoted": false
+    },
+    {
+        "id": "6e380893-dcd6-4322-89c0-3c4bf5385034",
+        "name": "Ab Sint Fuga Fugiat",
+        "location": {
+            "city": "Nałęczów",
+            "postCode": "08-160",
+            "address": "pl. Siwek 70c"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 70322,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 75901,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 42,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 82887,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 21,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 76710,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 26,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 79613,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 76526,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 23,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 68834,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 8,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 1.7,
+        "promoted": false
+    },
+    {
+        "id": "6ef7533e-5bf4-4fad-9c64-807023cac500",
+        "name": "Occaecati Blanditiis Commodi",
+        "location": {
+            "city": "Śmigiel",
+            "postCode": "19-431",
+            "address": "bulw. Kmieć 4/4"
+        },
+        "stars": 5,
+        "rooms": [
+            {
+                "price": 51076,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 72477,
+                "maxGuests": 6,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 31,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 30601,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 30,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 36703,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 35,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 84561,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 43,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 31141,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 28,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 55433,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 35,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 6,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 8.4,
+        "promoted": true
+    },
+    {
+        "id": "8a9e5f20-ec31-4168-bb56-adb1a6c5c1ef",
+        "name": "Sapiente Ab Aspernatur A",
+        "location": {
+            "city": "Starachowice",
+            "postCode": "82-490",
+            "address": "rynek Cieślik 56b"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 66630,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 30168,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 43,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 77916,
+                "maxGuests": 6,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 43,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 79244,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 43,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 61346,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 50,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 60048,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 23,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 37663,
+                "maxGuests": 6,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 47,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 0,
+            "wifi": true,
+            "parking": false,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 8,
+        "promoted": false
+    },
+    {
+        "id": "02b73d17-a8ad-4494-ade2-59ed9e7ac269",
+        "name": "Similique Eum Expedita Ea",
+        "location": {
+            "city": "Lubień Kujawski",
+            "postCode": "48-973",
+            "address": "ul. Piasecki 63a"
+        },
+        "stars": 0,
+        "rooms": [
+            {
+                "price": 43757,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 27,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 63768,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 34,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 70857,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 23,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 44176,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 83204,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 23,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 86554,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 40,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 36497,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 49,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 2,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 3,
+        "promoted": false
+    },
+    {
+        "id": "07993d6f-0936-4372-ba1c-62d31ca0b7fd",
+        "name": "Ratione",
+        "location": {
+            "city": "Maków Podhalański",
+            "postCode": "16-019",
+            "address": "pl. Bednarczyk 6/9"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 49778,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 35,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 45962,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 41,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 52177,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 83531,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 28,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 44449,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 82548,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 50,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 30028,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 26,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 16,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 9.3,
+        "promoted": false
+    },
+    {
+        "id": "1457062f-51a8-4aed-983e-e5d11c5d814b",
+        "name": "Sapiente Enim Maiores",
+        "location": {
+            "city": "Dobrzyń nad Wisłą",
+            "postCode": "13-805",
+            "address": "al. Kępa 62a"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 51455,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 49,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 53563,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 27,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 45436,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 42,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 83280,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 29,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 63456,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 41,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 59944,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 46,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 76104,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 50,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 9,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 9.4,
+        "promoted": true
+    },
+    {
+        "id": "1bd813d8-dd7d-416c-8003-50b1c7401c51",
+        "name": "Recusandae",
+        "location": {
+            "city": "Gdańsk",
+            "postCode": "69-735",
+            "address": "droga Jagielski 73a"
+        },
+        "stars": 0,
+        "rooms": [
+            {
+                "price": 88931,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 23,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 71994,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 31,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 36863,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 47,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 51769,
+                "maxGuests": 6,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 22,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 78743,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 31,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 59003,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 50,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 54018,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 45,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 11,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": true
+        },
+        "reviewsScore": 9.5,
+        "promoted": true
+    },
+    {
+        "id": "fec512cb-916c-4ac2-be12-54fd032b0bb8",
+        "name": "Deserunt",
+        "location": {
+            "city": "Brodnica",
+            "postCode": "53-721",
+            "address": "szosa Kobus 40a"
+        },
+        "stars": 3,
+        "rooms": [
+            {
+                "price": 43168,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 45,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 87004,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 33,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 76450,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 33189,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 38,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 49341,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 35,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 55999,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 45,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 67218,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 42,
+                "breakfast": true,
+                "available": true
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 13,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": true
+        },
+        "reviewsScore": 9,
+        "promoted": false
+    },
+    {
+        "id": "731cc5bc-d725-4d5d-ab3f-c0f1f02a9ad7",
+        "name": "Voluptates",
+        "location": {
+            "city": "Tarnów",
+            "postCode": "77-496",
+            "address": "pl. Makowski 46a"
+        },
+        "stars": 3,
+        "rooms": [
+            {
+                "price": 69030,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 23,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 76583,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 49,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 35357,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 36,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 81513,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 74687,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 30,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 49501,
+                "maxGuests": 6,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 39,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 71053,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 44,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 10,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 1.6,
+        "promoted": false
+    },
+    {
+        "id": "cceffcee-62c8-424e-977d-a48fab7efdb1",
+        "name": "Aperiam",
+        "location": {
+            "city": "Kłodzko",
+            "postCode": "07-342",
+            "address": "wyb. Zaborowski 922"
+        },
+        "stars": 3,
+        "rooms": [
+            {
+                "price": 55795,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 34,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 32495,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 37,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 70946,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 41,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 71828,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 38,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 77830,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 27,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 84959,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 26,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 62708,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 50,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 11,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 5.8,
+        "promoted": false
+    },
+    {
+        "id": "948de4cf-e198-4971-bcc6-b940765174b0",
+        "name": "Quas Eius Tempore Sint",
+        "location": {
+            "city": "Barcin",
+            "postCode": "22-339",
+            "address": "wyb. Tomala 54a"
+        },
+        "stars": 0,
+        "rooms": [
+            {
+                "price": 73652,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 37,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 87728,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 20,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 63365,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 21,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 66320,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 35,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 62351,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 38,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 44157,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 80499,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 45,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 1,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 5.6,
+        "promoted": false
+    },
+    {
+        "id": "9a39e18b-efa4-4f76-9624-3a10bec9da9e",
+        "name": "Ipsam Soluta Esse",
+        "location": {
+            "city": "Andrychów",
+            "postCode": "55-502",
+            "address": "bulw. Misztal 695"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 80787,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 38,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 60014,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 42,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 84259,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 41,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 62977,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 44,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 56773,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 28,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 88699,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 30,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 57499,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 30,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 3,
+            "wifi": true,
+            "parking": false,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 3.3,
+        "promoted": false
+    },
+    {
+        "id": "c8f1c0bf-3ef8-4bba-82e5-75ddfca69aca",
+        "name": "Fugit Ipsam Totam",
+        "location": {
+            "city": "Byczyna",
+            "postCode": "67-132",
+            "address": "skwer Makowski 51b"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 31752,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 23,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 79567,
+                "maxGuests": 6,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 30,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 87421,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 48,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 46838,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 34,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 40177,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 27,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 84177,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 20,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 87813,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 30,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 15,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 9.8,
+        "promoted": false
+    },
+    {
+        "id": "f3d59560-e38c-46b0-b97c-b2bee1c928ff",
+        "name": "Delectus Omnis",
+        "location": {
+            "city": "Augustów",
+            "postCode": "63-526",
+            "address": "bulw. Cieślak 86b"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 63689,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 37,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 83213,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 36,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 37554,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 48,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 42385,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 36,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 48333,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 31,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 39532,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 35,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 78152,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 8,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": true
+        },
+        "reviewsScore": 4.8,
+        "promoted": true
+    },
+    {
+        "id": "2c69da5b-654a-40f7-a968-980ca117b86c",
+        "name": "Unde Dolorem",
+        "location": {
+            "city": "Suraż",
+            "postCode": "59-762",
+            "address": "bulw. Jankowski 22b"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 47661,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 31,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 43750,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 88893,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 27,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 42561,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 47,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 33195,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 36,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 62872,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 20,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 39239,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 6,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 2.5,
+        "promoted": false
+    },
+    {
+        "id": "88e77ad9-38e9-43a2-a9f2-7dbde619c0ee",
+        "name": "Sit Assumenda Id Quibusdam",
+        "location": {
+            "city": "Wysokie Mazowieckie",
+            "postCode": "53-938",
+            "address": "pl. Kałuża 5/8"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 35813,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 53092,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 36,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 71979,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 42,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 63032,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 30,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 43780,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 34,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 59091,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 46,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 39954,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 41,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 5,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 2.1,
+        "promoted": false
+    },
+    {
+        "id": "c956797d-9bb2-4291-8b7d-839a633613f8",
+        "name": "Illum Sapiente Esse Enim",
+        "location": {
+            "city": "Sokołów Podlaski",
+            "postCode": "79-217",
+            "address": "ogród Dąbkowski 42"
+        },
+        "stars": 3,
+        "rooms": [
+            {
+                "price": 53251,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 37,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 81070,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 30,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 60988,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 36,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 89155,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 48,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 63596,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 31,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 31740,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 38,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 64148,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 45,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 5,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 6.3,
+        "promoted": false
+    },
+    {
+        "id": "b4bc85e5-777d-4f48-953c-0f0944f90515",
+        "name": "Dolorem Minus",
+        "location": {
+            "city": "Bielsk Podlaski",
+            "postCode": "05-067",
+            "address": "ul. Dąbkowski 93a"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 55848,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 23,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 70488,
+                "maxGuests": 6,
+                "beds": 6,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 45613,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 25,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 31880,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 71948,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 37,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 74819,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 38,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 88691,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 36,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 20,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 2.6,
+        "promoted": false
+    },
+    {
+        "id": "d8d8bd50-7cf0-4904-8e73-6adf293fabe5",
+        "name": "Expedita Temporibus",
+        "location": {
+            "city": "Boguszów-Gorce",
+            "postCode": "31-327",
+            "address": "al. Gruszczyński 75c"
+        },
+        "stars": 2,
+        "rooms": [
+            {
+                "price": 67714,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 32,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 83472,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 21,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 67981,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 32,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 68048,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 43,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 56271,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 44,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 65083,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 49,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 57754,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 47,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 19,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 7.2,
+        "promoted": false
+    },
+    {
+        "id": "2cb2febb-9dce-4e49-b4a9-fb5df2ecf763",
+        "name": "Labore Rerum Cupiditate Atque",
+        "location": {
+            "city": "Sławków",
+            "postCode": "69-499",
+            "address": "skwer Bielak 35c"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 81355,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 40,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 60699,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 31,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 56333,
+                "maxGuests": 5,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 22,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 75172,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 27,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 48048,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 45,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 46732,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 28,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 60269,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 49,
+                "breakfast": false,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 20,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 5,
+        "promoted": true
+    },
+    {
+        "id": "1c7a2e63-3c57-45c5-aa8d-a7411d2b0564",
+        "name": "Iusto Consequatur Deserunt",
+        "location": {
+            "city": "Tomaszów Mazowiecki",
+            "postCode": "33-223",
+            "address": "rynek Jaros 28a"
+        },
+        "stars": 4,
+        "rooms": [
+            {
+                "price": 36708,
+                "maxGuests": 3,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 47,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 63392,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 49,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 49977,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 32,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 31808,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 30,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 62756,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 46,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 33515,
+                "maxGuests": 3,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 69313,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 36,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 18,
+            "wifi": true,
+            "parking": false,
+            "pets": true,
+            "roomService": false
+        },
+        "reviewsScore": 3.4,
+        "promoted": false
+    },
+    {
+        "id": "98756406-0cfb-4dd6-827a-a45e084f36f5",
+        "name": "Quidem",
+        "location": {
+            "city": "Rumia",
+            "postCode": "81-666",
+            "address": "bulw. Nowak 78a"
+        },
+        "stars": 1,
+        "rooms": [
+            {
+                "price": 69475,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 47,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 73797,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 39,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 45400,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 41,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 42401,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 48364,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 26,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 53457,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 69893,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 50,
+                "breakfast": true,
+                "available": true
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 10,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 3.3,
+        "promoted": false
+    },
+    {
+        "id": "95112f9d-c220-49b9-9895-1f89ae1d8a16",
+        "name": "Cum",
+        "location": {
+            "city": "Bystrzyca Kłodzka",
+            "postCode": "39-670",
+            "address": "park Bednarczyk 47c"
+        },
+        "stars": 5,
+        "rooms": [
+            {
+                "price": 77353,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 30,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 32460,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 33,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 75683,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 50,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 57035,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 28,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 68765,
+                "maxGuests": 6,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 49,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 76121,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 40,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 40648,
+                "maxGuests": 2,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 43,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 19,
+            "wifi": true,
+            "parking": true,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 4.8,
+        "promoted": false
+    },
+    {
+        "id": "5df116a1-cf6e-42ef-ba3b-a92a8055b196",
+        "name": "Doloribus Ex Illo Eligendi",
+        "location": {
+            "city": "Izbica Kujawska",
+            "postCode": "03-110",
+            "address": "bulw. Tomala 15a"
+        },
+        "stars": 0,
+        "rooms": [
+            {
+                "price": 62671,
+                "maxGuests": 5,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 37,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 41694,
+                "maxGuests": 4,
+                "beds": 4,
+                "familyRoom": true,
+                "area": 47,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 74208,
+                "maxGuests": 1,
+                "beds": 1,
+                "familyRoom": false,
+                "area": 21,
+                "breakfast": true,
+                "available": false
+            },
+            {
+                "price": 80340,
+                "maxGuests": 5,
+                "beds": 5,
+                "familyRoom": true,
+                "area": 42,
+                "breakfast": true,
+                "available": true
+            },
+            {
+                "price": 81144,
+                "maxGuests": 2,
+                "beds": 2,
+                "familyRoom": false,
+                "area": 28,
+                "breakfast": false,
+                "available": false
+            },
+            {
+                "price": 35167,
+                "maxGuests": 4,
+                "beds": 3,
+                "familyRoom": true,
+                "area": 24,
+                "breakfast": false,
+                "available": true
+            },
+            {
+                "price": 88464,
+                "maxGuests": 4,
+                "beds": 2,
+                "familyRoom": true,
+                "area": 50,
+                "breakfast": true,
+                "available": false
+            }
+        ],
+        "metadata": {
+            "distanceFromCenter": 4,
+            "wifi": true,
+            "parking": false,
+            "pets": false,
+            "roomService": false
+        },
+        "reviewsScore": 7.7,
+        "promoted": false
+    }
+]

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hotels data manager</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="bg-dark text-secondary px-4 py-5 text-center vertical_center">
+            <div class="py-5">
+                <h1 class="display-5 fw-bold text-white">Hotels data manager</h1>
+                <div class="col mx-auto">
+                    <p class="fs-5 mb-4">Wybierz czy chcesz dodać nowe dane do bazy danych czy usunąć stare.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <button type="button" class="btn btn-outline-success btn-lg px-4 me-sm-3 fw-bold" data-bs-toggle="modal" data-bs-target="#addModal">
+                            Dodaj
+                        </button>
+                        <button type="button" class="btn btn-outline-danger btn-lg px-4 me-sm-3 fw-bold" data-bs-toggle="modal" data-bs-target="#removeModal">
+                            Usuń
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="alertPlaceholder" class="position-absolute top-0 mt-5"></div>
+        </div>
+        
+        <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Usuń dane</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Czy napewno chcesz usunąć <span class="text-danger fw-bold">WSZYSTKIE</span> dane z bazy danych?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                        <a type="button" href="remove_func.php" class="btn btn-danger">Usuń</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Dodaj dane</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="add_func.php" method="post" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <input class="form-control" name="jsonFile" id="jsonFile" accept=".json" type="file">
+                            </div>
+                            <button class="w-100 mb-2 btn rounded-3 btn-success" id="send" type="submit">Wyślij</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+
+            const alertPlaceholder = document.getElementById('alertPlaceholder')
+            const appendAlert = (message, type) => {
+                const wrapper = document.createElement('div')
+                wrapper.innerHTML = [
+                    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                    `   <div>${message}</div>`,
+                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                    '</div>'
+                ].join('')
+
+                alertPlaceholder.append(wrapper)
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const removeok = urlParams.get('removeok');
+            const addok = urlParams.get('addok');
+
+            window.addEventListener('DOMContentLoaded', (event) => {
+                if(removeok){
+                    appendAlert('Pomyślnie usunięto <span class="fw-bold">WSZYSTKIE</span> dane z bazy danych.', 'success');
+                }
+
+                if (addok) {
+                    appendAlert('Pomyślnie dodano dane do bazy danych.', 'success');
+                }
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var myButton = document.getElementById('send');
+                var originalText = myButton.innerHTML;
+
+                myButton.addEventListener('click', function() {
+                    myButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Wysyłanie...';
+
+                    setTimeout(function() {
+                        myButton.innerHTML = originalText;
+                    }, 3000);
+                });
+            });
+
+        </script>
+          
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

@@ -112,7 +112,7 @@ const OneHotel = (props) => {
               <div className="col d-flex flex-column align-items-start gap-2">
                 <h2 className="fw-bold text-body-emphasis">{hotel[0].name}</h2>
                 <p className="text-primary">
-                  {hotel[0].city} ({hotel[0].postCode}), {hotel[0].address}
+                  {hotel[0].city} ({hotel[0].code}), {hotel[0].address}
                 </p>
               </div>
 
@@ -236,7 +236,7 @@ const OneHotel = (props) => {
               </thead>
               <tbody>
 
-                {available === true && rooms.filter((room) => room.available === true).length === 0 && (
+                {available === true && rooms.filter((room) => room.available === 1).length === 0 && (
                   <tr>
                     <th colSpan="8">{t("hotel.noAvailableHotels")}</th>
                   </tr>
@@ -244,7 +244,7 @@ const OneHotel = (props) => {
 
                 {available === true
                   ? rooms
-                      .filter((room) => room.available === true)
+                      .filter((room) => room.available === 1)
                       .map((room, index) => (
                         <RoomRow key={index} room={room} hotelId={props.hotelId} index={index} />
                       ))
