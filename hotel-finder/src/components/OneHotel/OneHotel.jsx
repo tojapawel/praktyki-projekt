@@ -13,13 +13,11 @@ import { Link } from "react-router-dom";
 import i18n from "../../translations/i18n";
 import { useTranslation } from "react-i18next";
 
-import addComment from "../../functions/addComment";
+import addComment from "../../functions/fetch/comments/addComment";
 import CalculateStars from "../../functions/calculateStars";
 import RoomRow from "./RoomRow";
 import LeafletMap from "../LeafletMap/LeafletMap";
-import fetchComments from "../../functions/fetchComments";
-
-//TODO: Zrobić wyciąganie danych z bazy danych nową metodą
+import fetchComments from "../../functions/fetch/comments/fetchComments";
 
 const OneHotel = (props) => {
   const { t } = useTranslation();
@@ -75,9 +73,6 @@ const OneHotel = (props) => {
       }
     }
   };
-
-  // if (props.hotels.length >= 1) {
-  //   props.isError(false);
 
       let hotel = props.hotel;
       let rooms = props.rooms;
@@ -320,9 +315,6 @@ const OneHotel = (props) => {
 
         </div>
       );
-  //   } else {
-  //     props.isError(true);
-  //   }
   };
 
 export default OneHotel;
