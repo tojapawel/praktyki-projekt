@@ -54,10 +54,7 @@ const Hotel = () => {
     return E404();
   } else {
     return (
-      <>
-        {(hotel.length === 1 && rooms.length > 0) && <OneHotel hotel={hotel} rooms={rooms} hotelId={hotelId} isError={errorHandler} comments={comments}/>}
-        <Footer />
-      </>
+        (hotel.length === 1 && rooms.length > 0) ? <><OneHotel hotel={hotel} rooms={rooms} hotelId={hotelId} isError={errorHandler} comments={comments}/> <Footer /></>: E404()
     );
   }
 };

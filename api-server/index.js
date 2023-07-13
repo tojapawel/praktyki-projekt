@@ -43,22 +43,6 @@ connection.connect((err) => {
 
 app.use(express.json());
 
-app.get('/addcomment/:hotelid/:author/:comment', (req, res) => {
-  const hotelid = req.params.hotelid;
-  const author = req.params.author;
-  const comment = req.params.comment;
-  const query = `INSERT INTO comments (hotel_id, author, comment) VALUES ('${hotelid}','${author}', '${comment}')`;
-
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error executing MySQL query:', error);
-      res.status(500).json({ error: 'Error executing MySQL query: ' + error.message });
-    } else {
-      res.json(0);
-    }
-  });
-});
-
 app.get('/data', (req, res) => {
   const query = 'SELECT hotels_json FROM hotels where id = 1';
 
@@ -72,18 +56,48 @@ app.get('/data', (req, res) => {
   });
 });
 
-app.get('/comments/:id', (req, res) => {
-  const commentId = req.params.id;
-  const query = 'SELECT * FROM comments WHERE hotel_id = ?';
+app.get('/addcomment/:apiKey/:hotelid/:author/:comment', (req, res) => {
+  const apiKey = req.params.apiKey;
 
-  connection.query(query, [commentId], (error, results) => {
-    if (error) {
-      console.error('Error executing MySQL query:', error);
-      res.status(500).json({ error: 'Error retrieving data from database' });
-    } else {
-      res.json(results);
-    }
-  });
+  const hotelid = req.params.hotelid;
+  const author = req.params.author;
+  const comment = req.params.comment;
+
+
+  if (!checkAPIKey(apiKey)) {
+    const query = `INSERT INTO comments (hotel_id, author, comment) VALUES ('${hotelid}','${author}', '${comment}')`;
+
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error executing MySQL query: ' + error.message });
+      } else {
+        res.json(0);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
+});
+
+app.get('/comments/:apiKey/:id', (req, res) => {
+  const commentId = req.params.id;
+  const apiKey = req.params.apiKey;
+
+  if (!checkAPIKey(apiKey)) {
+    const query = 'SELECT * FROM comments WHERE hotel_id = ?';
+
+    connection.query(query, [commentId], (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error retrieving data from database' });
+      } else {
+        res.json(results);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
 });
 
 

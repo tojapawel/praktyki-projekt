@@ -17,6 +17,7 @@ import addComment from "../../functions/addComment";
 import CalculateStars from "../../functions/calculateStars";
 import RoomRow from "./RoomRow";
 import LeafletMap from "../LeafletMap/LeafletMap";
+import fetchComments from "../../functions/fetchComments";
 
 //TODO: Zrobić wyciąganie danych z bazy danych nową metodą
 
@@ -26,6 +27,17 @@ const OneHotel = (props) => {
 
   const [commentAuthor, setCommentAuthor] = useState("");
   const [commentComment, setCommentComment] = useState("");
+
+  const [comments, setComments] = useState("");
+
+  const fetchCommentsFunc = async () => {
+    const fetchedComments = await fetchComments(props.hotelId);
+    setComments(fetchedComments);
+  };
+
+  useEffect(() => {
+    fetchCommentsFunc();
+  }, []);
 
   const setMetadataColor = (val) => {
     if (val) {
@@ -69,10 +81,9 @@ const OneHotel = (props) => {
 
       let hotel = props.hotel;
       let rooms = props.rooms;
-      console.log(hotel);
       const handleAddComment = (hotelid) => {
         addComment(hotelid, commentAuthor, commentComment);
-        window.location.reload(false);
+        fetchCommentsFunc();
       }
 
       return (
@@ -230,7 +241,7 @@ const OneHotel = (props) => {
               </thead>
               <tbody>
 
-                {available === true && room.filter((room) => room.available === true).length === 0 && (
+                {available === true && rooms.filter((room) => room.available === true).length === 0 && (
                   <tr>
                     <th colSpan="8">{t("hotel.noAvailableHotels")}</th>
                   </tr>
@@ -277,7 +288,7 @@ const OneHotel = (props) => {
                 </div>
                 <div className="modal-footer">
                   <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">{t("hotel.comments.cancel")}</button>
-                  <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={(e) => handleAddComment(hotel.id)}>{t("hotel.comments.add")}</button>
+                  <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={(e) => handleAddComment(props.hotelId)}>{t("hotel.comments.add")}</button>
                 </div>
               </div>
             </div>
@@ -286,11 +297,11 @@ const OneHotel = (props) => {
           <div className="container mb-5">
 
             {
-              props.comments.length > 0 ? (
+              comments.length > 0 ? (
                 
                 <div className="container px-4 my-5">
                   {
-                    props.comments.map((comment) => (
+                    comments.map((comment) => (
                       <div className="card mb-3" key={comment.id}>
                         <div className="card-body">
                           <h5 className="card-title">@{comment.author}</h5>
