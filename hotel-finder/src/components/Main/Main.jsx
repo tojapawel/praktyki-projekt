@@ -108,9 +108,10 @@ const Main = () => {
         </div>
       </div>
 
-      {!cookieClosed && <div class="alert alert-primary alert-dismissible fade show position-absolute bottom-0" role="alert">
+      //TODO: zrobić, zeby tekst był też w innych językach
+      {!cookieClosed && <div className="alert alert-primary alert-dismissible fade show position-absolute bottom-0" role="alert">
         Ta strona do poprawnego działania używa <strong>plików cookie</strong> / <strong>local storage</strong>. Jeżeli nie zgadzasz się z tym opuść stronę.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={handleSaveCookies}></button>
+        <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={handleSaveCookies}></button>
       </div>}
 
       

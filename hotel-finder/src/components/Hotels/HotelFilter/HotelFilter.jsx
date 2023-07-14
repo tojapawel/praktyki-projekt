@@ -98,7 +98,7 @@ const HotelFilter = (props) => {
     if(selectedCity.length > 0 && load === true){
 
       setFilter(props.hotels.filter((hotel) => {
-        if (hotel.location.city.toLocaleLowerCase() !== selectedCity[0].toLocaleLowerCase()) {
+        if (hotel.city.toLocaleLowerCase() !== selectedCity[0].toLocaleLowerCase()) {
             return false;
         }else{
           return true;
@@ -119,10 +119,10 @@ const HotelFilter = (props) => {
   const handleFilter = () => {
     setSubmitChecker(true);
   };
-
+  
   useEffect(() => {
     setFiltered(
-      filterHotels(props.hotels, selectedCity, reviewScore, stars, wifi, parking, pets, roomService, breakfast, available, priceMin, priceMax, guests)
+      filterHotels(props.hotels, props.rooms, selectedCity, reviewScore, stars, wifi, parking, pets, roomService, breakfast, available, priceMin, priceMax, guests)
     );
 
     sortHotels(sort, filtered);

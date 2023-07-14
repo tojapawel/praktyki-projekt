@@ -9,8 +9,6 @@ import HotelFilter from "../HotelFilter/HotelFilter";
 import i18n from "../../../translations/i18n";
 import { useTranslation } from "react-i18next";
 
-//TODO: Zrobić wyciąganie danych z bazy danych nową metodą
-
 const HotelsList = (props) => {
   const { t } = useTranslation();
 
@@ -36,6 +34,7 @@ const HotelsList = (props) => {
       <div className="row align-items-md-stretch">
         <HotelFilter
           hotels={props.hotels}
+          rooms={props.rooms}
           city={props.city}
           guests={props.guests}
           handleGetFiltered={handleGetFiltered}
@@ -46,9 +45,19 @@ const HotelsList = (props) => {
             {t("hotels.hotelsList.hotelsFound")}: {filteredData.length}
           </small>
           {filteredData.length > 0 ? (
-            filteredData.map((hotel, index) => (
-              <HotelCard hotel={hotel} key={index} index={index} />
-            ))
+            filteredData.map((hotel, index) => {
+              const rooms = [];
+
+              props.rooms.map((room, index) => {
+                if(hotel.id === room.hotel_id){
+                  rooms.push(room);
+                };
+              })
+
+              return (
+                <HotelCard hotel={hotel} rooms={rooms} key={index} index={index} />
+              )
+            })
           ) : (
             <div className="container my-5">
               <div className="p-5 text-center">

@@ -1,59 +1,68 @@
-const filterHotels = (hotels, selectedCity, reviewScore, stars, wifi, parking, pets, roomService, breakfast, available, priceMin, priceMax, guests) => {
+const filterHotels = (hotels, rooms, selectedCity, reviewScore, stars, wifi, parking, pets, roomService, breakfast, available, priceMin, priceMax, guests) => {
     return hotels.filter((hotel) => {
-        if (selectedCity.length !== 0 && hotel.location.city.toLocaleLowerCase() !== selectedCity[0].toLocaleLowerCase()) {
-            return false;
-        }
-    
-        if (reviewScore && hotel.reviewsScore < reviewScore) {
-            return false;
-        }
-        
-        if (stars && hotel.stars != stars) {
-            return false;
-        }
-        
-        if (wifi && hotel.metadata.wifi !== wifi) {
-            return false;
-        }
-    
-        if (parking && hotel.metadata.parking !== parking) {
-            return false;
-        }
-    
-        if (pets && hotel.metadata.pets !== pets) {
-            return false;
-        }
-    
-        if (roomService && hotel.metadata.roomService !== roomService) {
-            return false;
-        }
-    
-        if (breakfast && (hotel.rooms.some((room) => room.breakfast === true) !== breakfast)) {
-            return false;
-        }
-        
-        if (available && (hotel.rooms.some((room) => room.available === true) !== available)) {
+        const wifiBinary = wifi ? 1 : 0;
+        const parkingBinary = parking ? 1 : 0;
+        const petsBinary = pets ? 1 : 0;
+        const roomServiceBinary = roomService ? 1 : 0;
+
+        const newRooms = rooms.filter(room => room.hotel_id === hotel.id);
+
+        if (selectedCity.length !== 0 && hotel.city.toLowerCase() !== selectedCity[0].toLowerCase()) {
             return false;
         }
 
-        if(priceMin === undefined){
+        if (reviewScore && hotel.reviewScore < reviewScore) {
+            return false;
+        }
+
+        if (stars && hotel.stars !== stars) {
+            return false;
+        }
+
+        if (wifi && hotel.wifi !== wifiBinary) {
+            return false;
+        }
+
+        if (parking && hotel.parking !== parkingBinary) {
+            return false;
+        }
+
+        if (pets && hotel.pets !== petsBinary) {
+            return false;
+        }
+
+        if (roomService && hotel.roomService !== roomServiceBinary) {
+            return false;
+        }
+
+        //TODO: naprawić filtrowanie po dostępności pokoi i śniadań
+        
+        if (breakfast && !newRooms.some(room => room.breakfast === 1)) {
+            return false;
+        }
+
+        if (available && !newRooms.some(room => room.available === 1)) {
+            return false;
+        }
+
+        if (priceMin === undefined) {
             priceMin = 0;
         }
 
-        if(priceMax === undefined){
+        if (priceMax === undefined) {
             priceMax = 100000000;
         }
-        
-        if (priceMin !== undefined && priceMax !== undefined && !hotel.rooms.some((room) => room.price >= priceMin && room.price <= priceMax)) {
-            return false;
-          }
-        
-        if (guests && (hotel.rooms.some((room) => room.maxGuests >= parseInt(guests)) === false)) {
+
+        if (priceMin !== undefined && priceMax !== undefined && !newRooms.some(room => room.price >= priceMin && room.price <= priceMax)) {
             return false;
         }
-        
+
+        if (guests && !newRooms.some(room => room.maxGuests >= parseInt(guests))) {
+            return false;
+        }
+
         return true;
-    })
-}
+    });
+};
 
 export default filterHotels;

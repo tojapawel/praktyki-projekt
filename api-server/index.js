@@ -43,19 +43,7 @@ connection.connect((err) => {
 
 app.use(express.json());
 
-app.get('/data', (req, res) => {
-  const query = 'SELECT hotels_json FROM hotels where id = 1';
-
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error executing MySQL query:', error);
-      res.status(500).json({ error: 'Error retrieving data from database' });
-    } else {
-      res.json(results);
-    }
-  });
-});
-
+//dodawanie komantarza dla danego hotelu
 app.get('/addcomment/:apiKey/:hotelid/:author/:comment', (req, res) => {
   const apiKey = req.params.apiKey;
 
@@ -80,6 +68,7 @@ app.get('/addcomment/:apiKey/:hotelid/:author/:comment', (req, res) => {
   }
 });
 
+//pobieranie komentarzy dla danego hotelu
 app.get('/comments/:apiKey/:id', (req, res) => {
   const commentId = req.params.id;
   const apiKey = req.params.apiKey;
@@ -100,20 +89,44 @@ app.get('/comments/:apiKey/:id', (req, res) => {
   }
 });
 
-
-//temp - future
 //pobieranie informacji o wszystkich hotelach
-app.get('/gethotels', (req, res) => {
-  const query = `SELECT * FROM hotelss`;
+app.get('/gethotels/:apiKey', (req, res) => {
+  const apiKey = req.params.apiKey;
 
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error executing MySQL query:', error);
-      res.status(500).json({ error: 'Error retrieving data from database' });
-    } else {
-      res.json(results);
-    }
-  });
+  if (!checkAPIKey(apiKey)) {
+    const query = `SELECT * FROM hotels`;
+
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error retrieving data from database' });
+      } else {
+        res.json(results);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
+});
+
+//pobieranie wszystkich pokoi
+app.get('/getrooms/:apiKey', (req, res) => {
+  const apiKey = req.params.apiKey;
+
+  if (!checkAPIKey(apiKey)) {
+    const query = `SELECT * FROM rooms`;
+
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error retrieving data from database' });
+      } else {
+        res.json(results);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
 });
 
 //pobieranie informacji o pokojach w hotelu o id=hotel_id
@@ -122,7 +135,7 @@ app.get('/getrooms/:apiKey/:hotel_id', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
   if (!checkAPIKey(apiKey)) {
-    const query = `SELECT r.* FROM rooms r JOIN hotelss h ON r.hotel_id = h.id WHERE h.hotel_id = "${hotel_id}"`;
+    const query = `SELECT r.* FROM rooms r JOIN hotels h ON r.hotel_id = h.id WHERE h.hotel_id = "${hotel_id}"`;
 
     connection.query(query, (error, results) => {
       if (error) {
@@ -144,7 +157,7 @@ app.get('/gethotel/:apiKey/:hotel_id', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
   if (!checkAPIKey(apiKey)) {
-    const query = `SELECT * FROM hotelss WHERE hotel_id = "${hotel_id}"`;
+    const query = `SELECT * FROM hotels WHERE hotel_id = "${hotel_id}"`;
 
     connection.query(query, (error, results) => {
       if (error) {
@@ -164,7 +177,7 @@ app.get('/getcities/:apiKey', (req, res) => {
   const apiKey = req.params.apiKey;
 
   if (!checkAPIKey(apiKey)) {
-    const query = `SELECT DISTINCT city FROM hotelss`;
+    const query = `SELECT DISTINCT city FROM hotels`;
 
     connection.query(query, (error, results) => {
       if (error) {
