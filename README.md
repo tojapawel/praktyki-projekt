@@ -8,26 +8,29 @@ pierwsze uruchomienie:
 ```bash
 cd api-server
 npm install
-npm start
 ```
 ```bash
 cd hotel-finder
 npm install
-npm run dev
 ```
 
-uruchomienie dockera (na screen'ach):
+uruchomienie dockera (na screen'ach w podanej kolejności):
+1. 
+```bash
+docker-compose up -d
+```
+2. 
 ```bash
 cd api-server
 npm start
 ```
+3. 
 ```bash
 cd hotel-finder
 npm run dev
 ```
-```bash
-docker-compose up -d
-```
+
+najlepiej 
 
 #### Podgląd projektu w czasie rzeczywistym
 

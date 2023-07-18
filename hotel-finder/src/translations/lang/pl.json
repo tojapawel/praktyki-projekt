@@ -2,6 +2,7 @@
   "main": {
     "title": "Hotel finder",
     "motto": "Znajdź hotel swoich marzeń i odpocznij na najlepszych wakacjach pod słońcem",
+    "cookies": "Ta strona do poprawnego działania używa plików cookie / local storage. Jeżeli nie zgadzasz się z tym opuść stronę.",
     
     "breadcrumbs": {
       "hotels": "Hotele"

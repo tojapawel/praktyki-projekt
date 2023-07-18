@@ -34,8 +34,6 @@ const filterHotels = (hotels, rooms, selectedCity, reviewScore, stars, wifi, par
         if (roomService && hotel.roomService !== roomServiceBinary) {
             return false;
         }
-
-        //TODO: naprawić filtrowanie po dostępności pokoi i śniadań
         
         if (breakfast && !newRooms.some(room => room.breakfast === 1)) {
             return false;

@@ -2,6 +2,9 @@
     "main":{
        "title": "Hotel finder",
        "motto":"Find the hotel of your dreams and relax on the best vacation under the sun",
+       "cookies": "This website uses cookies / local storage to function properly. If you do not agree with this, please leave the site.",
+
+
        "breadcrumbs":{
           "hotels":"Hotels"
        },

@@ -21,7 +21,7 @@ import fetchComments from "../../functions/fetch/comments/fetchComments";
 
 const OneHotel = (props) => {
   const { t } = useTranslation();
-  const [available, setAvailable] = useState();
+  const [available, setAvailable] = useState(false);
 
   const [commentAuthor, setCommentAuthor] = useState("");
   const [commentComment, setCommentComment] = useState("");
@@ -260,6 +260,8 @@ const OneHotel = (props) => {
               <h2>{t("hotel.comments.comments")}</h2>
               <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#commentModal">{t("hotel.comments.add")}</button>
           </div>
+
+          {/* //FIXME: nie działają polskie znaki podczas dodawania komentarza */}
 
           <div className="modal fade" id="commentModal" tabIndex="-1" aria-hidden="true">
             <div className="modal-dialog">
