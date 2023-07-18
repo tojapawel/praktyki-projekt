@@ -15,6 +15,7 @@ npm install
 ```
 
 uruchomienie dockera (na screen'ach w podanej kolejności):
+
 1. 
 ```bash
 docker-compose up -d
@@ -28,9 +29,7 @@ npm start
 ```bash
 cd hotel-finder
 npm run dev
-```
-
-najlepiej 
+``` 
 
 #### Podgląd projektu w czasie rzeczywistym
 
