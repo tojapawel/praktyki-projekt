@@ -43,9 +43,9 @@ const HotelCard = (props) => {
                     <div className="card-body">
                         <h5 className="card-title">
                             {hotel.name}
-                            <small>
-                                {hotel.promoted && <MdCampaign className='mx-2 promotedHotelTT' style={{position: 'relative', bottom: '3px'}} />}
-                            </small>
+                           
+                            {hotel.promoted === 1 && <small><MdCampaign className='mx-2 promotedHotelTT' style={{position: 'relative', bottom: '3px'}} /></small>}
+                            
                         </h5>
                         <p className="card-text">
                             <small className="text-primary">{hotel.city}, {hotel.address}</small>

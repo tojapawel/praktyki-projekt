@@ -25,17 +25,17 @@
         exit();
     }
 
-    $sql = "DELETE FROM hotelss";
+    $sql = "DELETE FROM hotels";
     $stmt = $conn->prepare($sql);
     if (!$stmt->execute()) {
-        echo "Error removing data from hotelss: " . $stmt->error;
+        echo "Error removing data from hotels: " . $stmt->error;
         exit();
     }
 
-    $sql = "ALTER TABLE hotelss AUTO_INCREMENT = 1";
+    $sql = "ALTER TABLE hotels AUTO_INCREMENT = 1";
     $stmt = $conn->prepare($sql);
     if (!$stmt->execute()) {
-        echo "Error resetting auto increment for hotelss: " . $stmt->error;
+        echo "Error resetting auto increment for hotels: " . $stmt->error;
         exit();
     }
 

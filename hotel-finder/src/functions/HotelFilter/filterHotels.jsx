@@ -15,7 +15,7 @@ const filterHotels = (hotels, rooms, selectedCity, reviewScore, stars, wifi, par
             return false;
         }
 
-        if (stars && hotel.stars !== stars) {
+        if (stars && hotel.stars != stars) {
             return false;
         }
 
