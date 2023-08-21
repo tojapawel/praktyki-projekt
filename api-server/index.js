@@ -198,14 +198,18 @@ app.get('/getattractions/:apiKey/:hotel_id', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
   if (!checkAPIKey(apiKey)) {
-    const query = `SELECT * FROM attractions WHERE hotel_id = "${hotel_id}"`;
+    const query = `SELECT * FROM attractions WHERE hotels = "${hotel_id}"`;
 
     connection.query(query, (error, results) => {
       if (error) {
         console.error('Error executing MySQL query:', error);
         res.status(500).json({ error: 'Error retrieving data from database' });
       } else {
-        res.json(results);
+        if (results.length === 0) {
+          res.status(403).send('invalid hotel id');
+        }else{
+          res.json(results);
+        }
       }
     });
   }else{

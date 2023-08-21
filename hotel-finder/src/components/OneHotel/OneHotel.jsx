@@ -18,6 +18,8 @@ import CalculateStars from "../../functions/calculateStars";
 import RoomRow from "./RoomRow";
 import LeafletMap from "../LeafletMap/LeafletMap";
 import fetchComments from "../../functions/fetch/comments/fetchComments";
+import fetchAttractions from "../../functions/fetch/fetchAttractions";
+import AttractionsRow from "./AttractionsRow";
 
 const OneHotel = (props) => {
   const { t } = useTranslation();
@@ -33,8 +35,18 @@ const OneHotel = (props) => {
     setComments(fetchedComments);
   };
 
+  const [attractions, setAttractions] = useState("");
+
+
+  const fetchAttractionsFunc = async () => {
+    const fetchedAttractions = await fetchAttractions(props.hotelId);
+    setAttractions(fetchedAttractions);
+  };
+
+
   useEffect(() => {
     fetchCommentsFunc();
+    fetchAttractionsFunc();
   }, []);
 
   const setMetadataColor = (val) => {
@@ -251,6 +263,35 @@ const OneHotel = (props) => {
                   : rooms.map((room, index) => (
                       <RoomRow key={index} room={room} hotelId={props.hotelId} index={index} />
                 ))}
+
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-5 pb-2 mx-4 text-dark border-bottom">
+              <h2>Atrakcje</h2>
+          </div>
+
+          <div className="table-responsive mx-4">
+            <table className="table text-center table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Nazwa</th>
+                  <th>Zdjęcie</th>
+                  <th>Ilość</th>
+                  <th>Cena</th>
+                  <th>Typ płatności</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                {attractions.length === 0 && (
+                  <tr>
+                    <th colSpan="8">Brak atrakcji dla wybranego hotelu</th>
+                  </tr>
+                )}
+
+                <AttractionsRow attractions={attractions} />
 
               </tbody>
             </table>
