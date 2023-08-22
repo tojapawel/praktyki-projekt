@@ -1,141 +1,156 @@
 {
-    "main":{
-       "title": "Hotel finder",
-       "motto":"Find the hotel of your dreams and relax on the best vacation under the sun",
-       "cookies": "This website uses cookies / local storage to function properly. If you do not agree with this, please leave the site.",
+  "main": {
+    "title": "Hotel finder",
+    "motto": "Find the hotel of your dreams and relax on the best vacation under the sun",
+    "cookies": "This website uses cookies / local storage to function properly. If you do not agree with this, please leave the site.",
 
-
-       "breadcrumbs":{
-          "hotels":"Hotels"
-       },
-       "button":{
-          "main":{
-             "searchHotels":"Search hotels",
-             "allHotels":"Show all hotels"
-          }
-       },
-       "input":{
-          "city":{
-             "chooseCity":"Choose city",
-             "emptyCity":"No matching results"
-          },
-          "guests":"Number of guests",
-          "date":{
-             "arrival":"Arrival date",
-             "departure":"Departure date"
-          }
-       }
+    "breadcrumbs": {
+      "hotels": "Hotels"
     },
-    "hotels":{
-       "filter":{
-          "info":"Filter hotels",
-          "city":"City",
-          "minReviewScore":"Minimum review score",
-          "price":{
-             "price":"Price",
-             "from":"from",
-             "to":"to"
-          },
-          "stars":{
-             "starsCount":"Number of stars",
-             "all":"All"
-          },
-          "metadata":{
-             "wifi":"Wifi",
-             "parking":"Parking",
-             "pets":"Pets",
-             "roomService":"Room service"
-          },
-          "room":{
-             "breakfast":"Breakfast",
-             "onlyAvailable":"Show only available"
-          },
-          "sort":{
-             "sort":"Sort",
-             "type":{
-                "default":"Default",
-                "stars":{
-                   "desc":"Stars descending",
-                   "asc":"Stars ascending"
-                },
-                "reviewScore":{
-                   "desc":"Review score descending",
-                   "asc":"Review score ascending"
-                },
-                "distanceFromCenter":{
-                   "desc":"Distance from center descending",
-                   "asc":"Distance from center ascending"
-                },
-                "hotelName":"Hotel name alphabetically",
-                "city":"City alphabetically"
-             },
-             "button":{
-                "reset":"Reset",
-                "filter":"Filter"
-             }
-          }
-       },
-       "hotelCard":{
-          "tooltip":{
-             "promoted":"Promoted",
-             "lowestPrice":"Price for the cheapest room per night"
-          },
-          "toCenter":"to center",
-          "reviewScore":"Review score",
-          "night":"night",
-          "showPrices":"Show prices"
-       },
-       "hotelsList":{
-          "info":"Below are the hotels that meet your requirements.",
-          "emptyHotels":{
-             "noHotels":"No hotels",
-             "info":"We couldn't find any hotels matching your preferences."
-          },
-         "hotelsFound": "Hotels found"
-       }
+    "button": {
+      "main": {
+        "searchHotels": "Search hotels",
+        "allHotels": "Show all hotels"
+      }
     },
-    "hotel":{
-       "distanceFromCenter":"Distance from center",
-       "roomCount":"Number of rooms",
-       "utilities":"Utilities",
-       "rooms":{
-          "rooms":"Rooms",
-          "beds":"Beds",
-          "familyRoom":"Family room",
-          "area":"Area",
-          "available":"Available",
-          "reservation":"Reservation"
-       },
-       "noAvailableHotels": "No available rooms",
-       "roomRow": {
-         "unAvailable": "unavailable",
-         "book": "Book"
-       },
-       "metadata":{
-          "true":{
-             "wifi":"The hotel offers free WiFi access throughout the property.",
-             "parking":"Guests have access to a large parking area with 300 spaces.",
-             "pets":"You can bring your pets to the hotel and enjoy your stay together.",
-             "roomService":"The hotel provides room service for guests."
-          },
-          "false":{
-             "wifi":"The hotel does not provide WiFi access for guests.",
-             "parking":"The hotel does not have parking facilities.",
-             "pets":"Pets are not allowed in the hotel.",
-             "roomService":"The hotel does not have room service."
-          }
-       },
-
-       "comments": {
-         "comments": "Comments",
-         "add": "Add comment",
-         "empty": "No comments",
-         "author": "Author",
-         "comment": "Comment",
-         "cancel": "Cancel"
-       }
-    },
-    "footer":{
-       "top":"Top"
+    "input": {
+      "city": {
+        "chooseCity": "Choose city",
+        "emptyCity": "No matching results"
+      },
+      "guests": "Number of guests",
+      "date": {
+        "arrival": "Arrival date",
+        "departure": "Departure date"
+      }
     }
- }
+  },
+  "hotels": {
+    "filter": {
+      "info": "Filter hotels",
+      "city": "City",
+      "minReviewScore": "Minimum review score",
+      "price": {
+        "price": "Price",
+        "from": "from",
+        "to": "to"
+      },
+      "stars": {
+        "starsCount": "Number of stars",
+        "all": "All"
+      },
+      "metadata": {
+        "wifi": "Wifi",
+        "parking": "Parking",
+        "pets": "Pets",
+        "roomService": "Room service"
+      },
+      "room": {
+        "breakfast": "Breakfast",
+        "onlyAvailable": "Show only available"
+      },
+      "sort": {
+        "sort": "Sort",
+        "type": {
+          "default": "Default",
+          "stars": {
+            "desc": "Stars descending",
+            "asc": "Stars ascending"
+          },
+          "reviewScore": {
+            "desc": "Review score descending",
+            "asc": "Review score ascending"
+          },
+          "distanceFromCenter": {
+            "desc": "Distance from center descending",
+            "asc": "Distance from center ascending"
+          },
+          "hotelName": "Hotel name alphabetically",
+          "city": "City alphabetically"
+        },
+        "button": {
+          "reset": "Reset",
+          "filter": "Filter"
+        }
+      }
+    },
+    "hotelCard": {
+      "tooltip": {
+        "promoted": "Promoted",
+        "lowestPrice": "Price for the cheapest room per night"
+      },
+      "toCenter": "to center",
+      "reviewScore": "Review score",
+      "night": "night",
+      "showPrices": "Show prices"
+    },
+    "hotelsList": {
+      "info": "Below are the hotels that meet your requirements.",
+      "emptyHotels": {
+        "noHotels": "No hotels",
+        "info": "We couldn't find any hotels matching your preferences."
+      },
+      "hotelsFound": "Hotels found"
+    }
+  },
+  "hotel": {
+    "distanceFromCenter": "Distance from center",
+    "roomCount": "Number of rooms",
+    "utilities": "Utilities",
+    "rooms": {
+      "rooms": "Rooms",
+      "beds": "Beds",
+      "familyRoom": "Family room",
+      "area": "Area",
+      "available": "Available",
+      "reservation": "Reservation"
+    },
+    "noAvailableHotels": "No available rooms",
+    "roomRow": {
+      "unAvailable": "unavailable",
+      "book": "Book"
+    },
+    "metadata": {
+      "true": {
+        "wifi": "The hotel offers free WiFi access throughout the property.",
+        "parking": "Guests have access to a large parking area with 300 spaces.",
+        "pets": "You can bring your pets to the hotel and enjoy your stay together.",
+        "roomService": "The hotel provides room service for guests."
+      },
+      "false": {
+        "wifi": "The hotel does not provide WiFi access for guests.",
+        "parking": "The hotel does not have parking facilities.",
+        "pets": "Pets are not allowed in the hotel.",
+        "roomService": "The hotel does not have room service."
+      }
+    },
+
+    "attractions": {
+      "attractions": "Attractions",
+      "name": "Name",
+      "image": "Image",
+      "quantity": "Quantity",
+      "price": "Price",
+      "noAttractions": "There are no attractions for the selected hotel",
+      "notAvailable": "not available",
+      "priceType": {
+        "text": "Payment type",
+        "onetime": "onetime",
+        "perday": "daily"
+      }
+    },
+
+    "comments": {
+      "comments": "Comments",
+      "add": "Add comment",
+      "empty": "There are no comments",
+      "author": "Author",
+      "comment": "Comment",
+      "cancel": "Cancel"
+    }
+  },
+
+  "footer": {
+    "top": "Top"
+  }
+}

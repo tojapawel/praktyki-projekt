@@ -269,29 +269,29 @@ const OneHotel = (props) => {
           </div>
 
           <div className="mt-5 pb-2 mx-4 text-dark border-bottom">
-              <h2>Atrakcje</h2>
+              <h2>{t("hotel.attractions.attractions")}</h2>
           </div>
 
           <div className="table-responsive mx-4">
             <table className="table text-center table-striped table-hover">
               <thead>
                 <tr>
-                  <th>Nazwa</th>
-                  <th>Zdjęcie</th>
-                  <th>Ilość</th>
-                  <th>Cena</th>
-                  <th>Typ płatności</th>
+                  <th>{t("hotel.attractions.name")}</th>
+                  <th>{t("hotel.attractions.image")}</th>
+                  <th>{t("hotel.attractions.quantity")}</th>
+                  <th>{t("hotel.attractions.price")}</th>
+                  <th>{t("hotel.attractions.priceType.text")}</th>
                 </tr>
               </thead>
               <tbody>
 
-                {attractions.length === 0 && (
-                  <tr>
-                    <th colSpan="8">Brak atrakcji dla wybranego hotelu</th>
-                  </tr>
-                )}
-
-                <AttractionsRow attractions={attractions} />
+                {attractions.length === 0 ? (
+                    <tr>
+                      <th colSpan="5">{t("hotel.attractions.noAttractions")}</th>
+                    </tr>
+                ) : attractions.map((attraction, index) => (
+                    <AttractionsRow key={index} attraction={attraction} index={index} />
+                ))}
 
               </tbody>
             </table>

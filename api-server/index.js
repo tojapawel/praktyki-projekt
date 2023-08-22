@@ -198,7 +198,9 @@ app.get('/getattractions/:apiKey/:hotel_id', (req, res) => {
   const hotel_id = req.params.hotel_id;
 
   if (!checkAPIKey(apiKey)) {
-    const query = `SELECT * FROM attractions WHERE hotels = "${hotel_id}"`;
+    // const query = `SELECT * FROM attractions WHERE hotels = "${hotel_id}"`;
+
+    const query = `SELECT h.hotel_id, a.id, a.name, a.image, a.quantity, a.price, a.price_type FROM hotels h JOIN hotel_attraction_mapping ham ON h.id = ham.hotel_id JOIN attractions a ON ham.attraction_id = a.id WHERE h.hotel_id = "${hotel_id}"`;
 
     connection.query(query, (error, results) => {
       if (error) {

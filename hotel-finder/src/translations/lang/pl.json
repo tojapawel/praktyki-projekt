@@ -3,7 +3,7 @@
     "title": "Hotel finder",
     "motto": "Znajdź hotel swoich marzeń i odpocznij na najlepszych wakacjach pod słońcem",
     "cookies": "Ta strona do poprawnego działania używa plików cookie / local storage. Jeżeli nie zgadzasz się z tym opuść stronę.",
-    
+
     "breadcrumbs": {
       "hotels": "Hotele"
     },
@@ -28,7 +28,7 @@
     }
   },
 
-  "hotels":{
+  "hotels": {
     "filter": {
       "info": "Filtrowanie hoteli",
       "city": "Miejscowość",
@@ -128,6 +128,21 @@
         "parking": "Hotel nie posiada parkingu.",
         "pets": "Do hotelu nie można wprowadzać zwierząt.",
         "roomService": "Hotel nie posiada obsługi pokoju."
+      }
+    },
+
+    "attractions": {
+      "attractions": "Atrakcje",
+      "name": "Nazwa",
+      "image": "Zdjęcie",
+      "quantity": "Ilość",
+      "price": "Cena",
+      "noAttractions": "Brak atrakcji dla wybranego hotelu",
+      "notAvailable": "niedostępne",
+      "priceType": {
+        "text": "Typ płatności",
+        "onetime": "jednorazowa",
+        "perday": "dziennie"
       }
     },
 
