@@ -302,8 +302,6 @@ const OneHotel = (props) => {
               <button type="button" className="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#commentModal">{t("hotel.comments.add")}</button>
           </div>
 
-          {/* //FIXME: nie działają polskie znaki podczas dodawania komentarza */}
-
           <div className="modal fade" id="commentModal" tabIndex="-1" aria-hidden="true">
             <div className="modal-dialog">
               <div className="modal-content">
