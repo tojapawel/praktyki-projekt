@@ -11,6 +11,8 @@ import "./App.css";
 import Index from "./routes/Index";
 import Hotels from "./routes/Hotels";
 import Hotel from "./routes/Hotel";
+import Reservation from "./routes/Reservation";
+
 import E404 from "./routes/errors/E404";
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/hotels/:city/:guests" element={<Hotels />} />
         <Route path="/hotel/:hotelId" element={<Hotel />} />
+        <Route path="/reservation/:hotelId/:roomId" element={<Reservation />} />
 
         <Route path="*" element={<E404 />} />
       </Routes>

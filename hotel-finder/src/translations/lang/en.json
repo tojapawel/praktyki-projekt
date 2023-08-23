@@ -108,7 +108,7 @@
     "noAvailableHotels": "No available rooms",
     "roomRow": {
       "unAvailable": "unavailable",
-      "book": "Book"
+      "book": "Reservation"
     },
     "metadata": {
       "true": {

@@ -172,6 +172,27 @@ app.get('/gethotel/:apiKey/:hotel_id', (req, res) => {
   }
 });
 
+//pobieranie informacji o pokoju
+app.get('/getroom/:apiKey/:room_id', (req, res) => {
+  const apiKey = req.params.apiKey;
+  const room_id = req.params.room_id;
+
+  if (!checkAPIKey(apiKey)) {
+    const query = `SELECT * FROM rooms WHERE id = "${room_id}"`;
+
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error retrieving data from database' });
+      } else {
+        res.json(results);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
+});
+
 //pobieranie miast
 app.get('/getcities/:apiKey', (req, res) => {
   const apiKey = req.params.apiKey;

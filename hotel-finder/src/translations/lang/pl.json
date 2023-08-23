@@ -5,7 +5,8 @@
     "cookies": "Ta strona do poprawnego działania używa plików cookie / local storage. Jeżeli nie zgadzasz się z tym opuść stronę.",
 
     "breadcrumbs": {
-      "hotels": "Hotele"
+      "hotels": "Hotele",
+      "reservation": "Rezerwacja"
     },
 
     "button": {
@@ -158,5 +159,13 @@
 
   "footer": {
     "top": "Góra"
+  },
+
+  "reservation": {
+    "main": {
+      "roomReservation": "Rezerwacja pokoju",
+      "info": "Rezerwujesz pokój w hotelu <strong>{{hotelName}}</strong> w miejscowości <strong>{{hotelCity}}</strong>"
+    },
+    "date": "Informacje o pobycie"
   }
 }
