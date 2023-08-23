@@ -213,6 +213,26 @@ app.get('/getcities/:apiKey', (req, res) => {
   }
 });
 
+//pobieranie kodów promocyjnych
+app.get('/getpromocodes/:apiKey', (req, res) => {
+  const apiKey = req.params.apiKey;
+
+  if (!checkAPIKey(apiKey)) {
+    const query = `SELECT code, value FROM promo_codes`;
+
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error retrieving data from database' });
+      } else {
+        res.json(results);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
+});
+
 //pobieranie atrakcji które mają przypisany hotel o id=hotel_id
 app.get('/getattractions/:apiKey/:hotel_id', (req, res) => {
   const apiKey = req.params.apiKey;

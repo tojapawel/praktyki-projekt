@@ -164,7 +164,7 @@
   "reservation": {
     "main": {
       "roomReservation": "Rezerwacja pokoju",
-      "info": "Rezerwujesz pokój w hotelu <strong>{{hotelName}}</strong> w miejscowości <strong>{{hotelCity}}</strong>"
+      "info": "Rezerwujesz pokój w hotelu"
     },
     "date": "Informacje o pobycie"
   }

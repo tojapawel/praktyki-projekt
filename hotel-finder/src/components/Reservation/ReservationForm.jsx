@@ -49,28 +49,18 @@ const ReservationForm = (props) => {
         setPrice((daysCount*room.price) - (daysCount*room.price)*promo/100);
     }, [daysCount, promo]);
 
+
     const handlePromoCode = () => {
         setPromoCodeShow(promoCode);
 
-        // TODO: Pobieranie kodów rabatowych z bazy danych
+        const foundCode = props.codes.find(item => item.code === promoCode);
 
-        switch (promoCode.toString()) {
-            case "MINUS10":
-                setPromo(10);
-                setPromoError(false);
-                break;
-            case "MINUS30":
-                setPromo(30);
-                setPromoError(false);
-                break;
-            case "":
-                setPromo(0);
-                setPromoError(false);
-                break;
-            default:
-                setPromo(0);
-                setPromoError(true);
-                break;
+        if (foundCode) {
+            setPromo(foundCode.value);
+            setPromoError(false);
+        }else{
+            setPromo(0);
+            setPromoError(true);
         }
     }
 
@@ -113,7 +103,7 @@ const ReservationForm = (props) => {
             <main>
                 <div className="py-5 text-center">
                     <h2>Rezerwacja pokoju</h2>
-                    <p className="lead" dangerouslySetInnerHTML={{ __html: t("reservation.main.info", { hotelName: hotel.name, hotelCity: hotel.city }) }} />
+                    <p className="lead" >{t("reservation.main.info")} {hotel.name}, <b>{hotel.city}</b></p>
                 </div>
     
 
@@ -150,7 +140,7 @@ const ReservationForm = (props) => {
 
                             <li className="list-group-item d-flex justify-content-between">
                                 <span>Razem</span>
-                                <strong>{price} zł</strong>
+                                <strong>{price.toFixed(2)} zł</strong>
                             </li>
                         </ul>
 
