@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line
 import i18n from "../../translations/i18n";
 import { useTranslation } from "react-i18next";
+
+import CryptoJS from 'crypto-js';
   
 const ReservationForm = (props) => {
     const { t } = useTranslation();
@@ -20,6 +22,7 @@ const ReservationForm = (props) => {
     const [promo, setPromo] = useState(0);
     const [promoCode, setPromoCode] = useState(null);
     const [promoCodeShow, setPromoCodeShow] = useState(null);
+    const [promoCodeHash, setPromoCodeHash] = useState(null);
     const [promoError, setPromoError] = useState(false);
 
     const [price, setPrice] = useState(0);
@@ -49,11 +52,14 @@ const ReservationForm = (props) => {
         setPrice((daysCount*room.price) - (daysCount*room.price)*promo/100);
     }, [daysCount, promo]);
 
+    useEffect(() => {
+        setPromoCodeHash(CryptoJS.SHA256(promoCode).toString(CryptoJS.enc.Hex));
+    }, [promoCode]);
 
     const handlePromoCode = () => {
         setPromoCodeShow(promoCode);
 
-        const foundCode = props.codes.find(item => item.code === promoCode);
+        const foundCode = props.codes.find(item => item.code === promoCodeHash);
 
         if (foundCode) {
             setPromo(foundCode.value);
