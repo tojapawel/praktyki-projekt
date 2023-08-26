@@ -218,7 +218,7 @@ app.get('/getpromocodes/:apiKey', (req, res) => {
   const apiKey = req.params.apiKey;
 
   if (!checkAPIKey(apiKey)) {
-    const query = `SELECT code, value FROM promo_codes`;
+    const query = `SELECT code, value, quantity FROM promo_codes`;
 
     connection.query(query, (error, results) => {
       if (error) {
