@@ -16,6 +16,7 @@ const ReservationForm = (props) => {
   const [arrivalDate, setArrivalDate] = useState();
   const [departueDate, setDepartueDate] = useState();
   const [dateError, setDateError] = useState("");
+  const [dateLoaded, setDateLoaded] = useState(false);
 
   const [promo, setPromo] = useState(0);
   const [promoCode, setPromoCode] = useState(null);
@@ -36,22 +37,45 @@ const ReservationForm = (props) => {
   const room = props.room[0];
 
   useEffect(() => {
-    var today = new Date();
-
-    if (departueDate > 0 && arrivalDate > 0) {
-      if (today <= arrivalDate || today <= departueDate) {
-        if (departueDate > arrivalDate) {
-          setDaysCount((departueDate - arrivalDate) / (1000 * 60 * 60 * 24));
-          setDateError(null);
-        } else {
-          setDaysCount(0);
-          setDateError("Data przyjazdu nie może być wcześniejsza niż data wyjazdu.");
-        }
-      } else {
-        setDaysCount(0);
-        setDateError("Daty nie mogą być z przeszłości.");
-      }
+    const arrivalDateStorage = localStorage.getItem('arrivalDate');
+    const departueDateStorage = localStorage.getItem('departueDate');
+    if (arrivalDateStorage !== null && departueDateStorage !== null && !dateLoaded) {
+      setArrivalDate(arrivalDateStorage);
+      setDepartueDate(departueDateStorage);
+      setDateLoaded(true);
     }
+  }, []);
+
+  useEffect(() => {
+    const today = new Date();
+    const tempArrivalDate = new Date(arrivalDate);
+    const tempDepartueDate = new Date(departueDate);
+  
+    const checkDate = () => {
+      if (tempDepartueDate < 0 || tempArrivalDate < 0) {
+        setDateError("Daty nie mogą być ujemne.");
+        setDaysCount(0);
+        return;
+      }
+  
+      if (today > tempArrivalDate || today > tempDepartueDate) {
+        setDateError("Daty nie mogą być z przeszłości.");
+        setDaysCount(0);
+        return;
+      }
+  
+      if (tempDepartueDate <= tempArrivalDate) {
+        setDateError("Data przyjazdu nie może być wcześniejsza niż data wyjazdu.");
+        setDaysCount(0);
+        return;
+      }
+  
+      const daysDifference = (tempDepartueDate - tempArrivalDate) / (1000 * 60 * 60 * 24);
+      setDaysCount(daysDifference);
+      setDateError(null);
+    };
+  
+    checkDate();
   }, [arrivalDate, departueDate]);
 
   useEffect(() => {
@@ -238,7 +262,8 @@ const ReservationForm = (props) => {
                       type="date"
                       className="form-control"
                       id="arrivalDate"
-                      onChange={(e) => setArrivalDate(new Date(e.target.value))}
+                      value={arrivalDate || ''}
+                      onChange={(e) => setArrivalDate(e.target.value)}
                     />
                     <label htmlFor="arrivalDate">{t("main.input.date.arrival")}</label>
                   </div>
@@ -249,7 +274,8 @@ const ReservationForm = (props) => {
                       type="date"
                       className="form-control"
                       id="departueDate"
-                      onChange={(e) => setDepartueDate(new Date(e.target.value))}
+                      value={departueDate || ''}
+                      onChange={(e) => setDepartueDate(e.target.value)}
                     />
                     <label htmlFor="departueDate">{t("main.input.date.departure")}</label>
                   </div>

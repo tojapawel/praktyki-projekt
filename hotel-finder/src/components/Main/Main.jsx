@@ -18,6 +18,8 @@ const Main = () => {
 
   const [selectedCity, setSelectedCity] = useState([]);
 	const [guests, setGuests] = useState("");
+	const [arrivalDate, setArrivalDate] = useState("");
+	const [departueDate, setDepartueDate] = useState("");
   const [disabled, setDisabled] = useState("");
 
   const [cookieClosed, setCookieClosed] = useState(false);
@@ -39,13 +41,13 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    //TODO: zrobić, zeby walidowało czy data jest wprowadzona 
-    if(selectedCity.length > 0 && guests.length > 0){
+    //TODO: zrobić, sprawdzanie poprawności wybranych dat
+    if(selectedCity.length > 0 && guests.length > 0 && arrivalDate.length > 0 && departueDate.length > 0){
       setDisabled("");
     }else{
       setDisabled(styles.disabled);
     }
-  }, [selectedCity, guests]);
+  }, [selectedCity, guests, arrivalDate, departueDate]);
 
   let cities = data.map(city => city.city);
 
@@ -59,10 +61,16 @@ const Main = () => {
   }
 
   const handleSearch = () => {
-    //TODO: zrobić, żeby wybrane daty przyjazdu i wyjazdu zapisywały się w localstorage
-    // localStorage.setItem('arrivalDate', "test");
+    localStorage.setItem('arrivalDate', arrivalDate);
+    localStorage.setItem('departueDate', departueDate);
     navigate(`/hotels/${selectedCity}/${guests}`);
-  };
+  }
+
+  const handleAllHotels = () => {
+    localStorage.removeItem('arrivalDate');
+    localStorage.removeItem('departueDate');
+    navigate(`/hotels`);
+  }
   
   return (
     <div className="container col-xl-10 col-xxl-8 px-4 py-5 vertical_center">
@@ -95,13 +103,13 @@ const Main = () => {
               <div className="row">
                 <div className="col">
                   <div className="form-floating mb-3">
-                    <input type="date" className="form-control" id="arrivalDate" />
+                    <input type="date" className="form-control" id="arrivalDate" onChange={(e) => setArrivalDate(e.target.value)}/>
                     <label htmlFor="arrivalDate">{t("main.input.date.arrival")}</label>
                   </div>
                 </div>
                 <div className="col">
                   <div className="form-floating mb-3">
-                    <input type="date" className="form-control" id="departueDate" />
+                    <input type="date" className="form-control" id="departueDate" onChange={(e) => setDepartueDate(e.target.value)}/>
                     <label htmlFor="departueDate">{t("main.input.date.departure")}</label>
                   </div>
                 </div>
@@ -111,7 +119,7 @@ const Main = () => {
             
             <hr className="my-4" />
             <small className="text-body-secondary">
-              <Link to={`/hotels/`}>{t("main.button.main.allHotels")}</Link>
+              <a href="" onClick={handleAllHotels}>{t("main.button.main.allHotels")}</a>
             </small>
           </div>
         </div>
