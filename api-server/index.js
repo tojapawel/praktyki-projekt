@@ -1,37 +1,30 @@
 const crypto = require('crypto');
-
 const express = require('express');
 const mysql = require('mysql');
 
 const app = express();
 const port = 3001;
+const API_KEY = 'ff65e1e206a6754a5641ce1fb13c628c772b51d6';
 
 //klucz API: sUdwM2xbtu
 function checkAPIKey(key) {
-  const API_KEY = 'ff65e1e206a6754a5641ce1fb13c628c772b51d6';
-  const hashKey = crypto.createHash('sha1');
-  hashKey.update(key);
-  if (API_KEY === hashKey.digest('hex')) {
-    return 0;
-  }else{
-    return 1;
-  }
+  const hashKey = crypto.createHash('sha1').update(key).digest('hex');
+  return API_KEY === hashKey ? 0 : 1;
 }
 
-app.use(function(req, res, next){
+app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://hassioustka.duckdns.org:3354');
-  // res.header('Access-Control-Allow-Origin', 'http://192.168.0.137:3000');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
 const connection = mysql.createConnection({
   host: '192.168.0.137',
-   user: 'root',
-   password: 'root',
-   database: 'hotel-finder',
-   port: 33075
-  });
+  user: 'root',
+  password: 'root',
+  database: 'hotel-finder',
+  port: 33075
+});
   
 connection.connect((err) => {
   if (err) {

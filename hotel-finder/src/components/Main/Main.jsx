@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Typeahead } from "react-bootstrap-typeahead";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "react-bootstrap-typeahead/css/Typeahead.css";
 
 import fetchCities from "../../functions/fetch/fetchCities";
@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 
 const Main = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const [selectedCity, setSelectedCity] = useState([]);
 	const [guests, setGuests] = useState("");
@@ -38,6 +39,7 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
+    //TODO: zrobić, zeby walidowało czy data jest wprowadzona 
     if(selectedCity.length > 0 && guests.length > 0){
       setDisabled("");
     }else{
@@ -55,6 +57,12 @@ const Main = () => {
     localStorage.setItem('cookiesOK', true);
     setCookieClosed(true);
   }
+
+  const handleSearch = () => {
+    //TODO: zrobić, żeby wybrane daty przyjazdu i wyjazdu zapisywały się w localstorage
+    // localStorage.setItem('arrivalDate', "test");
+    navigate(`/hotels/${selectedCity}/${guests}`);
+  };
   
   return (
     <div className="container col-xl-10 col-xxl-8 px-4 py-5 vertical_center">
@@ -99,7 +107,8 @@ const Main = () => {
                 </div>
               </div>
             </div>
-            <Link className={`w-100 btn btn-lg btn-primary mb-3 ${disabled}`} to={`/hotels/${selectedCity}/${guests}`}>{t("main.button.main.searchHotels")}</Link>
+            <a href="" className={`w-100 btn btn-lg btn-primary mb-3 ${disabled}`} onClick={handleSearch}>{t("main.button.main.searchHotels")}</a>
+            
             <hr className="my-4" />
             <small className="text-body-secondary">
               <Link to={`/hotels/`}>{t("main.button.main.allHotels")}</Link>
