@@ -1,7 +1,7 @@
 import { MdHome } from "react-icons/md";
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line
 import i18n from "../../translations/i18n";
@@ -11,6 +11,7 @@ import CryptoJS from "crypto-js";
 
 const ReservationForm = (props) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const [daysCount, setDaysCount] = useState(0);
   const [arrivalDate, setArrivalDate] = useState();
@@ -30,6 +31,7 @@ const ReservationForm = (props) => {
   const [addressError, setAddressError] = useState(false);
   const [cityError, setCityError] = useState(false);
   const [zipError, setZipError] = useState(false);
+  const [paymentError, setPaymentError] = useState(false);
 
   const [price, setPrice] = useState(0);
 
@@ -50,6 +52,7 @@ const ReservationForm = (props) => {
     const today = new Date();
     const tempArrivalDate = new Date(arrivalDate);
     const tempDepartueDate = new Date(departueDate);
+    setDaysCount(0);
   
     const checkDate = () => {
       if (tempDepartueDate < 0 || tempArrivalDate < 0) {
@@ -71,7 +74,12 @@ const ReservationForm = (props) => {
       }
   
       const daysDifference = (tempDepartueDate - tempArrivalDate) / (1000 * 60 * 60 * 24);
-      setDaysCount(daysDifference);
+      if (daysDifference) {
+        setDaysCount(daysDifference);
+      }else{
+        setDaysCount(0);
+      }
+      
       setDateError(null);
     };
   
@@ -106,13 +114,14 @@ const ReservationForm = (props) => {
     }
   };
 
-  function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
+  function validateString(str, pattern) {
+    return pattern.test(str);
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    var formOkey = true;
 
     const formData = [
       event.target[0].value, // firstname
@@ -124,21 +133,58 @@ const ReservationForm = (props) => {
       event.target[6].value, // zip
     ];
 
-    setFirstNameError(!formData[0] ? "Pole imie nie może być puste." : false);
-    setLastNameError(!formData[1] ? "Pole nazwisko nie może być puste." : false);
+    if (!formData[0]) {
+      setFirstNameError("Pole imie nie może być puste.");
+      formOkey = false;
+    }else{
+      setFirstNameError(false);
+    }
 
+    if (!formData[1]) {
+      setLastNameError("Pole nazwisko nie może być puste.");
+      formOkey = false;
+    }else{
+      setLastNameError(false);
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const emailInput = formData[2];
     if (!emailInput) {
       setMailError("Pole email nie może być puste.");
-    } else if (!validateEmail(emailInput)) {
+      formOkey = false;
+    } else if (!validateString(emailInput, emailPattern)) {
       setMailError("Nieprawidłowy format adresu email.");
+      formOkey = false;
     } else {
       setMailError(false);
     }
 
-    setAddressError(!formData[3] ? "Pole adres nie może być puste." : false);
-    setCityError(!formData[5] ? "Pole miasto nie może być puste." : false);
-    setZipError(!formData[6] ? "Pole kod pocztowy nie może być puste." : false);
+    if (!formData[3]) {
+      setAddressError("Pole adres nie może być puste.");
+      formOkey = false;
+    }else{
+      setAddressError(false);
+    }
+
+    if (!formData[5]) {
+      setCityError("Pole miasto nie może być puste.");
+      formOkey = false;
+    }else{
+      setCityError(false);
+    }
+        
+    var zipFormat = /^[A-Z0-9]{2}-[A-Z0-9]{3}$/;
+    var zip = formData[6];
+    
+    if (!zip) {
+      setZipError("Pole kod pocztowy nie może być puste.");
+      formOkey = false;
+    } else if (!zipFormat.test(zip)) {
+      setZipError("Nieprawidłowy format kodu pocztowego.");
+      formOkey = false;
+    } else {
+      setZipError(false);
+    }
 
     const paymentOptions = ["card", "qtransfer", "transfer", "blik"];
     let payment = null;
@@ -150,10 +196,18 @@ const ReservationForm = (props) => {
       }
     }
 
-    formData.push(payment);
-    console.log(formData);
+    if (!payment) {
+      setPaymentError("Należy wybrać sposób płatności.");
+      formOkey = false;
+    }else{
+      setPaymentError(false);
+    }
 
-    // TODO: obsługa formularza
+    formData.push(payment, hotel.id, room.id, price, new Date(arrivalDate), new Date(departueDate), new Date());
+
+    if (formOkey) {
+      navigate(`/reservation/final/?data=${JSON.stringify(formData)}`);
+    }
   };
 
   return (
@@ -417,6 +471,7 @@ const ReservationForm = (props) => {
                     Blik
                   </label>
                 </div>
+                {paymentError != "" && <div className="text-danger">{paymentError}</div>}
               </div>
 
               <hr className="my-4" />

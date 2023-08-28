@@ -12,6 +12,7 @@ import Index from "./routes/Index";
 import Hotels from "./routes/Hotels";
 import Hotel from "./routes/Hotel";
 import Reservation from "./routes/Reservation";
+import ReservationFinal from "./components/Reservation/ReservationFinal";
 
 import E404 from "./routes/errors/E404";
 
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/hotels/:city/:guests" element={<Hotels />} />
         <Route path="/hotel/:hotelId" element={<Hotel />} />
         <Route path="/reservation/:hotelId/:roomId" element={<Reservation />} />
+        <Route path="/reservation/final" element={<ReservationFinal />} />
 
         <Route path="*" element={<E404 />} />
       </Routes>

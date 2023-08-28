@@ -61,6 +61,65 @@ app.get('/addcomment/:apiKey/:hotelid/:author/:comment', (req, res) => {
   }
 });
 
+//zmiana dostępności pokoju
+app.get('/changeavailable/:apiKey/:roomid/:value', (req, res) => {
+  const apiKey = req.params.apiKey;
+
+  const roomid = req.params.roomid;
+  const value = req.params.value;
+
+  if (!checkAPIKey(apiKey)) {
+    const query = `UPDATE rooms SET available = ${value} WHERE id = ${roomid}`;
+
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error executing MySQL query: ' + error.message });
+      } else {
+        res.json(0);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
+});
+
+//dodawanie rezerwacji
+app.get('/addReservation/:apiKey/:firstName/:lastName/:email/:address/:address2/:city/:zip/:payment/:hotel_id/:room_id/:price/:arrival_date/:departue_date/:reservation_date/', (req, res) => {
+  const apiKey = req.params.apiKey;
+
+  const firstName = req.params.firstName;
+  const lastName = req.params.lastName;
+  const email = req.params.email;
+  const address = req.params.address;
+  const address2 = req.params.address2;
+  const city = req.params.city;
+  const zip = req.params.zip;
+  const payment = req.params.payment;
+  const hotel_id = req.params.hotel_id;
+  const room_id = req.params.room_id;
+  const price = req.params.price;
+  const arrival_date = req.params.arrival_date;
+  const departue_date = req.params.departue_date;
+  const reservation_date = req.params.reservation_date;
+
+
+  if (!checkAPIKey(apiKey)) {
+    const query = `INSERT INTO reservations VALUES (NULL, '${firstName}', '${lastName}', '${email}', '${address}', '${address2}', '${city}', '${zip}', '${payment}', ${hotel_id}, ${room_id}, ${price}, '${arrival_date}', '${departue_date}', '${reservation_date}')`;
+
+    connection.query(query, (error, results) => {
+      if (error) {
+        console.error('Error executing MySQL query:', error);
+        res.status(500).json({ error: 'Error executing MySQL query: ' + error.message });
+      } else {
+        res.json(0);
+      }
+    });
+  }else{
+    res.status(403).send('invalid api key');
+  }
+});
+
 //pobieranie komentarzy dla danego hotelu
 app.get('/comments/:apiKey/:id', (req, res) => {
   const commentId = req.params.id;
@@ -274,7 +333,6 @@ app.get('/getreservations/:apiKey', (req, res) => {
     res.status(403).send('invalid api key');
   }
 });
-
 
 app.post;
 
