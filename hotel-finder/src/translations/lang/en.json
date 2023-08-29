@@ -5,7 +5,8 @@
     "cookies": "This website uses cookies / local storage to function properly. If you do not agree with this, please leave the site.",
 
     "breadcrumbs": {
-      "hotels": "Hotels"
+      "hotels": "Hotels",
+      "reservation": "Reservation"
     },
     "button": {
       "main": {
@@ -152,5 +153,66 @@
 
   "footer": {
     "top": "Top"
+  },
+
+  "reservation": {
+    "main": {
+      "roomReservation": "Room reservation",
+      "info": "You book a hotel room in "
+    },
+    "summary": {
+      "summaryText": "Summary",
+      "daysCount": "Days count",
+      "pricePerNight": "Price for room per night",
+      "promoCode": "Promotion code",
+      "summary": "Summary",
+      "promoCodeBtn": "Save"
+    },
+    "date": "Stay information",
+    "personalData": {
+      "personalDataText": "Personal data",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "address": "Address",
+      "address2": "Address 2",
+      "city": "City",
+      "zip": "ZIP code"
+    },
+    "payment": {
+      "payment": "Payment",
+      "card": "Card",
+      "qtransfer": "Quick transfer",
+      "transfer": "Transfer",
+      "blik": "Blik"
+    },
+    "goNextBtn": "Go to payment",
+    "errors": {
+      "date": {
+        "empty": "Select arrival and departure date.",
+        "minus": "Dates can not be on minus.",
+        "past": "Dates cannot be in the past.",
+        "future": "The arrival date cannot be earlier than the departure date."
+      },
+      "promoCode": {
+        "used": "The discount code has already been used.",
+        "bad": "The discount code is incorrect."
+      },
+      "personalData": {
+        "firstName": "The first name field cannot be empty.",
+        "lastName": "The last name field cannot be empty.",
+        "email": {
+          "empty": "The email field cannot be empty.",
+          "bad": "Nieprawidłowy format adresu email."
+        },
+        "address": "The address field cannot be empty.",
+        "city": "The city field cannot be empty.",
+        "zip": {
+          "empty": "The zip field cannot be empty.",
+          "bad": "Nieprawidłowy format kodu pocztowego."
+        }
+      },
+      "payment": "Select a payment method."
+    }
   }
 }

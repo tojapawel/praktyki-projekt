@@ -166,6 +166,59 @@
       "roomReservation": "Rezerwacja pokoju",
       "info": "Rezerwujesz pokój w hotelu"
     },
-    "date": "Informacje o pobycie"
+    "summary": {
+      "summaryText": "Podsumowanie",
+      "daysCount": "Ilość dni",
+      "pricePerNight": "Cena za noc w pokoju",
+      "promoCode": "Kod promocyjny",
+      "summary": "Razem",
+      "promoCodeBtn": "Zatwierdź"
+    },
+    "date": "Informacje o pobycie",
+    "personalData": {
+      "personalDataText": "Dane do faktury",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "Email",
+      "address": "Adres",
+      "address2": "Adres 2",
+      "city": "Miejscowość",
+      "zip": "Kod pocztowy"
+    },
+    "payment": {
+      "payment": "Płatność",
+      "card": "Karta",
+      "qtransfer": "Szybki przelew",
+      "transfer": "Tradycyjny przelew",
+      "blik": "Blik"
+    },
+    "goNextBtn": "Przejdź do płatności",
+    "errors": {
+      "date": {
+        "empty": "Należy wybrać datę przyjazdu i wyjazdu.",
+        "minus": "Daty nie mogą być ujemne.",
+        "past": "Daty nie mogą być z przeszłości.",
+        "future": "Data przyjazdu nie może być wcześniejsza niż data wyjazdu."
+      },
+      "promoCode": {
+        "used": "Kod rabatowy został już wykorzystany.",
+        "bad": "Kod rabatowy jest niepoprawny."
+      },
+      "personalData": {
+        "firstName": "Pole imie nie może być puste.",
+        "lastName": "Pole nazwisko nie może być puste.",
+        "email": {
+          "empty": "Pole email nie może być puste.",
+          "bad": "Nieprawidłowy format adresu email."
+        },
+        "address": "Pole adres nie może być puste.",
+        "city": "Pole miasto nie może być puste.",
+        "zip": {
+          "empty": "Pole kod pocztowy nie może być puste.",
+          "bad": "Nieprawidłowy format kodu pocztowego."
+        }
+      },
+      "payment": "Należy wybrać sposób płatności."
+    }
   }
 }

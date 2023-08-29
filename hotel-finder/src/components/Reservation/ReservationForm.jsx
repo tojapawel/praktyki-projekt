@@ -56,19 +56,19 @@ const ReservationForm = (props) => {
   
     const checkDate = () => {
       if (tempDepartueDate < 0 || tempArrivalDate < 0) {
-        setDateError("Daty nie mogą być ujemne.");
+        setDateError(t("reservation.errors.date.minus"));
         setDaysCount(0);
         return;
       }
   
       if (today > tempArrivalDate || today > tempDepartueDate) {
-        setDateError("Daty nie mogą być z przeszłości.");
+        setDateError(t("reservation.errors.date.past"));
         setDaysCount(0);
         return;
       }
   
       if (tempDepartueDate <= tempArrivalDate) {
-        setDateError("Data przyjazdu nie może być wcześniejsza niż data wyjazdu.");
+        setDateError(t("reservation.errors.date.future"));
         setDaysCount(0);
         return;
       }
@@ -106,11 +106,11 @@ const ReservationForm = (props) => {
         setPromoError(null);
       } else {
         setPromo(0);
-        setPromoError(`Kod rabatowy ${promoCodeShow} został już wykorzystany.`);
+        setPromoError(t("reservation.errors.promoCode.used"));
       }
     } else {
       setPromo(0);
-      setPromoError(`Kod rabatowy ${promoCodeShow} jest niepoprawny.`);
+      setPromoError(t("reservation.errors.promoCode.bad"));
     }
   };
 
@@ -133,15 +133,20 @@ const ReservationForm = (props) => {
       event.target[6].value, // zip
     ];
 
+    if (!arrivalDate || !departueDate) {
+      setDateError(t("reservation.errors.date.empty"));
+      formOkey = false;
+    }
+
     if (!formData[0]) {
-      setFirstNameError("Pole imie nie może być puste.");
+      setFirstNameError(t("reservation.errors.personalData.firstName"));
       formOkey = false;
     }else{
       setFirstNameError(false);
     }
 
     if (!formData[1]) {
-      setLastNameError("Pole nazwisko nie może być puste.");
+      setLastNameError(t("reservation.errors.personalData.lastName"));
       formOkey = false;
     }else{
       setLastNameError(false);
@@ -150,24 +155,24 @@ const ReservationForm = (props) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const emailInput = formData[2];
     if (!emailInput) {
-      setMailError("Pole email nie może być puste.");
+      setMailError(t("reservation.errors.personalData.email.empty"));
       formOkey = false;
     } else if (!validateString(emailInput, emailPattern)) {
-      setMailError("Nieprawidłowy format adresu email.");
+      setMailError(t("reservation.errors.personalData.email.bad"));
       formOkey = false;
     } else {
       setMailError(false);
     }
 
     if (!formData[3]) {
-      setAddressError("Pole adres nie może być puste.");
+      setAddressError(t("reservation.errors.personalData.address"));
       formOkey = false;
     }else{
       setAddressError(false);
     }
 
     if (!formData[5]) {
-      setCityError("Pole miasto nie może być puste.");
+      setCityError(t("reservation.errors.personalData.city"));
       formOkey = false;
     }else{
       setCityError(false);
@@ -177,10 +182,10 @@ const ReservationForm = (props) => {
     var zip = formData[6];
     
     if (!zip) {
-      setZipError("Pole kod pocztowy nie może być puste.");
+      setZipError(t("reservation.errors.personalData.zip.empty"));
       formOkey = false;
     } else if (!zipFormat.test(zip)) {
-      setZipError("Nieprawidłowy format kodu pocztowego.");
+      setZipError(t("reservation.errors.personalData.zip.bad"));
       formOkey = false;
     } else {
       setZipError(false);
@@ -197,7 +202,7 @@ const ReservationForm = (props) => {
     }
 
     if (!payment) {
-      setPaymentError("Należy wybrać sposób płatności.");
+      setPaymentError(t("reservation.errors.payment"));
       formOkey = false;
     }else{
       setPaymentError(false);
@@ -246,7 +251,7 @@ const ReservationForm = (props) => {
 
       <main>
         <div className="py-5 text-center">
-          <h2>Rezerwacja pokoju</h2>
+          <h2>{t("reservation.main.roomReservation")}</h2>
           <p className="fs-5 text-secondary">
             {t("reservation.main.info")} <strong>{hotel.name}</strong>
           </p>
@@ -255,18 +260,18 @@ const ReservationForm = (props) => {
         <div className="row g-5">
           <div className="col-md-5 col-lg-4 order-md-last">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
-              <span className="text-primary">Podsumowanie</span>
+              <span className="text-primary">{t("reservation.summary.summaryText")}</span>
             </h4>
             <ul className="list-group mb-3">
               <li className="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                  <h6 className="my-0">Ilość dni</h6>
+                  <h6 className="my-0">{t("reservation.summary.daysCount")}</h6>
                 </div>
                 <span className="text-body-secondary">{daysCount}</span>
               </li>
               <li className="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                  <h6 className="my-0">Cena za noc w pokoju</h6>
+                  <h6 className="my-0">{t("reservation.summary.pricePerNight")}</h6>
                 </div>
                 <span className="text-body-secondary">{room.price} zł</span>
               </li>
@@ -275,7 +280,7 @@ const ReservationForm = (props) => {
                 <>
                   <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
                     <div className="text-success">
-                      <h6 className="my-0">Kod promocyjny</h6>
+                      <h6 className="my-0">{t("reservation.summary.promoCode")}</h6>
                       <small>{promoCodeShow}</small>
                     </div>
                     <span className="text-success">−{promo} %</span>
@@ -284,7 +289,7 @@ const ReservationForm = (props) => {
               )}
 
               <li className="list-group-item d-flex justify-content-between">
-                <span>Razem</span>
+                <span>{t("reservation.summary.summary")}</span>
                 <strong>{price.toFixed(2)} zł</strong>
               </li>
             </ul>
@@ -293,11 +298,11 @@ const ReservationForm = (props) => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Kod promocyjny"
+                placeholder={t("reservation.summary.promoCode")}
                 onChange={(e) => setPromoCode(e.target.value)}
               />
               <button className="btn btn-secondary" onClick={handlePromoCode}>
-                Zatwierdź
+                {t("reservation.summary.promoCodeBtn")}
               </button>
             </div>
 
@@ -306,7 +311,7 @@ const ReservationForm = (props) => {
           <div className="col-md-7 col-lg-8">
             <hr className="my-4" />
 
-            <h4 className="mb-3">Informacje o pobycie</h4>
+            <h4 className="mb-3">{t("reservation.date")}</h4>
 
             <div className="my-3">
               <div className="row">
@@ -340,12 +345,12 @@ const ReservationForm = (props) => {
 
             <hr className="my-4" />
 
-            <h4 className="mb-3">Dane do faktury</h4>
+            <h4 className="mb-3">{t("reservation.personalData.personalDataText")}</h4>
             <form className="needs-validation" onSubmit={handleSubmit}>
               <div className="row g-3">
                 <div className="col-sm-6">
                   <label htmlFor="firstName" className="form-label">
-                    Imie
+                  {t("reservation.personalData.firstName")}
                   </label>
                   <input
                     type="text"
@@ -358,7 +363,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-sm-6">
                   <label htmlFor="lastName" className="form-label">
-                    Nazwisko
+                  {t("reservation.personalData.lastName")}
                   </label>
                   <input
                     type="text"
@@ -370,7 +375,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-12">
                   <label htmlFor="email" className="form-label">
-                    Email
+                  {t("reservation.personalData.email")}
                   </label>
                   <input
                     type="text"
@@ -383,7 +388,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-12">
                   <label htmlFor="address" className="form-label">
-                    Adres
+                  {t("reservation.personalData.address")}
                   </label>
                   <input
                     type="text"
@@ -396,7 +401,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-12">
                   <label htmlFor="address2" className="form-label">
-                    Adres 2 <span className="text-body-secondary">(Opcjonalnie)</span>
+                  {t("reservation.personalData.address2")} <span className="text-body-secondary">(Opcjonalnie)</span>
                   </label>
                   <input
                     type="text"
@@ -408,7 +413,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-8">
                   <label htmlFor="city" className="form-label">
-                    Miejscowość
+                  {t("reservation.personalData.city")}
                   </label>
                   <input
                     type="text"
@@ -420,7 +425,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-4">
                   <label htmlFor="zip" className="form-label">
-                    Kod pocztowy
+                  {t("reservation.personalData.zip")}
                   </label>
                   <input
                     type="text"
@@ -434,13 +439,13 @@ const ReservationForm = (props) => {
 
               <hr className="my-4" />
 
-              <h4 className="mb-3">Płatność</h4>
+              <h4 className="mb-3">{t("reservation.payment.payment")}</h4>
 
               <div className="my-3">
                 <div className="form-check">
                   <input id="card" name="paymentMethod" type="radio" className="form-check-input" />
                   <label className="form-check-label" htmlFor="card">
-                    Karta <span className="text-body-secondary">(VISA / MASTERCARD)</span>
+                  {t("reservation.payment.card")} <span className="text-body-secondary">(VISA / MASTERCARD)</span>
                   </label>
                 </div>
                 <div className="form-check">
@@ -451,7 +456,7 @@ const ReservationForm = (props) => {
                     className="form-check-input"
                   />
                   <label className="form-check-label" htmlFor="quicktransfer">
-                    Szybki przelew <span className="text-body-secondary">(PayU)</span>
+                  {t("reservation.payment.qtransfer")} <span className="text-body-secondary">(PayU)</span>
                   </label>
                 </div>
                 <div className="form-check">
@@ -462,13 +467,13 @@ const ReservationForm = (props) => {
                     className="form-check-input"
                   />
                   <label className="form-check-label" htmlFor="transfer">
-                    Tradycyjny przelew
+                  {t("reservation.payment.transfer")}
                   </label>
                 </div>
                 <div className="form-check">
                   <input id="blik" name="paymentMethod" type="radio" className="form-check-input" />
                   <label className="form-check-label" htmlFor="blik">
-                    Blik
+                  {t("reservation.payment.blik")}
                   </label>
                 </div>
                 {paymentError != "" && <div className="text-danger">{paymentError}</div>}
@@ -477,7 +482,7 @@ const ReservationForm = (props) => {
               <hr className="my-4" />
 
               <button className="w-100 btn btn-primary btn-lg" type="submit">
-                Przejdź do płatności
+              {t("reservation.goNextBtn")}
               </button>
             </form>
           </div>
