@@ -55,7 +55,7 @@ const ReservationForm = (props) => {
     setDaysCount(0);
   
     const checkDate = () => {
-      if (tempDepartueDate < 0 || tempArrivalDate < 0) {
+      if (tempDeparDate < 0 || tempArrivalDate < 0) {
         setDateError(t("reservation.errors.date.minus"));
         setDaysCount(0);
         return;
@@ -95,7 +95,6 @@ const ReservationForm = (props) => {
   }, [promoCode]);
 
   const handlePromoCode = () => {
-    // FIXME: kod nie odświerza się poprawnie podczas błędu
     setPromoCodeShow(promoCode);
 
     const foundCode = props.codes.find((item) => item.code === promoCodeHash);
@@ -440,6 +439,8 @@ const ReservationForm = (props) => {
               <hr className="my-4" />
 
               <h4 className="mb-3">{t("reservation.payment.payment")}</h4>
+
+                {/* TODO: pobieranie sposobów płatności z bazy danych */}
 
               <div className="my-3">
                 <div className="form-check">

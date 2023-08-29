@@ -193,6 +193,8 @@
       "blik": "Blik"
     },
     "goNextBtn": "Przejdź do płatności",
+    "payBelow": "Kliknij poniższy przycisk, żeby zapłacić.",
+    "pay": "Zapłać",
     "errors": {
       "date": {
         "empty": "Należy wybrać datę przyjazdu i wyjazdu.",

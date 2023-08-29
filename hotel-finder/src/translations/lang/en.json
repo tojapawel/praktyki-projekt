@@ -187,6 +187,8 @@
       "blik": "Blik"
     },
     "goNextBtn": "Go to payment",
+    "payBelow": "Press button below to pay.",
+    "pay": "Pay",
     "errors": {
       "date": {
         "empty": "Select arrival and departure date.",
