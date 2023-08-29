@@ -215,6 +215,11 @@
         }
       },
       "payment": "Select a payment method."
+    },
+    "ok": {
+      "title": "It worked!",
+      "info": "We have sent a reservation confirmation to the e-mail address provided.",
+      "button": "Back to the main page"
     }
   }
 }

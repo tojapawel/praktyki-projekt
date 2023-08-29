@@ -221,6 +221,11 @@
         }
       },
       "payment": "Należy wybrać sposób płatności."
+    },
+    "ok": {
+      "title": "Udało się!",
+      "info": "Na podanego maila wysłaliśmy potwierdzenie rezerwacji.",
+      "button": "Powrót na stronę główną"
     }
   }
 }

@@ -55,7 +55,7 @@ const ReservationForm = (props) => {
     setDaysCount(0);
   
     const checkDate = () => {
-      if (tempDeparDate < 0 || tempArrivalDate < 0) {
+      if (tempDepartueDate < 0 || tempArrivalDate < 0) {
         setDateError(t("reservation.errors.date.minus"));
         setDaysCount(0);
         return;

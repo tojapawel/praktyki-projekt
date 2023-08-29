@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import addReservation from "../../functions/fetch/addReservation";
@@ -23,10 +23,10 @@ const ReservationFinal = () => {
     addReservation(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11].split('T')[0], data[12].split('T')[0], data[13].split('T')[0]);
     localStorage.removeItem('arrivalDate');
     localStorage.removeItem('departueDate');
-    //TODO: dodać stronę potwierdzenia płatności
+    //TODO: wysyłanie maila z potwierdzeniem rezerwacji
     navigate("/reservation/ok");
   }
-
+    
   return (
     <>
       <div className="p-5 text-center bg-body-tertiary vertical_center">
@@ -38,6 +38,7 @@ const ReservationFinal = () => {
       </div>
     </>
   );
+
 };
 
 export default ReservationFinal;
