@@ -12,3 +12,5 @@ const fetchAllHotels = async () => {
   
   export default fetchAllHotels;
   
+
+  // TODO: zrobić, żeby wszystkie fetch były jako jedna funkcja
