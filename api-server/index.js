@@ -299,7 +299,7 @@ app.get('/getattractions/:apiKey/:hotel_id', (req, res) => {
         res.status(500).json({ error: 'Error retrieving data from database' });
       } else {
         if (results.length === 0) {
-          res.status(403).send('invalid hotel id');
+          res.status(200).send('[0]');
         }else{
           res.json(results);
         }

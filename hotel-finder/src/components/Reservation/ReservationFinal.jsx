@@ -1,12 +1,10 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import addReservation from "../../functions/fetch/addReservation";
-import changeAvailable from "../../functions/fetch/changeAvailable";
-
 // eslint-disable-next-line
 import i18n from "../../translations/i18n";
 import { useTranslation } from "react-i18next";
+import fetchData from "../../functions/fetchData";
 
 const ReservationFinal = () => {
   const { t } = useTranslation();
@@ -19,15 +17,14 @@ const ReservationFinal = () => {
   var data = JSON.parse(rawData);
 
   const handlePayment = () => {
-    changeAvailable(data[9], 0);
-    addReservation(data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11].split('T')[0], data[12].split('T')[0], data[13].split('T')[0]);
-    
-    //TODO: odejmowanie z bazy danych użycie kodu jeżeli kod został wykorzystany przy danej rezerwacji
+    fetchData("changeavailable", `${data[9]}/0`);
+    fetchData("addreservation", `${data[0]}/${data[1]}/${data[2]}/${data[3]}/${data[4]}/${data[5]}/${data[6]}/${data[7]}/${data[8]}/${data[9]}/${data[10]}/${data[11].split('T')[0]}/${data[12].split('T')[0]}/${data[13].split('T')[0]}`);
     
     localStorage.removeItem('arrivalDate');
     localStorage.removeItem('departueDate');
-    //TODO: wysyłanie maila z potwierdzeniem rezerwacji
-    //TODO: strona do której wchodzi się z linka z maila, na której są informacje o rezerwacji
+    // TODO: odejmowanie z bazy danych użycie kodu jeżeli kod został wykorzystany przy danej rezerwacji
+    // TODO: wysyłanie maila z potwierdzeniem rezerwacji
+    // TODO: strona do której wchodzi się z linka z maila, na której są informacje o rezerwacji
     navigate("/reservation/ok");
   }
     

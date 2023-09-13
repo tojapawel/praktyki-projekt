@@ -14,6 +14,7 @@ function AttractionsRow(props) {
         {props.attraction.quantity === 0 ? <td>{t("hotel.attractions.notAvailable")}</td> : <td>{props.attraction.quantity}</td>}
         <td>{props.attraction.price} zł</td>
         {props.attraction.price_type === "onetime" ? <td>{t("hotel.attractions.priceType.onetime")}</td> : <td>{t("hotel.attractions.priceType.perday")}</td>}
+        {/* // TODO: dodać rezerwacje atrakcji. rezerwacja atrakcji możliwa dopiero z poziomu maila */}
       </tr>
     );
 

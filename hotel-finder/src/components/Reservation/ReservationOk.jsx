@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import addReservation from "../../functions/fetch/addReservation";
-import changeAvailable from "../../functions/fetch/changeAvailable";
-
 // eslint-disable-next-line
 import i18n from "../../translations/i18n";
 import { useTranslation } from "react-i18next";

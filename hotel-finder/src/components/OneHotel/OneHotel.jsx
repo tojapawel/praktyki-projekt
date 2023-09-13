@@ -13,13 +13,12 @@ import { Link } from "react-router-dom";
 import i18n from "../../translations/i18n";
 import { useTranslation } from "react-i18next";
 
-import addComment from "../../functions/fetch/comments/addComment";
 import CalculateStars from "../../functions/calculateStars";
 import RoomRow from "./RoomRow";
 import LeafletMap from "../LeafletMap/LeafletMap";
-import fetchComments from "../../functions/fetch/comments/fetchComments";
-import fetchAttractions from "../../functions/fetch/fetchAttractions";
 import AttractionsRow from "./AttractionsRow";
+
+import fetchData from "../../functions/fetchData";
 
 const OneHotel = (props) => {
   const { t } = useTranslation();
@@ -31,15 +30,15 @@ const OneHotel = (props) => {
   const [comments, setComments] = useState("");
 
   const fetchCommentsFunc = async () => {
-    const fetchedComments = await fetchComments(props.hotelId);
+    const fetchedComments = await fetchData("comments", props.hotelId);
     setComments(fetchedComments);
   };
 
-  const [attractions, setAttractions] = useState("");
+  const [attractions, setAttractions] = useState([0]);
 
 
   const fetchAttractionsFunc = async () => {
-    const fetchedAttractions = await fetchAttractions(props.hotelId);
+    const fetchedAttractions = await fetchData("getattractions", props.hotelId);
     setAttractions(fetchedAttractions);
   };
 
@@ -89,7 +88,7 @@ const OneHotel = (props) => {
       let hotel = props.hotel;
       let rooms = props.rooms;
       const handleAddComment = (hotelid) => {
-        addComment(hotelid, commentAuthor, commentComment);
+        fetchData("addcomment", `${hotelid}/${commentAuthor}/${commentComment}`);
         fetchCommentsFunc();
       }
 
@@ -284,14 +283,16 @@ const OneHotel = (props) => {
                 </tr>
               </thead>
               <tbody>
-
-                {attractions.length === 0 ? (
-                    <tr>
-                      <th colSpan="5">{t("hotel.attractions.noAttractions")}</th>
-                    </tr>
-                ) : attractions.map((attraction, index) => (
-                    <AttractionsRow key={index} attraction={attraction} index={index} />
-                ))}
+                
+                  {
+                    attractions[0] == 0 ? (
+                        <tr>
+                          <th colSpan="5">{t("hotel.attractions.noAttractions")}</th>
+                        </tr>
+                    ) : attractions.map((attraction, index) => (
+                        <AttractionsRow key={index} attraction={attraction} index={index} />
+                    ))
+                  }
 
               </tbody>
             </table>
@@ -344,6 +345,7 @@ const OneHotel = (props) => {
                           <p className="card-text">{comment.comment}</p>
                         </div>
                       </div>
+                      // TODO: zmienić sposób wyświetlania komentarzy
                     ))
                   }
                   </div>

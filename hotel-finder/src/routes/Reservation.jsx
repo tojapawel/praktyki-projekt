@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import fetchHotel from "../functions/fetch/fetchHotel";
-import fetchRoom from "../functions/fetch/fetchRoom";
-import fetchPromoCodes from "../functions/fetch/fetchPromoCodes";
+// import fetchHotel from "../functions/fetch/fetchHotel";
+// import fetchRoom from "../functions/fetch/fetchRoom";
+// import fetchPromoCodes from "../functions/fetch/fetchPromoCodes";
+
+import fetchData from "../functions/fetchData";
 
 import Footer from "../components/Footer/Footer";
 
@@ -21,7 +23,7 @@ const Reservation = () => {
 
   useEffect(() => {
     const fetchHotelFunc = async () => {
-      const fetchedHotel = await fetchHotel(hotelId);
+      const fetchedHotel = await fetchData("gethotel", hotelId);
       setHotel(fetchedHotel);
     };
     fetchHotelFunc();
@@ -29,7 +31,7 @@ const Reservation = () => {
   
   useEffect(() => {
     const fetchRoomFunc = async () => {
-      const fetchedRoom = await fetchRoom(roomId);
+      const fetchedRoom = await fetchData("getroom", roomId);
       setRoom(fetchedRoom);
     };
     fetchRoomFunc();
@@ -37,7 +39,8 @@ const Reservation = () => {
 
   useEffect(() => {
     const fetchPromoCodesFunc = async () => {
-      const fetchedPromoCodes = await fetchPromoCodes();
+      const fetchedPromoCodes = await fetchData("getpromocodes");
+      //FIXME: zmienić, żeby zamiast wyciągać wszystkie kody to, zeby sprawdzało czy dany podany kod jest w bazie
       setCodes(fetchedPromoCodes);
     };
     fetchPromoCodesFunc();

@@ -4,7 +4,7 @@ import { Typeahead } from "react-bootstrap-typeahead";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { MdClose, MdExpandMore, MdHorizontalRule } from "react-icons/md";
 
-import fetchCities from "../../../functions/fetch/fetchCities";
+import fetchData from "../../../functions/fetchData";
 
 
 // eslint-disable-next-line
@@ -23,7 +23,7 @@ const HotelFilter = (props) => {
 
   useEffect(() => {
     const fetchCitiesFunc = async () => {
-      const fetchedCities = await fetchCities();
+      const fetchedCities = await fetchData("getcities");
       setCitiesAPI(fetchedCities);
     };
 

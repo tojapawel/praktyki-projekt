@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import fetchHotel from "../functions/fetch/fetchHotel";
-import fetchRooms from "../functions/fetch/fetchRooms";
+import fetchData from "../functions/fetchData";
 
 import Footer from "../components/Footer/Footer";
 import OneHotel from "../components/OneHotel/OneHotel";
@@ -18,7 +17,7 @@ const Hotel = () => {
 
   useEffect(() => {
     const fetchHotelFunc = async () => {
-      const fetchedHotel = await fetchHotel(hotelId);
+      const fetchedHotel = await fetchData("gethotel", hotelId);
       setHotel(fetchedHotel);
     };
     fetchHotelFunc();
@@ -26,7 +25,7 @@ const Hotel = () => {
   
   useEffect(() => {
     const fetchRoomsFunc = async () => {
-      const fetchedRooms = await fetchRooms(hotelId);
+      const fetchedRooms = await fetchData("getrooms", hotelId);
       setRooms(fetchedRooms);
     };
     fetchRoomsFunc();
