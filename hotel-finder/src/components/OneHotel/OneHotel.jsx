@@ -97,6 +97,9 @@ const OneHotel = (props) => {
         let created_at = `${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`;
         fetchData("addcomment", `${hotelid}/${commentAuthor}/${commentComment}/${commentStars}/${created_at}`);
         fetchCommentsFunc();
+        setCommentAuthor("");
+        setCommentComment("");
+        setCommentStars(0);
       }
 
       return (
@@ -320,12 +323,12 @@ const OneHotel = (props) => {
                 <div className="modal-body">
 
                   <div className="form-floating mb-3">
-                    <input type="text" className="form-control" id="comment-author" onChange={(e) => setCommentAuthor(e.target.value)}/>
+                    <input type="text" value={commentAuthor} className="form-control" id="comment-author" onChange={(e) => setCommentAuthor(e.target.value)}/>
                     <label htmlFor="comment-author">{t("hotel.comments.author")}</label>
                   </div>
 
                   <div className="form-floating mb-3">
-                    <textarea className="form-control" id="comment-comment" style={{height: '100px'}} onChange={(e) => setCommentComment(e.target.value)}></textarea>
+                    <textarea className="form-control" value={commentComment} id="comment-comment" style={{height: '100px'}} onChange={(e) => setCommentComment(e.target.value)}></textarea>
                     <label htmlFor="comment-comment">{t("hotel.comments.comment")}</label>
                   </div>
 

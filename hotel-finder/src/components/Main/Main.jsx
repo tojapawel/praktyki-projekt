@@ -42,7 +42,6 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    // TODO: zrobić, sprawdzanie poprawności wybranych dat
     if(selectedCity.length > 0 && guests.length > 0 && arrivalDate.length > 0 && departueDate.length > 0){
       setDisabled("");
     }else{
