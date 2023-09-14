@@ -6,6 +6,7 @@ import {
   MdHome
 } from "react-icons/md";
 
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -19,6 +20,7 @@ import LeafletMap from "../LeafletMap/LeafletMap";
 import AttractionsRow from "./AttractionsRow";
 
 import fetchData from "../../functions/fetchData";
+import StarRating from "../../functions/StarRating/starRating";
 
 const OneHotel = (props) => {
   const { t } = useTranslation();
@@ -26,22 +28,20 @@ const OneHotel = (props) => {
 
   const [commentAuthor, setCommentAuthor] = useState("");
   const [commentComment, setCommentComment] = useState("");
-
+  const [commentStars, setCommentStars] = useState(0);
   const [comments, setComments] = useState("");
+
+  const [attractions, setAttractions] = useState([0]);
 
   const fetchCommentsFunc = async () => {
     const fetchedComments = await fetchData("comments", props.hotelId);
     setComments(fetchedComments);
   };
 
-  const [attractions, setAttractions] = useState([0]);
-
-
   const fetchAttractionsFunc = async () => {
     const fetchedAttractions = await fetchData("getattractions", props.hotelId);
     setAttractions(fetchedAttractions);
   };
-
 
   useEffect(() => {
     fetchCommentsFunc();
@@ -54,6 +54,11 @@ const OneHotel = (props) => {
     }
     return "text-danger";
   };
+
+  const handleGetStars = (stars) => {
+    setCommentStars(stars);
+    console.log(stars);
+  }
 
   const setMetadataText = (val, type) => {
     if (val) {
@@ -88,7 +93,9 @@ const OneHotel = (props) => {
       let hotel = props.hotel;
       let rooms = props.rooms;
       const handleAddComment = (hotelid) => {
-        fetchData("addcomment", `${hotelid}/${commentAuthor}/${commentComment}`);
+        let now = new Date();
+        let created_at = `${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()} ${now.getHours()}:${now.getMinutes()}`;
+        fetchData("addcomment", `${hotelid}/${commentAuthor}/${commentComment}/${commentStars}/${created_at}`);
         fetchCommentsFunc();
       }
 
@@ -317,9 +324,13 @@ const OneHotel = (props) => {
                     <label htmlFor="comment-author">{t("hotel.comments.author")}</label>
                   </div>
 
-                  <div className="form-floating">
+                  <div className="form-floating mb-3">
                     <textarea className="form-control" id="comment-comment" style={{height: '100px'}} onChange={(e) => setCommentComment(e.target.value)}></textarea>
                     <label htmlFor="comment-comment">{t("hotel.comments.comment")}</label>
+                  </div>
+
+                  <div className="form-floating mb-3 fs-3 text-center">
+                    <StarRating getStars={handleGetStars}/>
                   </div>
                 
                 </div>
@@ -340,16 +351,21 @@ const OneHotel = (props) => {
                   {
                     comments.map((comment) => (
                       <div className="card mb-3" key={comment.id}>
-                        <div className="card-body">
-                          <h5 className="card-title">@{comment.author}</h5>
-                          <p className="card-text">{comment.comment}</p>
+                        <div className="card-body row">
+                          <div className="col-md-10">
+                            <p className="card-text">{comment.comment}</p>
+                            <p className="card-text"><small className="text-body-secondary">{comment.created_at}, @{comment.author}</small></p>
+                          </div>
+                          <div className="col-md-2 text-center fs-5">
+                            <p className="card-text"><small className="text-body-secondary">{<CalculateStars stars={comment.stars} />}</small></p>
+                          </div>
                         </div>
                       </div>
-                      // TODO: zmienić sposób wyświetlania komentarzy
                     ))
                   }
-                  </div>
-                )
+
+                </div>
+              )
               :
               <div className="container px-3"><small>{t("hotel.comments.empty")}</small></div>
             }

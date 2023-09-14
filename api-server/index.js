@@ -37,16 +37,18 @@ connection.connect((err) => {
 app.use(express.json());
 
 //dodawanie komantarza dla danego hotelu
-app.get('/addcomment/:apiKey/:hotelid/:author/:comment', (req, res) => {
+app.get('/addcomment/:apiKey/:hotelid/:author/:comment/:stars/:date', (req, res) => {
   const apiKey = req.params.apiKey;
 
   const hotelid = req.params.hotelid;
   const author = req.params.author;
   const comment = req.params.comment;
+  const stars = req.params.stars;
+  const date = req.params.date;
 
 
   if (!checkAPIKey(apiKey)) {
-    const query = `INSERT INTO comments (hotel_id, author, comment) VALUES ('${hotelid}','${author}', '${comment}')`;
+    const query = `INSERT INTO comments (hotel_id, author, comment, stars, created_at) VALUES ('${hotelid}','${author}', '${comment}', '${stars}', '${date}')`;
 
     connection.query(query, (error, results) => {
       if (error) {

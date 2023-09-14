@@ -1,0 +1,19 @@
+.rating {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.star {
+  color: gray;
+  transition: color 0.2s;
+}
+
+.star.active {
+  color: gold;
+  content: "dsfsdf";
+}
+
+.rating-text {
+  font-size: 20px;
+  margin-top: 10px;
+}
