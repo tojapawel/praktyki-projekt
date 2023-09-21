@@ -8,5 +8,4 @@ const fetchData = async (endpoint, values = "") => {
   }
 };
 
-
 export default fetchData;

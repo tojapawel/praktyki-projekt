@@ -8,7 +8,6 @@ import Footer from "../components/Footer/Footer";
 import { useParams } from "react-router-dom";
 
 const Hotels = () => {
-
   const [hotels, setHotels] = useState([]);
   const [rooms, setRooms] = useState([]);
 
@@ -22,7 +21,7 @@ const Hotels = () => {
     };
     fetchAllHotelsFunc();
   }, []);
-  
+
   useEffect(() => {
     const fetchAllRoomsFunc = async () => {
       const fetchedAllRooms = await fetchData("getrooms");
@@ -30,7 +29,7 @@ const Hotels = () => {
     };
     fetchAllRoomsFunc();
   }, []);
-  
+
   return (
     <>
       {city === undefined ? (

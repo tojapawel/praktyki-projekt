@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { MdLanguage } from 'react-icons/md';
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { MdLanguage } from "react-icons/md";
 
 function LanguageSelector() {
   const { i18n } = useTranslation();
@@ -10,19 +10,19 @@ function LanguageSelector() {
     const selectedLanguage = lang;
     i18n.changeLanguage(selectedLanguage);
     setSelectedLanguage(selectedLanguage);
-    localStorage.setItem('selectedLanguage', selectedLanguage);
+    localStorage.setItem("selectedLanguage", selectedLanguage);
   };
 
   useEffect(() => {
-    const storedLanguage = localStorage.getItem('selectedLanguage');
+    const storedLanguage = localStorage.getItem("selectedLanguage");
     const defaultLanguage = storedLanguage || i18n.language;
     i18n.changeLanguage(defaultLanguage);
     setSelectedLanguage(defaultLanguage);
   }, [i18n]);
 
   let languages = [
-    { name: 'Polski', value: 'pl' },
-    { name: 'English', value: 'en' }
+    { name: "Polski", value: "pl" },
+    { name: "English", value: "en" },
   ];
 
   return (
@@ -34,8 +34,7 @@ function LanguageSelector() {
           type="button"
           aria-expanded="false"
           data-bs-toggle="dropdown"
-          aria-label="Toggle theme (light)"
-        >
+          aria-label="Toggle theme (light)">
           <svg className="bi my-1" width="5px" height="10px">
             <use href="#sun-fill"></use>
           </svg>
@@ -44,14 +43,15 @@ function LanguageSelector() {
             Toggle theme
           </span>
         </button>
-        <ul className="dropdown-menu dropdown-menu-end shadow bg-white" style={{ zIndex: '1000' }}>
+        <ul className="dropdown-menu dropdown-menu-end shadow bg-white" style={{ zIndex: "1000" }}>
           {languages.map((lang, index) => (
             <li key={index}>
               <button
                 onClick={() => changeLanguage(lang.value)} // Wrap the function call inside an arrow function
                 type="button"
-                className={`dropdown-item d-flex align-items-center ${selectedLanguage === lang.value && 'active'}`}
-              >
+                className={`dropdown-item d-flex align-items-center ${
+                  selectedLanguage === lang.value && "active"
+                }`}>
                 {lang.name}
               </button>
             </li>

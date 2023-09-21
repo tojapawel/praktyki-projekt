@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { MdStarOutline, MdStar } from 'react-icons/md';
+import React, { useState } from "react";
+import { MdStarOutline, MdStar } from "react-icons/md";
 
-import './starRating.css';
+import "./starRating.css";
 
 const StarRating = (props) => {
   const [rating, setRating] = useState(0);
@@ -26,11 +26,10 @@ const StarRating = (props) => {
         {[1, 2, 3, 4, 5].map((star) => (
           <span
             key={star}
-            className={`star ${star <= (hoverRating || rating) ? 'active' : ''}`}
+            className={`star ${star <= (hoverRating || rating) ? "active" : ""}`}
             onClick={() => handleStarClick(star)}
             onMouseEnter={() => handleStarHover(star)}
-            onMouseLeave={handleStarLeave}
-          >
+            onMouseLeave={handleStarLeave}>
             {star <= (hoverRating || rating) ? <MdStar /> : <MdStarOutline />}
           </span>
         ))}

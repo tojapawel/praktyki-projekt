@@ -49,14 +49,12 @@ const HotelsList = (props) => {
               const rooms = [];
 
               props.rooms.map((room, index) => {
-                if(hotel.id === room.hotel_id){
+                if (hotel.id === room.hotel_id) {
                   rooms.push(room);
-                };
-              })
+                }
+              });
 
-              return (
-                <HotelCard hotel={hotel} rooms={rooms} key={index} index={index} />
-              )
+              return <HotelCard hotel={hotel} rooms={rooms} key={index} index={index} />;
             })
           ) : (
             <div className="container my-5">

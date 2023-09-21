@@ -39,8 +39,8 @@ const ReservationForm = (props) => {
   const room = props.room[0];
 
   useEffect(() => {
-    const arrivalDateStorage = localStorage.getItem('arrivalDate');
-    const departueDateStorage = localStorage.getItem('departueDate');
+    const arrivalDateStorage = localStorage.getItem("arrivalDate");
+    const departueDateStorage = localStorage.getItem("departueDate");
     if (arrivalDateStorage !== null && departueDateStorage !== null && !dateLoaded) {
       setArrivalDate(arrivalDateStorage);
       setDepartueDate(departueDateStorage);
@@ -53,36 +53,36 @@ const ReservationForm = (props) => {
     const tempArrivalDate = new Date(arrivalDate);
     const tempDepartueDate = new Date(departueDate);
     setDaysCount(0);
-  
+
     const checkDate = () => {
       if (tempDepartueDate < 0 || tempArrivalDate < 0) {
         setDateError(t("reservation.errors.date.minus"));
         setDaysCount(0);
         return;
       }
-  
+
       if (today > tempArrivalDate || today > tempDepartueDate) {
         setDateError(t("reservation.errors.date.past"));
         setDaysCount(0);
         return;
       }
-  
+
       if (tempDepartueDate <= tempArrivalDate) {
         setDateError(t("reservation.errors.date.future"));
         setDaysCount(0);
         return;
       }
-  
+
       const daysDifference = (tempDepartueDate - tempArrivalDate) / (1000 * 60 * 60 * 24);
       if (daysDifference) {
         setDaysCount(daysDifference);
-      }else{
+      } else {
         setDaysCount(0);
       }
-      
+
       setDateError(null);
     };
-  
+
     checkDate();
   }, [arrivalDate, departueDate]);
 
@@ -140,14 +140,14 @@ const ReservationForm = (props) => {
     if (!formData[0]) {
       setFirstNameError(t("reservation.errors.personalData.firstName"));
       formOkey = false;
-    }else{
+    } else {
       setFirstNameError(false);
     }
 
     if (!formData[1]) {
       setLastNameError(t("reservation.errors.personalData.lastName"));
       formOkey = false;
-    }else{
+    } else {
       setLastNameError(false);
     }
 
@@ -166,20 +166,20 @@ const ReservationForm = (props) => {
     if (!formData[3]) {
       setAddressError(t("reservation.errors.personalData.address"));
       formOkey = false;
-    }else{
+    } else {
       setAddressError(false);
     }
 
     if (!formData[5]) {
       setCityError(t("reservation.errors.personalData.city"));
       formOkey = false;
-    }else{
+    } else {
       setCityError(false);
     }
-        
+
     var zipFormat = /^[A-Z0-9]{2}-[A-Z0-9]{3}$/;
     var zip = formData[6];
-    
+
     if (!zip) {
       setZipError(t("reservation.errors.personalData.zip.empty"));
       formOkey = false;
@@ -203,11 +203,19 @@ const ReservationForm = (props) => {
     if (!payment) {
       setPaymentError(t("reservation.errors.payment"));
       formOkey = false;
-    }else{
+    } else {
       setPaymentError(false);
     }
 
-    formData.push(payment, hotel.id, room.id, price, new Date(arrivalDate), new Date(departueDate), new Date());
+    formData.push(
+      payment,
+      hotel.id,
+      room.id,
+      price,
+      new Date(arrivalDate),
+      new Date(departueDate),
+      new Date()
+    );
 
     if (formOkey) {
       navigate(`/reservation/final/?data=${JSON.stringify(formData)}`);
@@ -320,7 +328,7 @@ const ReservationForm = (props) => {
                       type="date"
                       className="form-control"
                       id="arrivalDate"
-                      value={arrivalDate || ''}
+                      value={arrivalDate || ""}
                       onChange={(e) => setArrivalDate(e.target.value)}
                     />
                     <label htmlFor="arrivalDate">{t("main.input.date.arrival")}</label>
@@ -332,7 +340,7 @@ const ReservationForm = (props) => {
                       type="date"
                       className="form-control"
                       id="departueDate"
-                      value={departueDate || ''}
+                      value={departueDate || ""}
                       onChange={(e) => setDepartueDate(e.target.value)}
                     />
                     <label htmlFor="departueDate">{t("main.input.date.departure")}</label>
@@ -349,7 +357,7 @@ const ReservationForm = (props) => {
               <div className="row g-3">
                 <div className="col-sm-6">
                   <label htmlFor="firstName" className="form-label">
-                  {t("reservation.personalData.firstName")}
+                    {t("reservation.personalData.firstName")}
                   </label>
                   <input
                     type="text"
@@ -362,7 +370,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-sm-6">
                   <label htmlFor="lastName" className="form-label">
-                  {t("reservation.personalData.lastName")}
+                    {t("reservation.personalData.lastName")}
                   </label>
                   <input
                     type="text"
@@ -374,7 +382,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-12">
                   <label htmlFor="email" className="form-label">
-                  {t("reservation.personalData.email")}
+                    {t("reservation.personalData.email")}
                   </label>
                   <input
                     type="text"
@@ -387,7 +395,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-12">
                   <label htmlFor="address" className="form-label">
-                  {t("reservation.personalData.address")}
+                    {t("reservation.personalData.address")}
                   </label>
                   <input
                     type="text"
@@ -400,7 +408,8 @@ const ReservationForm = (props) => {
 
                 <div className="col-12">
                   <label htmlFor="address2" className="form-label">
-                  {t("reservation.personalData.address2")} <span className="text-body-secondary">(Opcjonalnie)</span>
+                    {t("reservation.personalData.address2")}{" "}
+                    <span className="text-body-secondary">(Opcjonalnie)</span>
                   </label>
                   <input
                     type="text"
@@ -412,7 +421,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-8">
                   <label htmlFor="city" className="form-label">
-                  {t("reservation.personalData.city")}
+                    {t("reservation.personalData.city")}
                   </label>
                   <input
                     type="text"
@@ -424,7 +433,7 @@ const ReservationForm = (props) => {
 
                 <div className="col-4">
                   <label htmlFor="zip" className="form-label">
-                  {t("reservation.personalData.zip")}
+                    {t("reservation.personalData.zip")}
                   </label>
                   <input
                     type="text"
@@ -440,13 +449,14 @@ const ReservationForm = (props) => {
 
               <h4 className="mb-3">{t("reservation.payment.payment")}</h4>
 
-                {/* TODO: pobieranie sposobów płatności z bazy danych */}
+              {/* TODO: pobieranie sposobów płatności z bazy danych */}
 
               <div className="my-3">
                 <div className="form-check">
                   <input id="card" name="paymentMethod" type="radio" className="form-check-input" />
                   <label className="form-check-label" htmlFor="card">
-                  {t("reservation.payment.card")} <span className="text-body-secondary">(VISA / MASTERCARD)</span>
+                    {t("reservation.payment.card")}{" "}
+                    <span className="text-body-secondary">(VISA / MASTERCARD)</span>
                   </label>
                 </div>
                 <div className="form-check">
@@ -457,7 +467,8 @@ const ReservationForm = (props) => {
                     className="form-check-input"
                   />
                   <label className="form-check-label" htmlFor="quicktransfer">
-                  {t("reservation.payment.qtransfer")} <span className="text-body-secondary">(PayU)</span>
+                    {t("reservation.payment.qtransfer")}{" "}
+                    <span className="text-body-secondary">(PayU)</span>
                   </label>
                 </div>
                 <div className="form-check">
@@ -468,13 +479,13 @@ const ReservationForm = (props) => {
                     className="form-check-input"
                   />
                   <label className="form-check-label" htmlFor="transfer">
-                  {t("reservation.payment.transfer")}
+                    {t("reservation.payment.transfer")}
                   </label>
                 </div>
                 <div className="form-check">
                   <input id="blik" name="paymentMethod" type="radio" className="form-check-input" />
                   <label className="form-check-label" htmlFor="blik">
-                  {t("reservation.payment.blik")}
+                    {t("reservation.payment.blik")}
                   </label>
                 </div>
                 {paymentError != "" && <div className="text-danger">{paymentError}</div>}
@@ -483,7 +494,7 @@ const ReservationForm = (props) => {
               <hr className="my-4" />
 
               <button className="w-100 btn btn-primary btn-lg" type="submit">
-              {t("reservation.goNextBtn")}
+                {t("reservation.goNextBtn")}
               </button>
             </form>
           </div>

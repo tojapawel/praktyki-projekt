@@ -22,7 +22,7 @@ const Hotel = () => {
     };
     fetchHotelFunc();
   }, []);
-  
+
   useEffect(() => {
     const fetchRoomsFunc = async () => {
       const fetchedRooms = await fetchData("getrooms", hotelId);
@@ -31,8 +31,12 @@ const Hotel = () => {
     fetchRoomsFunc();
   }, []);
 
-  return (
-    (hotel.length === 1 && rooms.length > 0) ? <><OneHotel hotel={hotel} rooms={rooms} hotelId={hotelId} /> <Footer /></>: E404()
+  return hotel.length === 1 && rooms.length > 0 ? (
+    <>
+      <OneHotel hotel={hotel} rooms={rooms} hotelId={hotelId} /> <Footer />
+    </>
+  ) : (
+    E404()
   );
 };
 

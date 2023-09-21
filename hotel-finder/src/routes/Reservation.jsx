@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-// import fetchHotel from "../functions/fetch/fetchHotel";
-// import fetchRoom from "../functions/fetch/fetchRoom";
-// import fetchPromoCodes from "../functions/fetch/fetchPromoCodes";
-
 import fetchData from "../functions/fetchData";
-
 import Footer from "../components/Footer/Footer";
 
 import E404 from "./errors/E404";
@@ -28,7 +23,7 @@ const Reservation = () => {
     };
     fetchHotelFunc();
   }, []);
-  
+
   useEffect(() => {
     const fetchRoomFunc = async () => {
       const fetchedRoom = await fetchData("getroom", roomId);
@@ -46,8 +41,12 @@ const Reservation = () => {
     fetchPromoCodesFunc();
   }, []);
 
-  return (
-    (hotel.length === 1 && room.length === 1) ? <><ReservationForm hotel={hotel} room={room} codes={codes}/> <Footer /></>: E404()
+  return hotel.length === 1 && room.length === 1 ? (
+    <>
+      <ReservationForm hotel={hotel} room={room} codes={codes} /> <Footer />
+    </>
+  ) : (
+    E404()
   );
 };
 
